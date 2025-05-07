@@ -1,0 +1,11 @@
+1. Category
+    Name
+    Slug
+    Status
+    Image
+
+1. Brand
+    Name
+    Slug
+    Status
+    Image

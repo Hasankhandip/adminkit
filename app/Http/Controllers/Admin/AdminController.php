@@ -2,15 +2,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller {
+
     public function dashboard() {
 
         return view('admin.dashboard');
     }
 
-    public function profile() {
+    public function login(Request $request) {
 
-        return view('admin.proffile');
+        $request->validate([
+            'email'    => 'required|email',
+            'password' => 'required',
+        ]);
+
     }
 }

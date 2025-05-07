@@ -13,10 +13,14 @@
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                 </a>
             </li>
-
-            <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ route('admin.profile') }}">
-                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Profile</span>
+            <li class="sidebar-item active">
+                <a class="sidebar-link" href="{{ route('admin.category.index') }}">
+                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Category</span>
+                </a>
+            </li>
+            <li class="sidebar-item active">
+                <a class="sidebar-link" href="#">
+                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Brand</span>
                 </a>
             </li>
 
