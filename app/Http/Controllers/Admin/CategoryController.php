@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller {
     public function index() {
         $pageTitle = "Manage Category";
-        return view('admin.category.index', compact('pageTitle'));
+        // $categories = ['categories' => Category::all()];
+        return view('admin.category.index', ['categories' => Category::all()], compact('pageTitle'));
     }
 
     public function create() {
@@ -22,9 +23,15 @@ class CategoryController extends Controller {
             'image' => 'nullable|mimes:png,jpg,jpeg',
         ]);
 
+        $imageName = null;
+        if (isset($request->image)) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images'), $imageName);
+        }
+
         $categories        = new Category();
         $categories->name  = $request->name;
-        $categories->image = $request->image;
+        $categories->image = $imageName;
         // $categories->status = $request->status;
         $categories->save();
 

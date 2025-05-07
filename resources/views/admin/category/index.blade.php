@@ -22,14 +22,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Project Apollo</td>
-                                    <td>Image here</td>
-                                    <td><span class="badge bg-success">Done</span></td>
-                                    <td>
-                                        <button class="btn btn-primary">Edit</button>
-                                    </td>
-                                </tr>
+                                @foreach ($categories as $category)
+                                    <tr>
+                                        <td>{{ $category->name }}</td>
+                                        <td>
+                                            <img class="card-item-img" src="{{ asset('images/' . $category->image) }}"
+                                                alt="">
+                                        </td>
+                                        <td><span class="badge bg-success">Done</span></td>
+                                        <td>
+                                            <button class="btn btn-primary">Edit</button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
