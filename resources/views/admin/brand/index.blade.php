@@ -2,7 +2,7 @@
 @section('content')
     <div class="d-flex justify-content-between mb-3 flex-wrap  gap-2">
         <h1 class="h3 mb-3">{{ __($pageTitle) }}</h1>
-        <a href="{{ route('admin.category.create') }}" class="btn btn-primary">@lang('Add Category')</a>
+        <a href="{{ route('admin.brand.create') }}" class="btn btn-primary">@lang('Add Brands')</a>
     </div>
     <div class="row">
         <div class="col-lg-12">
@@ -13,31 +13,28 @@
                             <th>@lang('Name')</th>
                             <th>@lang('Image')</th>
                             <th>@lang('Status')</th>
-                            <th>@lang('Action')</th>
+                            <th class="d-none d-md-table-cell">@lang('Action')</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($categories as $category)
+                        @foreach ($brands as $brand)
                             <tr>
-                                <td>{{ __($category->name) }}</td>
+                                <td>{{ __($brand->name) }}</td>
                                 <td>
-                                    <img class="card-item-img" src="{{ asset('images/' . $category->image) }}" alt="">
+                                    <img class="card-item-img" src="{{ asset('images/' . $brand->image) }}" alt="">
                                 </td>
                                 <td>
-                                    <span class="text-{{ $category->status ? 'success' : 'danger' }}">
-                                        {{ __($category->status ? 'Enable' : 'Disable') }}
-                                    </span>
+                                    <a href="{{ route('admin.brand.status', $brand->id) }}"
+                                        class="btn btn-{{ $brand->status ? 'success' : 'danger' }}">
+                                        {{ __($brand->status ? 'Enable' : 'Disable') }}
+                                    </a>
                                 </td>
                                 <td>
-                                    <a href="{{ route('admin.category.edit', $category->id) }}"
+                                    <a href="{{ route('admin.brand.edit', $brand->id) }}"
                                         class="btn btn-primary">@lang('Edit')</a>
                                 </td>
                             </tr>
-                        @empty
-                            <tr class="text-center">
-                                <td colspan="100%" class="p-5">@lang('No data found')</td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>

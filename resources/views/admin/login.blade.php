@@ -17,19 +17,19 @@
                                     <form action="{{ route('admin.login.attempt') }}" method="POST">
                                         @csrf
                                         <div class="mb-3">
-                                            <label class="form-label">Email</label>
+                                            <label class="form-label">@lang('Email')</label>
                                             <input class="form-control form-control-lg" type="email" name="email"
                                                 placeholder="@lang('Enter your email')" />
                                             @error('email')
-                                                <p class="text-danger">{{ $message }}</p>
+                                                <p class="text-danger">{{ __($message) }}</p>
                                             @enderror
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Password</label>
+                                            <label class="form-label">@lang('Password')</label>
                                             <input class="form-control form-control-lg" type="password" name="password"
                                                 placeholder="Enter your password" />
                                             @error('password')
-                                                <p class="text-danger">{{ $message }}</p>
+                                                <p class="text-danger">{{ __($message) }}</p>
                                             @enderror
                                         </div>
                                         <div>
@@ -37,11 +37,11 @@
                                                 <input id="customControlInline" type="checkbox" class="form-check-input"
                                                     value="" name="remember-me" checked>
                                                 <label class="form-check-label text-small"
-                                                    for="customControlInline">Remember me</label>
+                                                    for="customControlInline">@lang('Remember me')</label>
                                             </div>
                                         </div>
                                         <div class="d-grid gap-2 mt-3">
-                                            <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+                                            <button class="btn btn-lg btn-primary" type="submit">@lang('Sign in')</button>
                                         </div>
                                     </form>
                                 </div>

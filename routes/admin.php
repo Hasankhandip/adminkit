@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,19 @@ Route::controller(CategoryController::class)->prefix('category')->name('category
     Route::get('index', "index")->name('index');
     Route::get('create', "create")->name('create');
     Route::post('store', "store")->name('store');
+    Route::get('status/{id}', "status")->name('status');
+    Route::get('/edit/{id}', "edit")->name('edit');
+    Route::post('/update/{id}', "update")->name('update');
+});
+
+Route::controller(BrandController::class)->prefix('brand')->name('brand.')->group(function () {
+    Route::get('index', "index")->name('index');
+    Route::get('create', "create")->name('create');
+    Route::post('store', "store")->name('store');
+    Route::get('status/{id}', "status")->name('status');
+    Route::get('edit/{id}', "edit")->name('edit');
+    Route::post('/update/{id}', "update")->name('update');
+
 });
 
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');

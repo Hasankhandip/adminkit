@@ -15,8 +15,9 @@
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
-    <title>AdminKit Demo - Bootstrap 5 Admin Template</title>
+    <title>@lang('AdminKit Demo - Bootstrap 5 Admin Template')</title>
 
     <link href="{{ asset('assets/admin/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/admin/css/main.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
