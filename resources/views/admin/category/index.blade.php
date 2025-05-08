@@ -21,7 +21,8 @@
                             <tr>
                                 <td>{{ __($category->name) }}</td>
                                 <td>
-                                    <img class="card-item-img" src="{{ asset('images/' . $category->image) }}" alt="">
+                                    <img class="card-item-img" src="{{ asset('assets/images/category/' . $category->image) }}"
+                                        alt="">
                                 </td>
                                 <td>
                                     <span class="text-{{ $category->status ? 'success' : 'danger' }}">

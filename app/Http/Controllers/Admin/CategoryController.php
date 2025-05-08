@@ -32,7 +32,7 @@ class CategoryController extends Controller {
         if ($request->hasFile('image')) {
             try {
                 $imageName = time() . '.' . $request->image->extension();
-                $request->image->move(public_path('assets/images/category'), $imageName);
+                $request->image->move(public_path('assets/images/category/'), $imageName);
             } catch (Exception $ex) {
                 return back()->with('error', "The image couldn't be uploaded");
             }
@@ -63,7 +63,6 @@ class CategoryController extends Controller {
         $category->slug = str()->slug($request->name);
 
         if ($request->hasFile('image')) {
-
             try {
                 $folderpath   = "assets/images/category";
                 $oldImagePath = public_path($folderpath . '/' . $category->image);
@@ -80,6 +79,7 @@ class CategoryController extends Controller {
                 return back()->with('error', "The image couldn't be uploaded");
             }
         }
+        $category->image = $imageName;
 
         $category->status = $request->status ?? 0;
         $category->save();
