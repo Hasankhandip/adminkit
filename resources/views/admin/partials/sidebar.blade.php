@@ -14,6 +14,12 @@
                         class="align-middle">@lang('Dashboard')</span>
                 </a>
             </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('admin.product.index') }}">
+                    <i class="align-middle" data-feather="sliders"></i> <span
+                        class="align-middle">@lang('Product')</span>
+                </a>
+            </li>
             <li class="sidebar-item ">
                 <a class="sidebar-link" href="{{ route('admin.category.index') }}">
                     <i class="align-middle" data-feather="sliders"></i> <span
@@ -24,6 +30,12 @@
                 <a class="sidebar-link" href="{{ route('admin.brand.index') }}">
                     <i class="align-middle" data-feather="sliders"></i> <span
                         class="align-middle">@lang('Brand')</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('admin.service.index') }}">
+                    <i class="align-middle" data-feather="sliders"></i> <span
+                        class="align-middle">@lang('Service')</span>
                 </a>
             </li>
 

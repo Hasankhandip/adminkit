@@ -3,67 +3,82 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
+use Exception;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller {
     public function index() {
         $pageTitle = "Manage Brand";
-        $brands    = Brand::all();
+        $brands    = Brand::orderBy('id', 'desc')->get();
         return view('admin.brand.index', compact('pageTitle', 'brands'));
     }
     public function create() {
         $pageTitle = "Create Brand";
         return view('admin.brand.create', compact('pageTitle'));
     }
-
     public function store(Request $request) {
-        $validate = $request->validate([
-            'name'  => 'required',
-            'image' => 'required|mimes:png,jpg,jpeg',
+        $request->validate([
+            'name'  => 'required|unique:brands,name',
+            'image' => 'nullable|mimes:png,jpg,jpeg',
         ]);
-        $brands       = new Brand();
-        $brands->name = $request->name;
-        if (isset($request->image)) {
-            $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('images'), $imageName);
-        }
-        $brands->image = $imageName;
-        $brands->save();
 
-        return redirect()->route('admin.brand.index')->with('success', 'Your brand has been created!');
-    }
+        $brand       = new Brand();
+        $brand->name = $request->name;
+        $brand->slug = str()->slug($request->name);
 
-    public function status($id) {
-        $brand = Brand::findOrFail($id);
-        if ($brand) {
-            if ($brand->status) {
-                $brand->status = 0;
-            } else {
-                $brand->status = 1;
+        if ($request->hasFile('image')) {
+            try {
+                $folderPath = 'assets/images/brand/';
+                $imageName  = time() . '.' . $request->image->extension();
+                $request->image->move(public_path($folderPath), $imageName);
+                $brand->image = $imageName;
+            } catch (Exception $ex) {
+                return back()->with('error', "The image couldn't be uploaded");
             }
-            $brand->save();
         }
-        return back();
+
+        $brand->save();
+        return redirect()->route('admin.brand.index')->with('success', 'Your brand has been created !');
     }
+
     public function edit($id) {
         $pageTitle = "Edit Brand";
-        $brandEdit = Brand::findOrFail($id);
-        return view('admin.brand.edit', compact('pageTitle', 'brandEdit'));
+        $brand     = Brand::findOrFail($id);
+        return view('admin.brand.edit', compact('pageTitle', 'brand'));
     }
 
-    public function update($id, Request $request) {
-        $validate = $request->validate([
-            'name'  => 'required',
-            'image' => 'required|mimes:png,jpg,jpeg',
+    public function update(Request $request, $id) {
+        $request->validate([
+            'name'   => 'required|unique:brands,name,' . $id,
+            'status' => 'required|boolean',
+            'image'  => 'nullable|mimes:png,jpg,jpeg',
         ]);
-        $brands       = Brand::findOrFail($id);
-        $brands->name = $request->name;
-        if (isset($request->image)) {
-            $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('/images'), $imageName);
-            $brands->image = $imageName;
+
+        $brand       = Brand::findOrFail($id);
+        $brand->name = $request->name;
+        $brand->slug = str()->slug($request->name);
+
+        if ($request->hasFile('image')) {
+            try {
+                $folderPath   = "assets/images/brand/";
+                $oldImagePath = public_path($folderPath . $brand->image);
+
+                if ($brand->image && file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+
+                $imageName = time() . '.' . $request->image->extension();
+                $request->image->move(public_path($folderPath), $imageName);
+                $brand->image = $imageName;
+
+            } catch (Exception $ex) {
+                return back()->with('error', "The image couldn't be uploaded");
+            }
         }
-        $brands->save();
-        return redirect()->route('admin.brand.index')->with('success', 'Your brand has been updated!');
+
+        $brand->status = $request->status ?? 0;
+        $brand->save();
+
+        return redirect()->route('admin.brand.index')->with('success', 'Your brand has been updated !');
     }
 }

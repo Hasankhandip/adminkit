@@ -21,26 +21,27 @@ class CategoryController extends Controller {
     public function store(Request $request) {
 
         $request->validate([
-            'name'  => 'required|unique:categories,name',
-            'image' => 'required|mimes:png,jpg,jpeg',
+            'name'   => 'required|unique:categories,name',
+            'status' => 'required|boolean',
+            'image'  => 'required|mimes:png,jpg,jpeg',
         ]);
 
-        $categories       = new Category();
-        $categories->name = $request->name;
-        $categories->slug = str()->slug($request->name);
+        $category       = new Category();
+        $category->name = $request->name;
+        $category->slug = str()->slug($request->name);
 
         if ($request->hasFile('image')) {
             try {
-                $imageName = time() . '.' . $request->image->extension();
-                $request->image->move(public_path('assets/images/category/'), $imageName);
+                $folderPath = "assets/images/category/";
+                $imageName  = time() . '.' . $request->image->extension();
+                $request->image->move(public_path($folderPath), $imageName);
+                $category->image = $imageName;
             } catch (Exception $ex) {
                 return back()->with('error', "The image couldn't be uploaded");
             }
         }
 
-        $categories->image = $imageName;
-
-        $categories->save();
+        $category->save();
         return redirect()->route('admin.category.index')->with('success', 'Your Category has been created! ');
     }
 
@@ -50,7 +51,7 @@ class CategoryController extends Controller {
         return view('admin.category.edit', compact('pageTitle', 'category'));
     }
 
-    public function update(Request $request, $id, ) {
+    public function update(Request $request, $id) {
 
         $request->validate([
             'name'  => 'required|unique:categories,name,' . $id,
@@ -64,22 +65,22 @@ class CategoryController extends Controller {
 
         if ($request->hasFile('image')) {
             try {
-                $folderpath   = "assets/images/category";
-                $oldImagePath = public_path($folderpath . '/' . $category->image);
+                $folderpath   = "assets/images/category/";
+                $oldImagePath = public_path($folderpath . $category->image);
 
-                if ($category->image && file_exists(filename: $oldImagePath)) {
+                if ($category->image && file_exists($oldImagePath)) {
                     unlink($oldImagePath);
                 }
 
                 $imageName = time() . '.' . $request->image->extension();
                 $request->image->move(public_path($folderpath), $imageName);
+                $category->image = $imageName;
 
             } catch (Exception $ex) {
 
                 return back()->with('error', "The image couldn't be uploaded");
             }
         }
-        $category->image = $imageName;
 
         $category->status = $request->status ?? 0;
         $category->save();

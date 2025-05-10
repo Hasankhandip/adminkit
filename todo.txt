@@ -9,3 +9,19 @@
     Slug
     Status
     Image
+
+
+Product
+1. name
+2. slug
+3. code
+4. category_id
+5. brand_id
+6. thumbnail
+7. description
+8. price
+9. quantity
+
+ProductImage 
+1. product_id
+2. image

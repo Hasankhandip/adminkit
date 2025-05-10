@@ -25,9 +25,15 @@
                                         alt="">
                                 </td>
                                 <td>
-                                    <span class="text-{{ $category->status ? 'success' : 'danger' }}">
-                                        {{ __($category->status ? 'Enable' : 'Disable') }}
-                                    </span>
+                                    @if ($category->status)
+                                        <span class="text-success">
+                                            @lang('Enable')
+                                        </span>
+                                    @else
+                                        <span class="text-danger">
+                                            @lang('Disable')
+                                        </span>
+                                    @endif
                                 </td>
                                 <td>
                                     <a href="{{ route('admin.category.edit', $category->id) }}"
