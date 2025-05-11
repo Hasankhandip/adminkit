@@ -22,9 +22,9 @@
                         <div class="mb-3">
                             <label for="brand_id" class="form-label">@lang('Brand')</label>
                             <select name="brand_id" id="brand_id" class="form-select" required>
-                                <option value="">Select a Brand</option>
+                                <option value="">@lang('Select a Brand')</option>
                                 @foreach ($brands as $brand)
-                                    <option value="{{ $brand->id }}" @selected($brand->id)>{{ $brand->name }}
+                                    <option value="{{ $brand->id }}" @selected($brand->id)>{{ __($brand->name) }}
                                     </option>
                                 @endforeach
                             </select>
@@ -32,9 +32,10 @@
                         <div class="mb-3">
                             <label for="category_id" class="form-label">@lang('Category')</label>
                             <select name="category_id" id="category_id" class="form-select" required>
-                                <option value="">Select a Category</option>
+                                <option value="">@lang('Select a Category')</option>
                                 @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}" @selected($category->id)>{{ $category->name }}
+                                    <option value="{{ $category->id }}" @selected($category->id)>
+                                        {{ __($category->name) }}
                                     </option>
                                 @endforeach
                             </select>
@@ -42,16 +43,8 @@
 
                         <div class="mb-3">
                             <label class="form-label">@lang('Thumbnail')</label>
-                            <input type="file" class="form-control" required name="thumbnail">
+                            <input type="file" class="form-control" name="thumbnail">
                             @error('thumbnail')
-                                <p class="text-danger pt-2">{{ __($message) }}</p>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">@lang('Product Code')</label>
-                            <input type="text" class="form-control" required name="code" value="{{ $product->code }}"
-                                placeholder="@lang('Enter product code')">
-                            @error('code')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
@@ -75,6 +68,14 @@
                             <input type="number" min="0" class="form-control" required name="price"
                                 value="{{ $product->price }}" placeholder="@lang('Enter product amount')">
                             @error('price')
+                                <p class="text-danger pt-2">{{ __($message) }}</p>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFileMultiple" class="form-label">@lang('Product Images Upload Here')</label>
+                            <input class="form-control" type="file" name="image_gallery[]" multiple id="formFileMultiple"
+                                multiple>
+                            @error('image_gallery')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>

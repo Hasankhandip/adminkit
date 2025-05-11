@@ -6,3 +6,17 @@ table{
         text-align: center;
     }
 }
+.user-2{
+    display: flex;
+    align-items: center;
+    
+}
+.user-2 .user-thumb{
+    margin-right: 5px;
+}
+.user-2 .user-thumb .card-item-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}

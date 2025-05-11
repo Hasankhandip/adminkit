@@ -22,17 +22,17 @@
                         @forelse ($products as $product)
                             <tr>
                                 <td>
-                                    <div class="user">
+                                    <div class="user user-2">
                                         <div class="user-thumb">
                                             <img class="card-item-img"
-                                                src="{{ asset('assets/images/product/' . $product->thumbnail) }}"
+                                                src="{{ asset('assets/images/product/thumb/' . $product->thumbnail) }}"
                                                 alt="">
                                         </div>
                                         <span class="user-name">{{ __($product->name) }}</span>
                                     </div>
                                 </td>
                                 <td>
-                                    {{ __($product->code) }}
+                                    {{ __($product->product_code) }}
                                 </td>
                                 <td>
                                     {{ __($product->description) }}
@@ -47,6 +47,9 @@
                                         class="btn btn-primary">@lang('Edit')</a></td>
                             </tr>
                         @empty
+                            <tr class="text-center">
+                                <td colspan="100%" class="p-5">@lang('No data found')</td>
+                            </tr>
                         @endforelse
                     </tbody>
                 </table>

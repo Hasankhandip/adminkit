@@ -21,18 +21,20 @@
                         <div class="mb-3">
                             <label for="brand_id" class="form-label">@lang('Brand')</label>
                             <select name="brand_id" id="brand_id" class="form-select" required>
-                                <option value="">Select a Brand</option>
+                                <option value="">@lang('Select a Brand')</option>
                                 @foreach ($brands as $brand)
-                                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                    <option value="{{ $brand->id }}" @selected(old('brand_id') == $brand->id)>{{ __($brand->name) }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="category_id" class="form-label">@lang('Category')</label>
                             <select name="category_id" id="category_id" class="form-select" required>
-                                <option value="">Select a Category</option>
+                                <option value="">@lang('Select a Category')</option>
                                 @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}" @selected(old('category_id') == $category->id)>
+                                        {{ __($category->name) }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -45,29 +47,13 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">@lang('Product Code')</label>
-                            <input type="text" class="form-control" required name="code" value="{{ old('code') }}"
-                                placeholder="@lang('Enter product code')">
-                            @error('code')
-                                <p class="text-danger pt-2">{{ __($message) }}</p>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label">@lang('Product Description')</label>
-                            <textarea class="form-control" required rows="4" name="description" value="{{ old('description') }}"
-                                placeholder="@lang('Enter product description')"></textarea>
+                            <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter product description')">{{ old('description') }}</textarea>
                             @error('code')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">@lang('Product Quantity')</label>
-                            <input type="number" min="0" class="form-control" required name="quantity"
-                                value="{{ old('quantity') }}" placeholder="@lang('Enter product amount')">
-                            @error('quantity')
-                                <p class="text-danger pt-2">{{ __($message) }}</p>
-                            @enderror
-                        </div>
+
                         <div class="mb-3">
                             <label class="form-label">@lang('Product Price')</label>
                             <input type="number" min="0" class="form-control" required name="price"
@@ -76,10 +62,24 @@
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
-
+                        <div class="mb-3">
+                            <label class="form-label">@lang('Quantity')</label>
+                            <input type="number" min="0" class="form-control" required name="quantity"
+                                value="{{ old('quantity') }}" placeholder="@lang('Enter product quantity')">
+                            @error('quantity')
+                                <p class="text-danger pt-2">{{ __($message) }}</p>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFileMultiple" class="form-label">@lang('Product Images Upload Here')</label>
+                            <input class="form-control" type="file" name="image_gallery[]" multiple id="formFileMultiple"
+                                multiple>
+                            @error('image_gallery')
+                                <p class="text-danger pt-2">{{ __($message) }}</p>
+                            @enderror
+                        </div>
                         <button type="submit" class="btn btn-primary">@lang('Submit')</button>
                     </form>
-
                 </div>
             </div>
         </div>

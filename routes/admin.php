@@ -44,7 +44,6 @@ Route::controller(ProductController::class)->prefix('product')->name('product.')
     Route::post('store', "store")->name('store');
     Route::get('edit/{id}', "edit")->name('edit');
     Route::post('update/{id}', "update")->name('update');
-
 });
 
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
