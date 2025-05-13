@@ -60,7 +60,7 @@ class ProductController extends Controller {
         $product->price        = $request->price;
         $product->save();
 
-        foreach ($request->image_gallery as $galleryImage) {
+        foreach (($request->file('image_gallery') ?? []) as $galleryImage) {
             try {
                 $productImage = new ProductImage();
                 $folderPath   = "assets/images/product/image/";
@@ -73,12 +73,12 @@ class ProductController extends Controller {
                 return back()->with('error', "The image couldn't be uploaded");
             }
         }
-        return redirect()->route('admin.product.index')->with('success', "Product has been created !");
+        return redirect()->route('admin.product.index')->withSuccess("Product has been created !");
     }
 
     public function edit($id) {
         $pageTitle  = "Edit Product";
-        $product    = Product::findOrFail($id);
+        $product    = Product::with('productImages')->findOrFail($id);
         $categories = Category::orderBy('id', 'desc')->get();
         $brands     = Brand::orderBy('id', 'desc')->get();
         return view('admin.product.edit', compact('product', 'brands', 'categories', 'pageTitle'));
@@ -94,7 +94,7 @@ class ProductController extends Controller {
             'quantity'        => 'required|integer|min:0',
             'price'           => 'required|numeric|min:0',
             'image_gallery'   => 'array|min:1',
-            'image_gallery.*' => 'nullable|image|mimes:jpg,jpeg,png',
+            'image_gallery.*' => 'nullable|image|mimes:jpg,jpeg,png,PNG,JPG',
         ]);
 
         $product              = Product::findOrFail($id);
@@ -105,8 +105,8 @@ class ProductController extends Controller {
         if ($request->hasFile('thumbnail')) {
             try {
                 $folderPath   = "assets/images/product/thumb/";
-                $oldImagePath = public_path($folderPath . $product->image);
-                if ($product->image && file_exists($oldImagePath)) {
+                $oldImagePath = public_path($folderPath . $product->thumbnail);
+                if ($product->thumbnail && file_exists($oldImagePath)) {
                     unlink($oldImagePath);
                 }
                 $imageName = time() . '.' . $request->thumbnail->extension();
@@ -121,23 +121,41 @@ class ProductController extends Controller {
         $product->price       = $request->price;
         $product->save();
 
-        foreach (($request->image_gallery ?? []) as $galleryImage) {
-            if ($request->hasFile($galleryImage)) {
-                try {
-                    $productImage = new ProductImage();
-                    $folderPath   = "assets/images/product/image/";
-                    $imageName    = time() . '.' . $galleryImage->extension();
-                    $galleryImage->move(public_path($folderPath), $imageName);
-                    $productImage->product_id = $product->id;
-                    $productImage->image      = $imageName;
-                    $productImage->save();
-                } catch (Exception $ex) {
-                    return back()->with('error', "The image couldn't be uploaded");
-                }
+        foreach (($request->file('image_gallery') ?? []) as $galleryImage) {
+            try {
+                $productImage = new ProductImage();
+                $folderPath   = "assets/images/product/image/";
+                $imageName    = time() . '.' . $galleryImage->extension();
+                $galleryImage->move(public_path($folderPath), $imageName);
+                $productImage->product_id = $product->id;
+                $productImage->image      = $imageName;
+                $productImage->save();
+            } catch (Exception $ex) {
+                return back()->with('error', "The image couldn't be uploaded");
             }
         }
 
-        return redirect()->route('admin.product.index')->with('success', "Product has been Updated !");
+        return redirect()->route('admin.product.index')->withSuccess("Product has been Updated !");
     }
 
+    public function deleteImage($id, $productId) {
+
+        $productImage = ProductImage::where('product_id', $productId)->findOrFail($id);
+        $imageCount   = ProductImage::where('product_id', $productId)->count();
+
+        if ($imageCount <= 1) {
+            return back()->withError('At least one image required to the image gallery');
+        }
+        try {
+            $folderPath   = "assets/images/product/image/";
+            $oldImagePath = public_path($folderPath . $productImage->image);
+            if (file_exists($oldImagePath)) {
+                unlink($oldImagePath);
+            }
+            $productImage->delete();
+            return back()->withsuccess('The image deleted succesfully');
+        } catch (Exception $ex) {
+            return back()->withError("The image couldn't be deleted");
+        }
+    }
 }

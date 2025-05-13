@@ -79,6 +79,21 @@
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
+                        <div class="mb-3">
+                            <div class="product-image-wrapper">
+                                @foreach ($product->productImages as $productImage)
+                                    <div class="product-image-item">
+                                        <img class=""
+                                            src="{{ asset('assets/images/product/image/' . $productImage->image) }}" />
+                                        <a href="{{ route('admin.product.delete.image', [$productImage->id, $product->id]) }}"
+                                            class="btn btn-danger"
+                                            onclick="return confirm('Are you sure you want to delete this image?')">
+                                            @lang('Delete Image')
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-primary">@lang('Submit')</button>
                     </form>
 

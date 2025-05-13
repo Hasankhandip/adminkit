@@ -20,3 +20,82 @@ table{
     border-radius: 50%;
     object-fit: cover;
 }
+.submenu .sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.submenu .sidebar-link:hover {
+    background-color: #34495e;
+    color: #fff;
+}
+
+/* Active Sidebar Link */
+.submenu .sidebar-link.active {
+    background-color: #1abc9c;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Sidebar Dropdown Styling */
+.submenu .sidebar-dropdown {
+    padding-left: 20px;
+    background-color: #34495e;
+}
+
+/* Nested Sidebar Dropdown */
+.submenu .sidebar-dropdown .sidebar-link {
+    padding: 8px 40px;
+    font-size: 14px;
+}
+
+.submenu.sidebar-dropdown .sidebar-link:hover {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+/* Submenu (Collapsible) */
+.submenu .collapse {
+    background-color: #2c3e50; /* Same as sidebar */
+    padding-left: 20px;
+}
+
+/* Opened State of Collapse */
+.submenu .collapse.show {
+    display: block;
+}
+
+/* Hover effect on collapsed menu items */
+.submenu .sidebar-dropdown .sidebar-item:hover {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+/* Sidebar Header */
+.submenu .sidebar-header {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 20px;
+    color: #ecf0f1;
+    background-color: #34495e;
+}
+
+/* Feather Icon Styling */
+.submenu .sidebar-link i {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+.submenu .submenu-link.active {
+    background-color: #34495e; /* Highlight active link */
+    color: #fff;
+    font-weight: bold;
+}
+.submenu .submenu-link.active:hover {
+    background-color: #34495e; /* Darker active color */
+    color: #fff;
+}

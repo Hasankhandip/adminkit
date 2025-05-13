@@ -1,0 +1,143 @@
+  <section class="account-section">
+      <div class="row g-0">
+          <div class="col-md-6 col-xl-7 col-lg-6">
+              <div class="account-thumb">
+                  <img src="https://script.viserlab.com/binaryecom/assets/images/frontend/register/61766d7fe740c1635151231.jpg"
+                      alt="thumb" />
+                  <div class="account-thumb-content">
+                      <p class="welc">WELCOME TO</p>
+                      <h3 class="title">Multi Level Marketing Rock</h3>
+                      <p class="info">
+                          Create an Account to get extra facility on MLM Hero and Access
+                          all Plans.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-xl-5 col-lg-6">
+              <div class="account-form-wrapper">
+                  <div class="logo">
+                      <a href="{{ route('index') }}"><img
+                              src="https://script.viserlab.com/binaryecom/assets/images/logoIcon/logo.png"
+                              alt="logo" /></a>
+                  </div>
+                  <form class="account-form verify-gcaptcha disableSubmission" method="POST"
+                      action="https://script.viserlab.com/binaryecom/user/register">
+                      <input type="hidden" name="_token" value="CPtJZDsHshJNHKnIlTXPS1uvrYewGIsHFuUcYivK"
+                          autocomplete="off" />
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form--group">
+                                  <label class="form--label">Referral Username</label>
+                                  <input class="referral form-control form--control" id="referenceBy" name="referBy"
+                                      type="text" value="" placeholder="Enter referral username" required />
+                                  <div id="ref"></div>
+                                  <span id="referral"></span>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form--group">
+                                  <label class="form--label">Position</label>
+                                  <select class="position form--control form-select select2" id="position"
+                                      name="position" required data-minimum-results-for-search="-1">
+                                      <option value="" selected disabled>
+                                          Select position
+                                      </option>
+                                      <option value="1">Left</option>
+                                      <option value="2">Right</option>
+                                  </select>
+                                  <span id="position-test"><span class="text--danger"></span></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-lg-6">
+                              <div class="form--group">
+                                  <label class="form--label">First Name</label>
+                                  <input class="form-control form--control" name="firstname" type="text"
+                                      value="" required placeholder="Enter Your First Name" />
+                              </div>
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="form--group">
+                                  <label class="form--label">Last Name</label>
+                                  <input class="form-control form--control" name="lastname" type="text"
+                                      value="" required placeholder="Enter Your Last Name" />
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-lg-12">
+                              <div class="form--group">
+                                  <label class="form--label">Email</label>
+                                  <input class="form-control form--control checkUser" name="email" type="email"
+                                      required placeholder="Enter Your Email" />
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-lg-6">
+                              <div class="form--group hover-input-popup">
+                                  <label class="form--label">Password</label>
+                                  <input class="form-control form--control" name="password" type="password" required
+                                      placeholder="Enter Password" />
+                              </div>
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="form--group">
+                                  <label class="form--label">Re-Password</label>
+                                  <input class="form-control form--control" name="password_confirmation" type="password"
+                                      required placeholder="Confirm Password" />
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="mb-3">
+                          <script src="https://www.google.com/recaptcha/api.js"></script>
+                          <div class="g-recaptcha" data-sitekey="6LdPC88fAAAAADQlUf_DV6Hrvgm-pZuLJFSLDOWV"
+                              data-callback="verifyCaptcha"></div>
+                          <div id="g-recaptcha-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                          <input id="agree" name="agree" type="checkbox" required />
+                          <label for="agree">I agree with</label>
+                          <a class="text-primary"
+                              href="https://script.viserlab.com/binaryecom/policy/privacy-and-policies"
+                              target="_blank">Privacy and Policies</a>
+                          ,
+                          <a class="text-primary"
+                              href="https://script.viserlab.com/binaryecom/policy/terms-and-condition"
+                              target="_blank">Terms and Condition</a>
+                          ,
+                          <a class="text-primary" href="https://script.viserlab.com/binaryecom/policy/refund-policy"
+                              target="_blank">Refund Policy</a>
+                          ,
+                          <a class="text-primary"
+                              href="https://script.viserlab.com/binaryecom/policy/commission-policy"
+                              target="_blank">Commission Policy</a>
+                      </div>
+
+                      <div class="form--group button-wrapper">
+                          <button class="account--btn" type="submit">
+                              Create Account
+                          </button>
+                          <a class="custom--btn" href="{{ route('login.index') }}"><span>Login
+                                  Account</span></a>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+      <div class="shape shape3">
+          <img src="https://script.viserlab.com/binaryecom/assets/templates/basic/images/shape/08.png"
+              alt="shape" />
+      </div>
+      <div class="shape shape4">
+          <img src="https://script.viserlab.com/binaryecom/assets/templates/basic/images/shape/waves.png"
+              alt="shape" />
+      </div>
+  </section>

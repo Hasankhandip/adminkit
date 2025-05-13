@@ -5,8 +5,7 @@
                 <p class="mb-0">
                     <a class="text-muted" href="https://adminkit.io/"
                         target="_blank"><strong>@lang('AdminKit')</strong></a> - <a class="text-muted"
-                        href="https://adminkit.io/" target="_blank"><strong>@lang('Bootstrap Admin
-                                                                                                    Template')</strong></a> &copy;
+                        href="https://adminkit.io/" target="_blank"><strong>@lang('Bootstrap Admin Template')</strong></a> &copy;
                 </p>
             </div>
             <div class="col-6 text-end">
