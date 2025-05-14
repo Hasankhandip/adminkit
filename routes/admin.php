@@ -4,7 +4,10 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\Frontend\FrontendBannerController;
+use App\Http\Controllers\Admin\Frontend\AboutController;
+use App\Http\Controllers\Admin\Frontend\BannerController;
+use App\Http\Controllers\Admin\Frontend\ServiceController;
+use App\Http\Controllers\Admin\Frontend\ServiceItemController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,7 +44,28 @@ Route::controller(ProductController::class)->prefix('product')->name('product.')
     Route::get("delete/image/{id}/{productId}", "deleteImage")->name('delete.image');
 });
 
-Route::controller(FrontendBannerController::class)->prefix('frontendBanner')->name('frontendBanner.')->group(function () {
-    Route::get('create', "create")->name('create');
+Route::prefix('frontend')->name('frontend.')->group(function () {
+    Route::controller(BannerController::class)->prefix('banner')->name('banner.')->group(function () {
+        Route::get('/', "index")->name('index');
+        Route::post('store', "store")->name('store');
+    });
 
+    Route::controller(AboutController::class)->prefix('about')->name('about.')->group(function () {
+        Route::get('/', "index")->name('index');
+        Route::post('store', "store")->name('store');
+
+    });
+
+    Route::controller(ServiceController::class)->prefix('service')->name('service.')->group(function () {
+        Route::get('/', "index")->name('index');
+        Route::post('store', "store")->name('store');
+
+    });
+
+    Route::controller(ServiceItemController::class)->prefix('service/item')->name('service.item.')->group(function () {
+        Route::get('/', "index")->name('index');
+        Route::get('create', "create")->name('create');
+        Route::post('store', "store")->name('store');
+
+    });
 });

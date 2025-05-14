@@ -1,25 +1,23 @@
  <section class="banner-section bg_img"
      style="
-        background: url(https://script.viserlab.com/binaryecom/assets/images/frontend/banner/61af265b85b201638868571.jpg)
+        background: url({{ asset('assets/images/frontend/banner/image/' . $bannerContents->image) }})
           left center;
       ">
      <span class="bg-shape"></span>
      <div class="container">
          <div class="banner-content">
-             @foreach ($bannerContents as $banner)
-                 <h1 class="title">
-                     {{ __($banner->title) }}
-                 </h1>
-                 <p>
-                     {{ __($banner->description) }}
-                 </p>
-                 <div class="button--wrapper">
-                     <a class="cmn--btn active"
-                         href="{{ route($banner->button_link_1) }}"><span>{{ __($banner->button_name_1) }}</span></a>
-                     <a class="cmn--btn"
-                         href="{{ route($banner->button_link_2) }}"><span>{{ __($banner->button_name_2) }}</span></a>
-                 </div>
-             @endforeach
+             <h1 class="title">
+                 {{ __($bannerContents->title) }}
+             </h1>
+             <p>
+                 {{ __($bannerContents->description) }}
+             </p>
+             <div class="button--wrapper">
+                 <a class="cmn--btn active"
+                     href="{{ $bannerContents->button_link_1 }}"><span>{{ __($bannerContents->button_name_1) }}</span></a>
+                 <a class="cmn--btn"
+                     href="{{ route($bannerContents->button_link_2) }}"><span>{{ __($bannerContents->button_name_2) }}</span></a>
+             </div>
          </div>
      </div>
      <div class="shapes d-none d-sm-block">

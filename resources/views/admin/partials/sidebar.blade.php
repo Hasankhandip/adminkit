@@ -23,16 +23,22 @@
 
                     <!-- Manage Content Submenu -->
                     <li class="sidebar-item">
-                        <a data-bs-target="#content-submenu" data-bs-toggle="collapse" class="sidebar-link collapsed">
-                            @lang('Manage Content')
-                        </a>
                         <ul id="content-submenu" class="sidebar-dropdown list-unstyled collapse">
                             <li class="sidebar-item">
                                 <a class="sidebar-link submenu-link"
-                                    href="{{ route('admin.frontendBanner.create') }}">@lang('Manage Banner')</a>
+                                    href="{{ route('admin.frontend.banner.index') }}">@lang('Manage Banner')</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link submenu-link" href="#">@lang('Manage About')</a>
+                                <a class="sidebar-link submenu-link"
+                                    href="{{ route('admin.frontend.about.index') }}">@lang('Manage About')</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link submenu-link"
+                                    href="{{ route('admin.frontend.service.index') }}">@lang('Manage Service')</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link submenu-link"
+                                    href="{{ route('admin.frontend.service.item.index') }}">@lang('Manage Service Item')</a>
                             </li>
                         </ul>
                     </li>

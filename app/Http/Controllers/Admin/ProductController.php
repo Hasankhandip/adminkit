@@ -38,7 +38,7 @@ class ProductController extends Controller {
 
         $product              = new Product();
         $product->name        = $request->name;
-        $product->slug        = str()->slug($request->name);
+        $product->slug        = generatSlug($request->name);
         $product->brand_id    = $request->brand_id;
         $product->category_id = $request->category_id;
 
@@ -99,7 +99,7 @@ class ProductController extends Controller {
 
         $product              = Product::findOrFail($id);
         $product->name        = $request->name;
-        $product->slug        = str()->slug($request->name);
+        $product->slug        = generatSlug($request->name);
         $product->brand_id    = $request->brand_id;
         $product->category_id = $request->category_id;
         if ($request->hasFile('thumbnail')) {

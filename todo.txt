@@ -1,4 +1,2 @@
-* Manage Frontend
-    * Manage Content 
-        * Manage Banner
-        * Manage About
+1.file path (frontend er moddhe shob)
+2.

@@ -28,7 +28,7 @@ class CategoryController extends Controller {
 
         $category       = new Category();
         $category->name = $request->name;
-        $category->slug = str()->slug($request->name);
+        $category->slug = generatSlug($request->name);
 
         if ($request->hasFile('image')) {
             try {
