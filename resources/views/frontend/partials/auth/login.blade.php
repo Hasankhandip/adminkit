@@ -8,10 +8,8 @@
                              alt="logo" /></a>
                  </div>
 
-                 <form class="account-form verify-gcaptcha" method="POST"
-                     action="https://script.viserlab.com/binaryecom/user/login">
-                     <input type="hidden" name="_token" value="CPtJZDsHshJNHKnIlTXPS1uvrYewGIsHFuUcYivK"
-                         autocomplete="off" />
+                 <form class="account-form verify-gcaptcha" method="POST" action="#">
+                     <input type="hidden" name="_token" value="" autocomplete="off" />
                      <div class="form--group">
                          <label class="form--label">Username</label>
                          <input class="form-control form--control" name="username" type="text" value=""
@@ -24,7 +22,7 @@
                      </div>
 
                      <div class="mb-3">
-                         <script src="https://www.google.com/recaptcha/api.js"></script>
+                         <script src="#"></script>
                          <div class="g-recaptcha" data-sitekey="6LdPC88fAAAAADQlUf_DV6Hrvgm-pZuLJFSLDOWV"
                              data-callback="verifyCaptcha"></div>
                          <div id="g-recaptcha-error"></div>

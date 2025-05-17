@@ -10,7 +10,7 @@ class ServiceItemController extends Controller {
     public function index() {
         $pageTitle           = "Manage Service Item ";
         $serviceItemContents = FrontendServiceItem::orderBy('id', 'desc')->get();
-        return view('admin.manageFrontend.serviceItem.index', compact('pageTitle', 'serviceItemContents'));
+        return view('admin.frontend.serviceItem.index', compact('pageTitle', 'serviceItemContents'));
     }
     public function create() {
         $pageTitle = "Create Service Item ";

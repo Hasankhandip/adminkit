@@ -10,43 +10,39 @@ class AboutController extends Controller {
     public function index() {
         $pageTitle     = "Manage About Section";
         $aboutContents = FrontendAbout::first();
-        return view('admin.manageFrontend.about', compact('pageTitle', 'aboutContents'));
+        return view('admin.frontend.about.index', compact('pageTitle', 'aboutContents'));
     }
 
     public function store(Request $request) {
         $request->validate([
-            'subtitle'      => 'required|string',
-            'title'         => 'required|string',
-            'description'   => 'required|string|max:1000',
-            'button_name_1' => 'required|string',
-            'button_link_1' => 'required|string',
-            'image'         => 'required|image|mimes:jpg,jpeg,png',
+            'subtitle'        => 'required|string',
+            'title'           => 'required|string',
+            'description'     => 'required|string|max:1000',
+            'button_name_one' => 'required|string',
+            'button_link_one' => 'required|string',
+            'image'           => 'required|image|mimes:jpg,jpeg,png',
         ]);
 
-        $frontendAbout = FrontendAbout::first();
-        if (! $frontendAbout) {
-            $frontendAbout = new FrontendAbout();
+        $about = FrontendAbout::first();
+        if (! $about) {
+            $about = new FrontendAbout();
         }
-        $frontendAbout->subtitle      = $request->subtitle;
-        $frontendAbout->title         = $request->title;
-        $frontendAbout->description   = $request->description;
-        $frontendAbout->button_name_1 = $request->button_name_1;
-        $frontendAbout->button_link_1 = $request->button_link_1;
+        $about->subtitle        = $request->subtitle;
+        $about->title           = $request->title;
+        $about->description     = $request->description;
+        $about->button_name_one = $request->button_name_one;
+        $about->button_link_one = $request->button_link_one;
+
         if ($request->hasFile('image')) {
             try {
                 $folderPath   = "assets/images/frontend/about/image/";
-                $oldImagePath = public_path($folderPath . $frontendAbout->image);
-                if ($frontendAbout->image && file_exists($oldImagePath)) {
-                    unlink($oldImagePath);
-                }
-                $imageName = time() . '.' . $request->image->extension();
-                $request->image->move(public_path($folderPath), $imageName);
-                $frontendAbout->image = $imageName;
+                $imageName    = uploadImage($request->image, $folderPath, $about->image);
+                $about->image = $imageName;
             } catch (Exception $ex) {
-                return back()->with('error', "The image couldn't be uploaded");
+                return back()->with('error', "The image couldn't be updated");
             }
         }
-        $frontendAbout->save();
+        $about->save();
         return redirect()->route('index')->with('success', 'Your Category has been created! ');
     }
 }

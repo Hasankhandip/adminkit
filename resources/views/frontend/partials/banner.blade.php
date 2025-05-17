@@ -14,9 +14,9 @@
              </p>
              <div class="button--wrapper">
                  <a class="cmn--btn active"
-                     href="{{ $bannerContents->button_link_1 }}"><span>{{ __($bannerContents->button_name_1) }}</span></a>
+                     href="{{ $bannerContents->button_link_one }}"><span>{{ __($bannerContents->button_name_one) }}</span></a>
                  <a class="cmn--btn"
-                     href="{{ route($bannerContents->button_link_2) }}"><span>{{ __($bannerContents->button_name_2) }}</span></a>
+                     href="{{ $bannerContents->button_link_two }} "><span>{{ __($bannerContents->button_name_two) }}</span></a>
              </div>
          </div>
      </div>

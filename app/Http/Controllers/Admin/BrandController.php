@@ -28,9 +28,8 @@ class BrandController extends Controller {
 
         if ($request->hasFile('image')) {
             try {
-                $folderPath = 'assets/images/brand/';
-                $imageName  = time() . '.' . $request->image->extension();
-                $request->image->move(public_path($folderPath), $imageName);
+                $folderPath   = "assets/images/brand/";
+                $imageName    = uploadImage($request->image, $folderPath, $brand->image);
                 $brand->image = $imageName;
             } catch (Exception $ex) {
                 return back()->with('error', "The image couldn't be uploaded");
@@ -61,16 +60,8 @@ class BrandController extends Controller {
         if ($request->hasFile('image')) {
             try {
                 $folderPath   = "assets/images/brand/";
-                $oldImagePath = public_path($folderPath . $brand->image);
-
-                if ($brand->image && file_exists($oldImagePath)) {
-                    unlink($oldImagePath);
-                }
-
-                $imageName = time() . '.' . $request->image->extension();
-                $request->image->move(public_path($folderPath), $imageName);
+                $imageName    = uploadImage($request->image, $folderPath, $brand->image);
                 $brand->image = $imageName;
-
             } catch (Exception $ex) {
                 return back()->with('error', "The image couldn't be uploaded");
             }

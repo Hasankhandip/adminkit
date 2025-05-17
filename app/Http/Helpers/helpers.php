@@ -16,6 +16,44 @@ function uploadImage($image, $location, $oldImage = null
 
 }
 
+function uploadThumb($thumbnail, $location, $oldThumb = null
+) {
+
+    $imageName = time() . '.' . $thumbnail->extension();
+    $thumbnail->move(public_path($location), $imageName);
+
+    if ($oldThumb) {
+        $oldThumbPath = public_path($location . $oldThumb);
+        if (file_exists($oldThumbPath)) {
+            unlink($oldThumbPath);
+        }
+    }
+    return $imageName;
+
+}
+
+function menuActive($routeName, $param = null, $className = 'active') {
+
+    if (is_array($routeName)) {
+        foreach ($routeName as $key => $value) {
+            if (request()->routeIs($value)) {
+                return $className;
+            }
+
+        }
+    } elseif (request()->routeIs($routeName)) {
+        if ($param) {
+            $routeParam = array_values(@request()->route()->parameters ?? []);
+            if (strtolower(@$routeParam[0]) == strtolower($param)) {
+                return $className;
+            } else {
+                return;
+            }
+
+        }
+        return $className;
+    }
+}
 function generatSlug($slugString) {
     return str()->slug($slugString);
 }

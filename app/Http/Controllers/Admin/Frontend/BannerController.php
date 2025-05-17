@@ -16,13 +16,13 @@ class BannerController extends Controller {
     public function store(Request $request) {
 
         $request->validate([
-            'title'         => 'required|string',
-            'description'   => 'required|string|max:1000',
-            'button_name_1' => 'required|string',
-            'button_name_2' => 'required|string',
-            'button_link_1' => 'required|string',
-            'button_link_2' => 'required|string',
-            'image'         => 'nullable|image|mimes:jpg,jpeg,png',
+            'title'           => 'required|string',
+            'description'     => 'required|string|max:1000',
+            'button_name_one' => 'required|string',
+            'button_name_two' => 'required|string',
+            'button_link_one' => 'required|string',
+            'button_link_two' => 'required|string',
+            'image'           => 'nullable|image|mimes:jpg,jpeg,png',
         ]);
 
         $frontendBanner = FrontendBanner::first();
@@ -31,12 +31,12 @@ class BannerController extends Controller {
             $frontendBanner = new FrontendBanner();
         }
 
-        $frontendBanner->title         = $request->title;
-        $frontendBanner->description   = $request->description;
-        $frontendBanner->button_name_1 = $request->button_name_1;
-        $frontendBanner->button_name_2 = $request->button_name_2;
-        $frontendBanner->button_link_1 = $request->button_link_1;
-        $frontendBanner->button_link_2 = $request->button_link_2;
+        $frontendBanner->title           = $request->title;
+        $frontendBanner->description     = $request->description;
+        $frontendBanner->button_name_one = $request->button_name_one;
+        $frontendBanner->button_name_two = $request->button_name_two;
+        $frontendBanner->button_link_one = $request->button_link_one;
+        $frontendBanner->button_link_two = $request->button_link_two;
 
         if ($request->hasFile('image')) {
             try {

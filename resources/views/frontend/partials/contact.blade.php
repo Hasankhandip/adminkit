@@ -14,8 +14,7 @@
                           assist you.
                       </h3>
                       <form class="contact-form verify-gcaptcha" method="post">
-                          <input type="hidden" name="_token" value="CPtJZDsHshJNHKnIlTXPS1uvrYewGIsHFuUcYivK"
-                              autocomplete="off" />
+                          <input type="hidden" name="_token" value="" autocomplete="off" />
                           <div class="form--group">
                               <label class="form--label">Name</label>
                               <input class="form--control" name="name" type="text" value=""

@@ -7,12 +7,12 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin.frontendAbout.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.frontend.about.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">@lang('About Subtitle')</label>
                             <input type="text" class="form-control" required name="subtitle"
-                                value="{{ __(@$aboutContents->subtitle) }}" placeholder="@lang('Enter subtitle')">
+                                value="{{ @$aboutContents->subtitle }}" placeholder="@lang('Enter subtitle')">
                             @error('subtitle')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
@@ -20,7 +20,7 @@
                         <div class="mb-3">
                             <label class="form-label">@lang('About Title')</label>
                             <input type="text" class="form-control" required name="title"
-                                value="{{ __(@$aboutContents->title) }}" placeholder="@lang('Enter title')">
+                                value="{{ @$aboutContents->title }}" placeholder="@lang('Enter title')">
                             @error('title')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
@@ -33,13 +33,12 @@
                             @enderror
                         </div>
                         <div class="row">
-                            <label class="form-label">@lang('* About Button 1')</label>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label class="form-label">@lang('About Button name')</label>
-                                    <input type="text" class="form-control" required name="button_name_1"
-                                        value="{{ __(@$aboutContents->button_name_1) }}" placeholder="@lang('Enter name')">
-                                    @error('button_name_1')
+                                    <input type="text" class="form-control" required name="button_name_one"
+                                        value="{{ @$aboutContents->button_name_one }}" placeholder="@lang('Enter button name')">
+                                    @error('button_name_one')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
                                 </div>
@@ -47,9 +46,9 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label class="form-label">@lang('About Button Link')</label>
-                                    <input type="text" class="form-control" required name="button_link_1"
-                                        value="{{ __(@$aboutContents->button_link_1) }}" placeholder="@lang('Enter link address')">
-                                    @error('button_link_1')
+                                    <input type="text" class="form-control" required name="button_link_one"
+                                        value="{{ @$aboutContents->button_link_one }}" placeholder="@lang('Enter link address')">
+                                    @error('button_link_one')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
                                 </div>

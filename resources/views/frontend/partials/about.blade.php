@@ -19,8 +19,8 @@
                          </p>
                      </div>
 
-                     <a href="{{ route($aboutContents->button_link_1) }}" class="cmn--btn active"><span>
-                             {{ __($aboutContents->button_name_1) }}</span></a>
+                     <a href="{{ $aboutContents->button_link_one }}" class="cmn--btn active"><span>
+                             {{ __($aboutContents->button_name_one) }}</span></a>
                  </div>
              </div>
          </div>

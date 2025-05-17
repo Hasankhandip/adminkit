@@ -7,12 +7,12 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin.frontendService.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.frontend.service.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">@lang('Service Subtitle')</label>
                             <input type="text" class="form-control" required name="subtitle"
-                                value="{{ __(@$serviceContents->subtitle) }}" placeholder="@lang('Enter subtitle')">
+                                value="{{ @$serviceContents->subtitle }}" placeholder="@lang('Enter subtitle')">
                             @error('subtitle')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
@@ -20,7 +20,7 @@
                         <div class="mb-3">
                             <label class="form-label">@lang('Service Title')</label>
                             <input type="text" class="form-control" required name="title"
-                                value="{{ __(@$serviceContents->title) }}" placeholder="@lang('Enter title')">
+                                value="{{ @$serviceContents->title }}" placeholder="@lang('Enter title')">
                             @error('title')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror

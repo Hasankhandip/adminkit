@@ -9,7 +9,7 @@ class ServiceController extends Controller {
     public function index() {
         $pageTitle       = "Manage Service Section";
         $serviceContents = FrontendService::first();
-        return view('admin.manageFrontend.service', compact('pageTitle', 'serviceContents'));
+        return view('admin.frontend.service.index', compact('pageTitle', 'serviceContents'));
     }
     public function store(Request $request) {
         $request->validate([

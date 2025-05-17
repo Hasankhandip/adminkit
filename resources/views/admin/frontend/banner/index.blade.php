@@ -28,9 +28,9 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label class="form-label">@lang('Banner Button name')</label>
-                                    <input type="text" class="form-control" required name="button_name_1"
-                                        value="{{ __(@$bannerContents->button_name_1) }}" placeholder="@lang('Enter name')">
-                                    @error('button_name_1')
+                                    <input type="text" class="form-control" required name="button_name_one"
+                                        value="{{ @$bannerContents->button_name_one }}" placeholder="@lang('Enter name')">
+                                    @error('button_name_one')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
                                 </div>
@@ -38,9 +38,9 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label class="form-label">@lang('Banner Button Link')</label>
-                                    <input type="text" class="form-control" required name="button_link_1"
-                                        value="{{ __(@$bannerContents->button_link_1) }}" placeholder="@lang('Enter link address')">
-                                    @error('button_link_1')
+                                    <input type="text" class="form-control" required name="button_link_one"
+                                        value="{{ @$bannerContents->button_link_one }}" placeholder="@lang('Enter link address')">
+                                    @error('button_link_one')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
                                 </div>
@@ -49,20 +49,20 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="mb-3">
-                                    <label class="form-label">@lang('Button One Text')</label>
-                                    <input type="text" class="form-control" required name="button_name_2"
-                                        value="{{ __(@$bannerContents->button_name_2) }}" placeholder="@lang('Enter name')">
-                                    @error('button_name_2')
+                                    <label class="form-label">@lang('Banner Button name')</label>
+                                    <input type="text" class="form-control" required name="button_name_two"
+                                        value="{{ @$bannerContents->button_name_two }}" placeholder="@lang('Enter name')">
+                                    @error('button_name_two')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
-                                    <label class="form-label">@lang('Button One Link')</label>
-                                    <input type="text" class="form-control" required name="button_link_2"
-                                        value="{{ __(@$bannerContents->button_link_2) }}" placeholder="@lang('Enter link address')">
-                                    @error('button_link_2')
+                                    <label class="form-label">@lang('Banner Button Link')</label>
+                                    <input type="text" class="form-control" required name="button_link_two"
+                                        value="{{ @$bannerContents->button_link_two }}" placeholder="@lang('Enter link address')">
+                                    @error('button_link_two')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
                                 </div>

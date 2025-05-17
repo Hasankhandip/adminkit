@@ -44,9 +44,8 @@ class ProductController extends Controller {
 
         if ($request->hasFile('thumbnail')) {
             try {
-                $folderPath = "assets/images/product/thumb/";
-                $imageName  = time() . '.' . $request->thumbnail->extension();
-                $request->thumbnail->move(public_path($folderPath), $imageName);
+                $folderPath         = "assets/images/product/thumb/";
+                $imageName          = uploadThumb($request->image, $folderPath, $product->thumbnail);
                 $product->thumbnail = $imageName;
             } catch (Exception $ex) {
                 return back()->with('error', "The image couldn't be uploaded");
@@ -104,13 +103,8 @@ class ProductController extends Controller {
         $product->category_id = $request->category_id;
         if ($request->hasFile('thumbnail')) {
             try {
-                $folderPath   = "assets/images/product/thumb/";
-                $oldImagePath = public_path($folderPath . $product->thumbnail);
-                if ($product->thumbnail && file_exists($oldImagePath)) {
-                    unlink($oldImagePath);
-                }
-                $imageName = time() . '.' . $request->thumbnail->extension();
-                $request->thumbnail->move(public_path($folderPath), $imageName);
+                $folderPath         = "assets/images/product/thumb/";
+                $imageName          = uploadThumb($request->thumbnail, $folderPath, $product->thumbnail);
                 $product->thumbnail = $imageName;
             } catch (Exception $ex) {
                 return back()->with('error', "The image couldn't be uploaded");

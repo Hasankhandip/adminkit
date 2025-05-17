@@ -13,10 +13,10 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->string('button_name_1');
-            $table->string('button_link_1');
-            $table->string('button_name_2');
-            $table->string('button_link_2');
+            $table->string('button_name_one');
+            $table->string('button_link_one');
+            $table->string('button_name_two');
+            $table->string('button_link_two');
             $table->string('image');
             $table->timestamps();
         });

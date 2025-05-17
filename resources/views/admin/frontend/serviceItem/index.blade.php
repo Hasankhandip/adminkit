@@ -2,7 +2,7 @@
 @section('content')
     <div class="d-flex justify-content-between mb-3 flex-wrap  gap-2">
         <h1 class="h3 mb-3">{{ __($pageTitle) }}</h1>
-        <a href="{{ route('admin.frontendServiceItem.create') }}" class="btn btn-primary">@lang('Add Service Item')</a>
+        <a href="{{ route('admin.frontend.service.item.create') }}" class="btn btn-primary">@lang('Add Service Item')</a>
     </div>
     <div class="row">
         <div class="col-lg-12">
