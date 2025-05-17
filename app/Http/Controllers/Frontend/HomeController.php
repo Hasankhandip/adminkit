@@ -13,7 +13,7 @@ class HomeController extends Controller {
         $bannerContents      = FrontendBanner::first();
         $aboutContents       = FrontendAbout::first();
         $serviceContents     = FrontendService::first();
-        $serviceItemContents = FrontendServiceItem::orderBy('id', 'desc')->get();
+        $serviceItemContents = FrontendServiceItem::orderBy('id', 'asc')->get();
         return view('frontend.index', compact('headTitle', 'bannerContents', 'aboutContents', 'serviceContents', 'serviceItemContents'));
     }
 

@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('content')
-    <div class="d-flex justify-content-between mb-3 flex-wrap  gap-2">
-        <h1 class="h3 mb-3">{{ __($pageTitle) }}</h1>
+    <div class="d-flex justify-content-between mb-4 flex-wrap  gap-2">
+        <h1 class="h3">{{ __($pageTitle) }}</h1>
         <a href="{{ route('admin.frontend.service.item.create') }}" class="btn btn-primary">@lang('Add Service Item')</a>
     </div>
     <div class="row">
@@ -22,11 +22,11 @@
                                 <td>{{ __($serviceItem->icon) }}</td>
                                 <td>{{ __($serviceItem->title) }}</td>
                                 <td>{{ __($serviceItem->description) }}</td>
-
-
                                 <td class="d-flex justify-content-between align-items-center">
-                                    <a href="#" class="btn btn-primary me-1">@lang('Edit')</a>
-                                    <a href="#" class="btn btn-danger">@lang('Delete')</a>
+                                    <a href="{{ route('admin.frontend.service.item.edit', $serviceItem->id) }}"
+                                        class="btn btn-primary me-1">@lang('Edit')</a>
+                                    <a href="{{ route('admin.frontend.service.item.delete', $serviceItem->id) }}"
+                                        class="btn btn-danger">@lang('Delete')</a>
                                 </td>
                             </tr>
                         @empty

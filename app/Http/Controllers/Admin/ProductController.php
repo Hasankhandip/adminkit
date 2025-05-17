@@ -45,7 +45,7 @@ class ProductController extends Controller {
         if ($request->hasFile('thumbnail')) {
             try {
                 $folderPath         = "assets/images/product/thumb/";
-                $imageName          = uploadThumb($request->image, $folderPath, $product->thumbnail);
+                $imageName          = uploadImage($request->image, $folderPath, $product->thumbnail);
                 $product->thumbnail = $imageName;
             } catch (Exception $ex) {
                 return back()->with('error', "The image couldn't be uploaded");
@@ -104,7 +104,7 @@ class ProductController extends Controller {
         if ($request->hasFile('thumbnail')) {
             try {
                 $folderPath         = "assets/images/product/thumb/";
-                $imageName          = uploadThumb($request->thumbnail, $folderPath, $product->thumbnail);
+                $imageName          = uploadImage($request->thumbnail, $folderPath, $product->thumbnail);
                 $product->thumbnail = $imageName;
             } catch (Exception $ex) {
                 return back()->with('error', "The image couldn't be uploaded");
@@ -118,9 +118,9 @@ class ProductController extends Controller {
         foreach (($request->file('image_gallery') ?? []) as $galleryImage) {
             try {
                 $productImage = new ProductImage();
-                $folderPath   = "assets/images/product/image/";
-                $imageName    = time() . '.' . $galleryImage->extension();
-                $galleryImage->move(public_path($folderPath), $imageName);
+
+                $folderPath               = "assets/images/product/image/";
+                $imageName                = uploadImage($galleryImage, $folderPath);
                 $productImage->product_id = $product->id;
                 $productImage->image      = $imageName;
                 $productImage->save();

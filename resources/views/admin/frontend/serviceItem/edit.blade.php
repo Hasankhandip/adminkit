@@ -8,13 +8,13 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin.frontend.service.item.store') }}" method="POST"
+                    <form action="{{ route('admin.frontend.service.item.update', $serviceItem->id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">@lang('Service Item Icon')</label>
                             <input type="text" class="form-control" required name="icon"
-                                placeholder="@lang('Enter item icon')">
+                                value="{{ $serviceItem->icon }}" placeholder="@lang('Enter item icon')">
                             @error('icon')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
@@ -22,14 +22,14 @@
                         <div class="mb-3">
                             <label class="form-label">@lang('Service Item Title')</label>
                             <input type="text" class="form-control" required name="title"
-                                placeholder="@lang('Enter item title')">
+                                value="{{ $serviceItem->title }}" placeholder="@lang('Enter item title')">
                             @error('title')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">@lang('Service Item Description')</label>
-                            <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter description')"></textarea>
+                            <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter description')">{{ $serviceItem->description }}</textarea>
                             @error('description')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror

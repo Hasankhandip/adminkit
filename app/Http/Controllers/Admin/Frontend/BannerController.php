@@ -49,6 +49,6 @@ class BannerController extends Controller {
         }
 
         $frontendBanner->save();
-        return back()->with('success', 'The banned content has been updated');
+        return back()->with('success', 'The banner content has been updated');
     }
 }

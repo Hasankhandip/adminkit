@@ -20,7 +20,7 @@ class AboutController extends Controller {
             'description'     => 'required|string|max:1000',
             'button_name_one' => 'required|string',
             'button_link_one' => 'required|string',
-            'image'           => 'required|image|mimes:jpg,jpeg,png',
+            'image'           => 'nullable|image|mimes:jpg,jpeg,png',
         ]);
 
         $about = FrontendAbout::first();
@@ -43,6 +43,6 @@ class AboutController extends Controller {
             }
         }
         $about->save();
-        return redirect()->route('index')->with('success', 'Your Category has been created! ');
+        return back()->with('success', 'The about content has been updated');
     }
 }

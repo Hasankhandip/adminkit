@@ -27,6 +27,6 @@ class ServiceController extends Controller {
         $frontendService->title    = $request->title;
 
         $frontendService->save();
-        return redirect()->route('index')->with('success', 'Your Category has been created! ');
+        return back()->with('success', 'The service content has been updated');
     }
 }
