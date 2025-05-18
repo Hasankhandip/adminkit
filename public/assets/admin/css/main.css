@@ -1,3 +1,6 @@
+.card.scrool{
+  overflow: scroll;
+}
 .card-item-img{
     width: 50px;
 }
@@ -116,6 +119,7 @@ ul, ol {
 .dashboard .sidebar-menu-list {
   margin-top: 40px;
   padding: 0 15px;
+  
 }
 
 .dashboard .sidebar-menu-list__item {

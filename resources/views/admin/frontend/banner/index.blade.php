@@ -12,14 +12,14 @@
                         <div class="mb-3">
                             <label class="form-label">@lang('Banner Title')</label>
                             <input type="text" class="form-control" required name="title"
-                                value="{{ @$bannerContents->title }}" placeholder="@lang('Enter title')">
+                                value="{{ @$bannerContent->title }}" placeholder="@lang('Enter title')">
                             @error('title')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">@lang('Banner Description')</label>
-                            <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter description')">{{ __(@$bannerContents->description) }}</textarea>
+                            <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter description')">{{ __(@$bannerContent->description) }}</textarea>
                             @error('description')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
@@ -29,7 +29,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">@lang('Banner Button name')</label>
                                     <input type="text" class="form-control" required name="button_name_one"
-                                        value="{{ @$bannerContents->button_name_one }}" placeholder="@lang('Enter name')">
+                                        value="{{ @$bannerContent->button_name_one }}" placeholder="@lang('Enter name')">
                                     @error('button_name_one')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
@@ -39,7 +39,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">@lang('Banner Button Link')</label>
                                     <input type="text" class="form-control" required name="button_link_one"
-                                        value="{{ @$bannerContents->button_link_one }}" placeholder="@lang('Enter link address')">
+                                        value="{{ @$bannerContent->button_link_one }}" placeholder="@lang('Enter link address')">
                                     @error('button_link_one')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
@@ -51,7 +51,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">@lang('Banner Button name')</label>
                                     <input type="text" class="form-control" required name="button_name_two"
-                                        value="{{ @$bannerContents->button_name_two }}" placeholder="@lang('Enter name')">
+                                        value="{{ @$bannerContent->button_name_two }}" placeholder="@lang('Enter name')">
                                     @error('button_name_two')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
@@ -61,7 +61,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">@lang('Banner Button Link')</label>
                                     <input type="text" class="form-control" required name="button_link_two"
-                                        value="{{ @$bannerContents->button_link_two }}" placeholder="@lang('Enter link address')">
+                                        value="{{ @$bannerContent->button_link_two }}" placeholder="@lang('Enter link address')">
                                     @error('button_link_two')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
@@ -70,7 +70,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">@lang('Banner Image')</label>
-                            <input type="file" class="form-control" name="image" @required(!$bannerContents->image)>
+                            <input type="file" class="form-control" name="image" @required(!$bannerContent->image)>
                             @error('image')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror

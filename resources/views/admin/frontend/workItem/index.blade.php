@@ -2,7 +2,7 @@
 @section('content')
     <div class="d-flex justify-content-between mb-4 flex-wrap  gap-2">
         <h1 class="h3">{{ __($pageTitle) }}</h1>
-        <a href="{{ route('admin.frontend.service.item.create') }}" class="btn btn-primary">@lang('Add Service Item')</a>
+        <a href="{{ route('admin.frontend.work.item.create') }}" class="btn btn-primary">@lang('Add Work Item')</a>
     </div>
     <div class="row">
         <div class="col-lg-12">
@@ -17,17 +17,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($serviceItemContents as $serviceItem)
+                        @forelse ($workItemContents as $workItem)
                             <tr>
-                                <td>{{ __($serviceItem->icon) }}</td>
-                                <td>{{ __($serviceItem->title) }}</td>
-                                <td>{{ __($serviceItem->description) }}</td>
+                                <td>{{ __($workItem->icon) }}</td>
+                                <td>{{ __($workItem->title) }}</td>
+                                <td>{{ __($workItem->description) }}</td>
                                 <td class="d-flex justify-content-between align-items-center">
-                                    <a href="{{ route('admin.frontend.service.item.edit', $serviceItem->id) }}"
+                                    <a href="{{ route('admin.frontend.work.item.edit', $workItem->id) }}"
                                         class="btn btn-primary me-1">@lang('Edit')</a>
-                                    <a href="{{ route('admin.frontend.service.item.delete', $serviceItem->id) }}"
-                                        class="btn btn-danger"
-                                        onclick="return confirm('Are you sure delete this?')">@lang('Delete')</a>
+                                    <a href="{{ route('admin.frontend.work.item.delete', $workItem->id) }}"
+                                        class="btn btn-danger" onclick="return confirm('Are you sure delete this?')">@lang('Delete')</a>
                                 </td>
                             </tr>
                         @empty

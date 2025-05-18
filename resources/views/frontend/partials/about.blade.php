@@ -3,24 +3,24 @@
          <div class="row align-items-center">
              <div class="col-lg-6 d-none d-lg-block">
                  <div class="about-thumb rtl">
-                     <img src="{{ asset('assets/images/frontend/about/image/' . $aboutContents->image) }}" alt="thumb"
+                     <img src="{{ asset('assets/images/frontend/about/image/' . $aboutContent->image) }}" alt="thumb"
                          class="w-100" />
                  </div>
              </div>
              <div class="col-lg-6">
                  <div class="about-content">
                      <div class="section-header">
-                         <span class="subtitle">{{ __($aboutContents->subtitle) }}</span>
+                         <span class="subtitle">{{ __($aboutContent->subtitle) }}</span>
                          <h2 class="title">
-                             {{ __($aboutContents->title) }}
+                             {{ __($aboutContent->title) }}
                          </h2>
                          <p>
-                             {{ __($aboutContents->description) }}
+                             {{ __($aboutContent->description) }}
                          </p>
                      </div>
 
-                     <a href="{{ $aboutContents->button_link_one }}" class="cmn--btn active"><span>
-                             {{ __($aboutContents->button_name_one) }}</span></a>
+                     <a href="{{ $aboutContent->button_link_one }}" class="cmn--btn active"><span>
+                             {{ __($aboutContent->button_name_one) }}</span></a>
                  </div>
              </div>
          </div>

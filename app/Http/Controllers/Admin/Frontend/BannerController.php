@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class BannerController extends Controller {
     public function index() {
-        $pageTitle      = "Manage Banner Section";
-        $bannerContents = FrontendBanner::first();
-        return view('admin.frontend.banner.index', compact('pageTitle', 'bannerContents'));
+        $pageTitle     = "Manage Banner Section";
+        $bannerContent = FrontendBanner::first();
+        return view('admin.frontend.banner.index', compact('pageTitle', 'bannerContent'));
     }
 
     public function store(Request $request) {

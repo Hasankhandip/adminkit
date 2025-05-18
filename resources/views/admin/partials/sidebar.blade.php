@@ -3,60 +3,6 @@
         <a class="sidebar-brand" href="{{ route('admin.dashboard') }}">
             <span class="align-middle">@lang('AdminKit')</span>
         </a>
-
-        {{-- <ul class="sidebar-nav">
-          
-        
-            <li class="sidebar-item submenu">
-                <a data-bs-target="#frontend-submenu" class="sidebar-link">
-                    <i class="align-middle" data-feather="sliders"></i>
-                    <span class="align-middle">@lang('Manage Frontend')</span>
-                </a>
-                <ul id="frontend-submenu" class="sidebar-dropdown list-unstyled">
-
-                    <!-- Manage Content Submenu -->
-                    <li class="sidebar-item">
-                        <ul id="content-submenu" class="sidebar-dropdown list-unstyled">
-                            <li class="sidebar-item">
-                                <a class="sidebar-link submenu-link"
-                                    href="{{ route('admin.frontend.banner.index') }}">@lang('Manage Banner')</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link submenu-link"
-                                    href="{{ route('admin.frontend.about.index') }}">@lang('Manage About')</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link submenu-link"
-                                    href="{{ route('admin.frontend.service.index') }}">@lang('Manage Service')</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link submenu-link"
-                                    href="{{ route('admin.frontend.service.item.index') }}">@lang('Manage Service Item')</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </li>
-            <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ route('admin.product.index') }}">
-                    <i class="align-middle" data-feather="sliders"></i> <span
-                        class="align-middle">@lang('Product')</span>
-                </a>
-            </li>
-            <li class="sidebar-item ">
-                <a class="sidebar-link" href="{{ route('admin.category.index') }}">
-                    <i class="align-middle" data-feather="sliders"></i> <span
-                        class="align-middle">@lang('Category')</span>
-                </a>
-            </li>
-            <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ route('admin.brand.index') }}">
-                    <i class="align-middle" data-feather="sliders"></i> <span
-                        class="align-middle">@lang('Brand')</span>
-                </a>
-            </li>
-        </ul> --}}
         <ul class="sidebar-menu-list">
             <li class="sidebar-menu-list__item">
                 <a href="{{ route('admin.dashboard') }}" class="sidebar-menu-list__link">
@@ -78,23 +24,49 @@
                     <ul class="sidebar-submenu-list ">
                         <li class="sidebar-submenu-list__item ">
                             <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.banner.index') }}">
-                                @lang('Manage Banner')
+                                @lang('Banner Section')
                             </a>
                         </li>
                         <li class="sidebar-submenu-list__item ">
                             <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.about.index') }}">
-                                @lang('Manage About')
+                                @lang('About Section')
                             </a>
                         </li>
                         <li class="sidebar-submenu-list__item ">
                             <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.service.index') }}">
-                                @lang('Manage Service')
+                                @lang('Service Section')
                             </a>
                         </li>
                         <li class="sidebar-submenu-list__item ">
                             <a class="sidebar-submenu-list__link"
                                 href="{{ route('admin.frontend.service.item.index') }}">
-                                @lang('Manage Service Item')
+                                @lang('Service Item')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.work.index') }}">
+                                @lang('Work Section')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.work.item.index') }}">
+                                @lang('Work Item')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.pricing.index') }}">
+                                @lang('Pricing Section')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link"
+                                href="{{ route('admin.frontend.pricing.item.index') }}">
+                                @lang('Pricing Item')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.reffer.index') }}">
+                                @lang('Reffer Section')
                             </a>
                         </li>
                     </ul>

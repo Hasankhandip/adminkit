@@ -9,10 +9,9 @@
         rel="shortcut icon" />
     <link href="https://script.viserlab.com/binaryecom/assets/images/logoIcon/logo.png" rel="apple-touch-icon" />
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/font-awesome.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/line-awesome.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/global/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/global/css/line-awesome.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/select2.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/flaticon.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/magnific-popup.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/animate.css') }}" />

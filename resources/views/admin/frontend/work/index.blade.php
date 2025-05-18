@@ -7,26 +7,28 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin.frontend.service.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.frontend.work.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label">@lang('Service Subtitle')</label>
+                            <label class="form-label">@lang('Work Subtitle')</label>
                             <input type="text" class="form-control" required name="subtitle"
-                                value="{{ @$serviceContent->subtitle }}" placeholder="@lang('Enter subtitle')">
+                                value="{{ @$WorkContent->subtitle }}" placeholder="@lang('Enter subtitle')">
                             @error('subtitle')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">@lang('Service Title')</label>
+                            <label class="form-label">@lang('Work Title')</label>
                             <input type="text" class="form-control" required name="title"
-                                value="{{ @$serviceContent->title }}" placeholder="@lang('Enter title')">
+                                value="{{ @$WorkContent->title }}" placeholder="@lang('Enter title')">
                             @error('title')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
+
                         <button type="submit" class="btn btn-primary">@lang('Submit')</button>
                     </form>
+
                 </div>
             </div>
         </div>

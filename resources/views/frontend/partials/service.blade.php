@@ -3,8 +3,8 @@
          <div class="row justify-content-center">
              <div class="col-lg-8 col-md-10">
                  <div class="section-header text-center">
-                     <span class="subtitle">{{ __($serviceContents->subtitle) }}</span>
-                     <h2 class="title">{{ __($serviceContents->title) }}</h2>
+                     <span class="subtitle">{{ __($serviceContent->subtitle) }}</span>
+                     <h2 class="title">{{ __($serviceContent->title) }}</h2>
                  </div>
              </div>
          </div>
@@ -13,7 +13,7 @@
                  <div class="col-lg-4 col-md-6 col-sm-10">
                      <div class="service-item">
                          <div class="service-icon">
-                             <i class="las {{ __(@$serviceItem->icon) }}"></i>
+                             <i class="{{ __(@$serviceItem->icon) }}"></i>
                          </div>
                          <div class="service-content">
                              <h4 class="title">{{ __(@$serviceItem->title) }}</h4>

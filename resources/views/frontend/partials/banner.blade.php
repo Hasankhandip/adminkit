@@ -1,22 +1,22 @@
  <section class="banner-section bg_img"
      style="
-        background: url({{ asset('assets/images/frontend/banner/image/' . $bannerContents->image) }})
+        background: url({{ asset('assets/images/frontend/banner/image/' . $bannerContent->image) }})
           left center;
       ">
      <span class="bg-shape"></span>
      <div class="container">
          <div class="banner-content">
              <h1 class="title">
-                 {{ __($bannerContents->title) }}
+                 {{ __($bannerContent->title) }}
              </h1>
              <p>
-                 {{ __($bannerContents->description) }}
+                 {{ __($bannerContent->description) }}
              </p>
              <div class="button--wrapper">
                  <a class="cmn--btn active"
-                     href="{{ $bannerContents->button_link_one }}"><span>{{ __($bannerContents->button_name_one) }}</span></a>
+                     href="{{ $bannerContent->button_link_one }}"><span>{{ __($bannerContent->button_name_one) }}</span></a>
                  <a class="cmn--btn"
-                     href="{{ $bannerContents->button_link_two }} "><span>{{ __($bannerContents->button_name_two) }}</span></a>
+                     href="{{ $bannerContent->button_link_two }} "><span>{{ __($bannerContent->button_name_two) }}</span></a>
              </div>
          </div>
      </div>
