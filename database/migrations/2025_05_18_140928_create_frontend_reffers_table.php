@@ -12,7 +12,7 @@ return new class extends Migration {
         Schema::create('frontend_reffers', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->string('button_name');
             $table->string('button_link');
             $table->string('image');

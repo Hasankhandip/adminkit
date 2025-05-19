@@ -6,8 +6,14 @@ use App\Models\Frontend\FrontendAbout;
 use App\Models\Frontend\FrontendBanner;
 use App\Models\Frontend\FrontendPricing;
 use App\Models\Frontend\FrontendPricingItem;
+use App\Models\Frontend\FrontendProduct;
+use App\Models\Frontend\FrontendProductItem;
+use App\Models\Frontend\FrontendReffer;
 use App\Models\Frontend\FrontendService;
 use App\Models\Frontend\FrontendServiceItem;
+use App\Models\Frontend\FrontendTeam;
+use App\Models\Frontend\FrontendTeamItem;
+use App\Models\Frontend\FrontendTestimonial;
 use App\Models\Frontend\FrontendWork;
 use App\Models\Frontend\FrontendWorkItem;
 
@@ -22,7 +28,13 @@ class HomeController extends Controller {
         $workItemContents    = FrontendWorkItem::orderBy('id', 'asc')->get();
         $pricingContent      = FrontendPricing::first();
         $pricingContents     = FrontendPricingItem::orderBy('price')->get();
-        return view('frontend.index', compact('headTitle', 'bannerContent', 'aboutContent', 'serviceContent', 'serviceItemContents', 'workContent', 'workItemContents', 'pricingContent', 'pricingContents'));
+        $refferContent       = FrontendReffer::first();
+        $teamContent         = FrontendTeam::first();
+        $teamItemContents    = FrontendTeamItem::orderBy('id', 'asc')->get();
+        $productContent      = FrontendProduct::first();
+        $productItemContents = FrontendProductItem::orderBy('id', 'asc')->get();
+        $testimonialContent  = FrontendTestimonial::first();
+        return view('frontend.index', compact('headTitle', 'bannerContent', 'aboutContent', 'serviceContent', 'serviceItemContents', 'workContent', 'workItemContents', 'pricingContent', 'pricingContents', 'refferContent', 'teamContent', 'teamItemContents', 'productContent', 'productItemContents', 'testimonialContent'));
     }
 
 }

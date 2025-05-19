@@ -11,7 +11,6 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('frontend_pricing_items', function (Blueprint $table) {
             $table->id();
-            $table->integer('serial');
             $table->decimal('price', 8, 2);
             $table->string('name');
             $table->string('info_icon_one');

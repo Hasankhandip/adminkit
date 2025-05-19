@@ -13,7 +13,7 @@
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">@lang('Service Item Icon')</label>
-                            <input type="text" class="form-control" required name="icon"
+                            <input type="text" class="form-control" required name="icon" value="{{ old('icon') }}"
                                 placeholder="@lang('Enter item icon')">
                             @error('icon')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
@@ -21,7 +21,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">@lang('Service Item Title')</label>
-                            <input type="text" class="form-control" required name="title"
+                            <input type="text" class="form-control" required name="title" value="{{ old('title') }}"
                                 placeholder="@lang('Enter item title')">
                             @error('title')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
@@ -29,7 +29,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">@lang('Service Item Description')</label>
-                            <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter description')"></textarea>
+                            <textarea class="form-control" required rows="4" name="description" value="{{ old('description') }}"
+                                placeholder="@lang('Enter description')"></textarea>
                             @error('description')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror

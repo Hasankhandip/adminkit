@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller {
     public function index() {
-        $pageTitle    = "Manage About Section";
+        $pageTitle    = "Manage About Content";
         $aboutContent = FrontendAbout::first();
         return view('admin.frontend.about.index', compact('pageTitle', 'aboutContent'));
     }

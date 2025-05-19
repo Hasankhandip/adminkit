@@ -24,17 +24,17 @@
                     <ul class="sidebar-submenu-list ">
                         <li class="sidebar-submenu-list__item ">
                             <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.banner.index') }}">
-                                @lang('Banner Section')
+                                @lang('Banner Content')
                             </a>
                         </li>
                         <li class="sidebar-submenu-list__item ">
                             <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.about.index') }}">
-                                @lang('About Section')
+                                @lang('About Content')
                             </a>
                         </li>
                         <li class="sidebar-submenu-list__item ">
                             <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.service.index') }}">
-                                @lang('Service Section')
+                                @lang('Service Content')
                             </a>
                         </li>
                         <li class="sidebar-submenu-list__item ">
@@ -45,7 +45,7 @@
                         </li>
                         <li class="sidebar-submenu-list__item ">
                             <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.work.index') }}">
-                                @lang('Work Section')
+                                @lang('Work Content')
                             </a>
                         </li>
                         <li class="sidebar-submenu-list__item ">
@@ -55,7 +55,7 @@
                         </li>
                         <li class="sidebar-submenu-list__item ">
                             <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.pricing.index') }}">
-                                @lang('Pricing Section')
+                                @lang('Pricing Content')
                             </a>
                         </li>
                         <li class="sidebar-submenu-list__item ">
@@ -66,7 +66,34 @@
                         </li>
                         <li class="sidebar-submenu-list__item ">
                             <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.reffer.index') }}">
-                                @lang('Reffer Section')
+                                @lang('Reffer Content')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.team.index') }}">
+                                @lang('Team Content')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.team.item.index') }}">
+                                @lang('Team Member')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.product.index') }}">
+                                @lang('Product Content')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link"
+                                href="{{ route('admin.frontend.product.item.index') }}">
+                                @lang('Product Item')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link"
+                                href="{{ route('admin.frontend.testimonial.index') }}">
+                                @lang('Testimonial Content')
                             </a>
                         </li>
                     </ul>

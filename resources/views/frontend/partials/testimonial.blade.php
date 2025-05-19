@@ -3,8 +3,8 @@
           <div class="testimonial-wrapper row">
               <div class="col-lg-6">
                   <div class="section-header">
-                      <span class="subtitle">Client&#039;s Say</span>
-                      <h2 class="title">What Our Client Say About Us</h2>
+                      <span class="subtitle">{{ $testimonialContent->subtitle }}</span>
+                      <h2 class="title">{{ $testimonialContent->title }}</h2>
                   </div>
                   <div class="testimonial-slider owl-carousel owl-theme" data-slider-id="1">
                       <div class="testimonial-item">

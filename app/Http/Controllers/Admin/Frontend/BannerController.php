@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class BannerController extends Controller {
     public function index() {
-        $pageTitle     = "Manage Banner Section";
+        $pageTitle     = "Manage Banner Content";
         $bannerContent = FrontendBanner::first();
         return view('admin.frontend.banner.index', compact('pageTitle', 'bannerContent'));
     }

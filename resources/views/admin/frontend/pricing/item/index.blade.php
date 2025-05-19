@@ -6,13 +6,12 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <div class="card scrool">
+            <div class="card scroll">
                 <table class="table table-hover my-0">
                     <thead>
                         <tr>
-                            <th>@lang('Serial')</th>
-                            <th>@lang('Price')</th>
                             <th>@lang('Name')</th>
+                            <th>@lang('Price')</th>
                             <th>@lang('Info_icon_one')</th>
                             <th>@lang('Info_name_one')</th>
                             <th>@lang('Info_icon_two')</th>
@@ -27,9 +26,8 @@
                     <tbody>
                         @forelse ($pricingContents as $pricingItem)
                             <tr>
-                                <td>{{ __($pricingItem->serial) }}</td>
-                                <td>{{ __($pricingItem->price) }}</td>
                                 <td>{{ __($pricingItem->name) }}</td>
+                                <td>{{ __($pricingItem->price) }}</td>
                                 <td>{{ __($pricingItem->info_icon_one) }}</td>
                                 <td>{{ __($pricingItem->info_name_one) }}</td>
                                 <td>{{ __($pricingItem->info_icon_two) }}</td>
@@ -42,7 +40,8 @@
                                     <a href="{{ route('admin.frontend.pricing.item.edit', $pricingItem->id) }}"
                                         class="btn btn-primary mb-1">@lang('Edit')</a>
                                     <a href="{{ route('admin.frontend.pricing.item.delete', $pricingItem->id) }}"
-                                        class="btn btn-danger" onclick="return confirm('Are you sure delete this?')">@lang('Delete')</a>
+                                        class="btn btn-danger"
+                                        onclick="return confirm('Are you sure delete this?')">@lang('Delete')</a>
                                 </td>
                             </tr>
                         @empty

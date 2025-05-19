@@ -12,7 +12,7 @@
              @foreach ($pricingContents as $pricingItem)
                  <div class="col-xl-4 col-lg-6 col-md-6 col-sm-10">
                      <div class="plan-item">
-                         <span class="plan-serial">{{ __($pricingItem->serial) }}</span>
+                         <span class="plan-serial">{{ $loop->iteration }}</span>
                          <div class="plan-bottom">
                              <div class="plan-header">
                                  <div class="plan-price"><sup>$</sup>{{ __($pricingItem->price) }}</div>
@@ -21,20 +21,20 @@
                                  <p class="plan-name">{{ __($pricingItem->name) }}</p>
                                  <ul class="plan-info">
                                      <li class="active">
-                                         <i class="{{ __($pricingItem->info_icon_one) }}"
+                                         <i class="{{ $pricingItem->info_icon_one }}"
                                              data="bv"></i>{{ __($pricingItem->info_name_one) }}
                                      </li>
                                      <li class="active">
-                                         <i class="{{ __($pricingItem->info_icon_two) }}"
+                                         <i class="{{ $pricingItem->info_icon_two }}"
                                              data="ref_com"></i>{{ __($pricingItem->info_name_two) }}
                                      </li>
                                      <li class="active">
-                                         <i class="{{ __($pricingItem->info_icon_three) }}"
+                                         <i class="{{ $pricingItem->info_icon_three }}"
                                              data="tree_com"></i>{{ __($pricingItem->info_name_three) }}
                                      </li>
                                  </ul>
                                  <div class="text-center">
-                                     <a href="{{ __($pricingItem->button_link) }}"
+                                     <a href="{{ $pricingItem->button_link }}"
                                          class="cmn--btn-2 btn--md active"><span>{{ __($pricingItem->button_name) }}</span></a>
                                  </div>
                              </div>

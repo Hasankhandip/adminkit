@@ -35,7 +35,7 @@ class ServiceController extends Controller {
     // service item start
     public function itemIndex() {
         $pageTitle           = "Manage Service Item ";
-        $serviceItemContents = FrontendServiceItem::orderBy('id', 'desc')->paginate(perPage: 4);
+        $serviceItemContents = FrontendServiceItem::orderBy('id', 'desc')->paginate(4);
         return view('admin.frontend.service.item.index', compact('pageTitle', 'serviceItemContents'));
     }
     public function itemCreate() {

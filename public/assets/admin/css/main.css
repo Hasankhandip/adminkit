@@ -1,8 +1,9 @@
-.card.scrool{
+.card.scroll{
   overflow: scroll;
 }
 .card-item-img{
     width: 50px;
+        object-fit: cover;
 }
 table{
     tr{

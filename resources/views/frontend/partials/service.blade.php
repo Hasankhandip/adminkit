@@ -13,7 +13,7 @@
                  <div class="col-lg-4 col-md-6 col-sm-10">
                      <div class="service-item">
                          <div class="service-icon">
-                             <i class="{{ __(@$serviceItem->icon) }}"></i>
+                             <i class="{{ @$serviceItem->icon }}"></i>
                          </div>
                          <div class="service-content">
                              <h4 class="title">{{ __(@$serviceItem->title) }}</h4>
