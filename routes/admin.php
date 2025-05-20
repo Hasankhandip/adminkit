@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Frontend\AboutController;
 use App\Http\Controllers\Admin\Frontend\BannerController;
+use App\Http\Controllers\Admin\Frontend\BlogController;
 use App\Http\Controllers\Admin\Frontend\PricingController;
 use App\Http\Controllers\Admin\Frontend\ProductController;
 use App\Http\Controllers\Admin\Frontend\RefferController;
@@ -140,5 +141,28 @@ Route::prefix('frontend')->name('frontend.')->group(function () {
     Route::controller(TestimonialController::class)->prefix('testimonial')->name('testimonial.')->group(function () {
         Route::get('/', "index")->name('index');
         Route::post('store', "store")->name('store');
+    });
+
+    Route::controller(TestimonialController::class)->prefix('testimonial/item')->name('testimonial.item.')->group(function () {
+        Route::get('/', "itemIndex")->name('index');
+        Route::get('create', "itemCreate")->name('create');
+        Route::post('store', "itemStore")->name('store');
+        Route::get('edit/{id}', "itemEdit")->name('edit');
+        Route::post('update/{id}', "itemUpdate")->name('update');
+        Route::get('delete/{id}', "itemDelete")->name('delete');
+    });
+
+    Route::controller(BlogController::class)->prefix('blog')->name('blog.')->group(function () {
+        Route::get('/', "index")->name('index');
+        Route::post('store', "store")->name('store');
+    });
+
+    Route::controller(BlogController::class)->prefix('blog/item')->name('blog.item.')->group(function () {
+        Route::get('/', "itemIndex")->name('index');
+        Route::get('create', "itemCreate")->name('create');
+        Route::post('store', "itemStore")->name('store');
+        Route::get('edit/{id}', "itemEdit")->name('edit');
+        Route::post('update/{id}', "itemUpdate")->name('update');
+        Route::get('delete/{id}', "itemDelete")->name('delete');
     });
 });

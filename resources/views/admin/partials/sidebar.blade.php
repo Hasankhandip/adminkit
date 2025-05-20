@@ -96,6 +96,22 @@
                                 @lang('Testimonial Content')
                             </a>
                         </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link"
+                                href="{{ route('admin.frontend.testimonial.item.index') }}">
+                                @lang('Testimonial Item')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.blog.index') }}">
+                                @lang('Blog Content')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.blog.item.index') }}">
+                                @lang('Blog Item')
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>

@@ -29,8 +29,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">@lang('Service Item Description')</label>
-                            <textarea class="form-control" required rows="4" name="description" value="{{ old('description') }}"
-                                placeholder="@lang('Enter description')"></textarea>
+                            <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter description')">{{ old('description') }}</textarea>
                             @error('description')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
