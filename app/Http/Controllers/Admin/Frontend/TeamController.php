@@ -132,7 +132,7 @@ class TeamController extends Controller {
     public function itemDelete($id) {
         $frontendTeamItem = FrontendTeamItem::findOrFail($id);
         $frontendTeamItem->delete();
-        return back()->withSuccess('The pricing item has been deleted');
+        return back()->withSuccess('The team member has been deleted');
     }
 
     // item end

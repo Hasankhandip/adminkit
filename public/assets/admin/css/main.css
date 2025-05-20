@@ -139,14 +139,34 @@ ul, ol {
 .dashboard .sidebar-menu-list__item.has-dropdown.active>a {
   color: #fff;
 }
+.dashboard .sidebar-menu-list__item.has-dropdown-two.active>a {
+  color: #fff;
+}
 
 .dashboard .sidebar-menu-list__item.has-dropdown.active>a:after {
   transform: rotate(-135deg);
   right: 18px;
   color: #fff;
 }
+.dashboard .sidebar-menu-list__item.has-dropdown-two.active>a:after {
+  transform: rotate(-135deg);
+  right: 18px;
+  color: #fff;
+}
 
 .dashboard .sidebar-menu-list__item.has-dropdown>a:after {
+    content: '';
+    position: absolute;
+    border: solid;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(45deg);
+    right: 15px;
+    transition: 0.1s linear;
+    top: 43%;
+}
+.dashboard .sidebar-menu-list__item.has-dropdown-two>a:after {
     content: '';
     position: absolute;
     border: solid;
@@ -198,10 +218,40 @@ ul, ol {
 .sidebar-menu-list__item.has-dropdown.active .sidebar-submenu {
     display: block !important;
 }
+ .has-dropdown-two .sidebar-submenu__two {
+  display: none;
+}
+.sidebar-menu-list__item-two.has-dropdown-two.active  .sidebar-submenu__two {
+  display: block !important;
+}
+li.sidebar-menu-list__item-two {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.sidebar-menu-list__item-two a.sidebar-menu-list__link {
+    background: #9999993d;
+}
 .dashboard .sidebar-submenu-list {
   padding: 5px 0;
 }
-
+.has-dropdown-two>a:after {
+    content: '';
+    position: absolute;
+    border: solid;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(45deg);
+    right: 15px;
+    transition: 0.1s linear;
+    top: 43%;
+}
+.has-dropdown-two.active>a:after {
+    transform: rotate(-135deg);
+    right: 18px;
+    color: #fff;
+}
 .dashboard .sidebar-submenu-list__item {
   margin-bottom: 6px;
 }
@@ -257,5 +307,15 @@ ul, ol {
 }
 
 
-
-
+.sidebar-menu-list__item-two.has-dropdown-two.active .sidebar-submenu__two {
+    background: rgba(255, 255, 255, .1);
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+.sidebar-submenu__two .sidebar-submenu-list__link{
+  margin:0 10px;
+}
+.sidebar-menu-list__item-two.has-dropdown-two.active .sidebar-submenu__two .sidebar-submenu-list__link {
+    margin-right: 20px;
+}

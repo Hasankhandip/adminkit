@@ -70,7 +70,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">@lang('Banner Image')</label>
-                            <input type="file" class="form-control" name="image" @required(!$bannerContent->image)>
+                            <input type="file" class="form-control" name="image" @required(!@$bannerContent->image)>
                             @error('image')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror

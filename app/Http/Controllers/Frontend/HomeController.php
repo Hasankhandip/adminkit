@@ -6,6 +6,7 @@ use App\Models\Frontend\FrontendAbout;
 use App\Models\Frontend\FrontendBanner;
 use App\Models\Frontend\FrontendBlog;
 use App\Models\Frontend\FrontendBlogItem;
+use App\Models\Frontend\FrontendFooter;
 use App\Models\Frontend\FrontendPricing;
 use App\Models\Frontend\FrontendPricingItem;
 use App\Models\Frontend\FrontendProduct;
@@ -40,7 +41,8 @@ class HomeController extends Controller {
         $testimonialItemContents = FrontendTestimonialItem::orderBy('id', 'asc')->get();
         $blogContent             = FrontendBlog::first();
         $blogItemContents        = FrontendBlogItem::orderBy('id', 'asc')->get();
-        return view('frontend.index', compact('headTitle', 'bannerContent', 'aboutContent', 'serviceContent', 'serviceItemContents', 'workContent', 'workItemContents', 'pricingContent', 'pricingContents', 'refferContent', 'teamContent', 'teamItemContents', 'productContent', 'productItemContents', 'testimonialContent', 'testimonialItemContents', 'blogContent', 'blogItemContents'));
+        $footerContent           = FrontendFooter::first();
+        return view('frontend.index', compact('headTitle', 'bannerContent', 'aboutContent', 'serviceContent', 'serviceItemContents', 'workContent', 'workItemContents', 'pricingContent', 'pricingContents', 'refferContent', 'teamContent', 'teamItemContents', 'productContent', 'productItemContents', 'testimonialContent', 'testimonialItemContents', 'blogContent', 'blogItemContents', 'footerContent'));
     }
 
 }

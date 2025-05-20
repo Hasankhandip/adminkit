@@ -32,86 +32,225 @@
                                 @lang('About Content')
                             </a>
                         </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.service.index') }}">
-                                @lang('Service Content')
+                        <li class="sidebar-menu-list__item-two has-dropdown-two">
+                            <a href="javascript:void(0)" class="sidebar-menu-list__link">
+                                <span class="icon">
+                                    <i class="align-middle" data-feather="sliders"></i>
+                                </span>
+                                <span class="text"> @lang('Services') </span>
                             </a>
+                            <div class="sidebar-submenu__two">
+                                <ul class="sidebar-submenu-list ">
+
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.service.index') }}">
+                                            @lang('Service Content')
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.service.item.index') }}">
+                                            @lang('Service Item')
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
                         </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link"
-                                href="{{ route('admin.frontend.service.item.index') }}">
-                                @lang('Service Item')
+
+                        <li class="sidebar-menu-list__item-two has-dropdown-two">
+                            <a href="javascript:void(0)" class="sidebar-menu-list__link">
+                                <span class="icon">
+                                    <i class="align-middle" data-feather="sliders"></i>
+                                </span>
+                                <span class="text"> @lang('Work') </span>
                             </a>
+                            <div class="sidebar-submenu__two">
+                                <ul class="sidebar-submenu-list ">
+
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.work.index') }}">
+                                            @lang('Work Content')
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.work.item.index') }}">
+                                            @lang('Work Item')
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
                         </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.work.index') }}">
-                                @lang('Work Content')
+
+                        <li class="sidebar-menu-list__item-two has-dropdown-two">
+                            <a href="javascript:void(0)" class="sidebar-menu-list__link">
+                                <span class="icon">
+                                    <i class="align-middle" data-feather="sliders"></i>
+                                </span>
+                                <span class="text"> @lang('Pricing') </span>
                             </a>
+                            <div class="sidebar-submenu__two">
+                                <ul class="sidebar-submenu-list ">
+
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.pricing.index') }}">
+                                            @lang('Pricing Content')
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.pricing.item.index') }}">
+                                            @lang('Pricing Item')
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
                         </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.work.item.index') }}">
-                                @lang('Work Item')
-                            </a>
-                        </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.pricing.index') }}">
-                                @lang('Pricing Content')
-                            </a>
-                        </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link"
-                                href="{{ route('admin.frontend.pricing.item.index') }}">
-                                @lang('Pricing Item')
-                            </a>
-                        </li>
+
                         <li class="sidebar-submenu-list__item ">
                             <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.reffer.index') }}">
                                 @lang('Reffer Content')
                             </a>
                         </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.team.index') }}">
-                                @lang('Team Content')
+
+                        <li class="sidebar-menu-list__item-two has-dropdown-two">
+                            <a href="javascript:void(0)" class="sidebar-menu-list__link">
+                                <span class="icon">
+                                    <i class="align-middle" data-feather="sliders"></i>
+                                </span>
+                                <span class="text"> @lang('Team') </span>
                             </a>
+                            <div class="sidebar-submenu__two">
+                                <ul class="sidebar-submenu-list ">
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.team.index') }}">
+                                            @lang('Team Content')
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.team.item.index') }}">
+                                            @lang('Team Member')
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.team.item.index') }}">
-                                @lang('Team Member')
+
+
+
+                        <li class="sidebar-menu-list__item-two has-dropdown-two">
+                            <a href="javascript:void(0)" class="sidebar-menu-list__link">
+                                <span class="icon">
+                                    <i class="align-middle" data-feather="sliders"></i>
+                                </span>
+                                <span class="text"> @lang('Product') </span>
                             </a>
+                            <div class="sidebar-submenu__two">
+                                <ul class="sidebar-submenu-list ">
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.product.index') }}">
+                                            @lang('Product Content')
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.product.item.index') }}">
+                                            @lang('Product Item')
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.product.index') }}">
-                                @lang('Product Content')
+
+
+                        <li class="sidebar-menu-list__item-two has-dropdown-two">
+                            <a href="javascript:void(0)" class="sidebar-menu-list__link">
+                                <span class="icon">
+                                    <i class="align-middle" data-feather="sliders"></i>
+                                </span>
+                                <span class="text"> @lang('Testimonial') </span>
                             </a>
+                            <div class="sidebar-submenu__two">
+                                <ul class="sidebar-submenu-list ">
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.testimonial.index') }}">
+                                            @lang('Testimonial Content')
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.testimonial.item.index') }}">
+                                            @lang('Testimonial Item')
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link"
-                                href="{{ route('admin.frontend.product.item.index') }}">
-                                @lang('Product Item')
+
+
+                        <li class="sidebar-menu-list__item-two has-dropdown-two">
+                            <a href="javascript:void(0)" class="sidebar-menu-list__link">
+                                <span class="icon">
+                                    <i class="align-middle" data-feather="sliders"></i>
+                                </span>
+                                <span class="text"> @lang('Blog') </span>
                             </a>
+                            <div class="sidebar-submenu__two">
+                                <ul class="sidebar-submenu-list ">
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.blog.index') }}">
+                                            @lang('Blog Content')
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.blog.item.index') }}">
+                                            @lang('Blog Item')
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link"
-                                href="{{ route('admin.frontend.testimonial.index') }}">
-                                @lang('Testimonial Content')
+
+
+                        <li class="sidebar-menu-list__item-two has-dropdown-two">
+                            <a href="javascript:void(0)" class="sidebar-menu-list__link">
+                                <span class="icon">
+                                    <i class="align-middle" data-feather="sliders"></i>
+                                </span>
+                                <span class="text"> @lang('Footer') </span>
                             </a>
+                            <div class="sidebar-submenu__two">
+                                <ul class="sidebar-submenu-list ">
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.footer.index') }}">
+                                            @lang('Footer Content')
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.footer.item.index') }}">
+                                            @lang('Footer Item')
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link"
-                                href="{{ route('admin.frontend.testimonial.item.index') }}">
-                                @lang('Testimonial Item')
-                            </a>
-                        </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.blog.index') }}">
-                                @lang('Blog Content')
-                            </a>
-                        </li>
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.blog.item.index') }}">
-                                @lang('Blog Item')
-                            </a>
-                        </li>
+
+
+
                     </ul>
                 </div>
             </li>

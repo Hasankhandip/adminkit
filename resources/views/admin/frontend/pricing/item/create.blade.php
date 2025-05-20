@@ -12,14 +12,6 @@
                         enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label">@lang('Pricing Item Serial')</label>
-                            <input type="number" class="form-control" required name="serial" value="{{ old('serial') }}"
-                                placeholder="@lang('Enter item serial')">
-                            @error('serial')
-                                <p class="text-danger pt-2">{{ __($message) }}</p>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label">@lang('Pricing Item Price')</label>
                             <input type="text" class="form-control" required name="price" value="{{ old('price') }}"
                                 placeholder="@lang('Enter item price')">

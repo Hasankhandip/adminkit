@@ -6,13 +6,11 @@
                       <div class="footer-widget p-0">
                           <div class="logo">
                               <a href="https://script.viserlab.com/binaryecom"><img
-                                      src="https://script.viserlab.com/binaryecom/assets/images/logoIcon/logo_dark.png"
+                                      src="{{ asset('assets/images/frontend/footer/image/' . $footerContent->image) }}"
                                       alt="logo" /></a>
                           </div>
                           <p>
-                              Discover top-quality products offering exclusive deals and
-                              exceptional value. Shop now to elevate your shopping
-                              experience with our featured products.
+                              {{ __($footerContent->title) }}
                           </p>
                       </div>
                   </div>
