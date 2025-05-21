@@ -9,7 +9,7 @@ return new class extends Migration {
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('frontend_testimonial_items', function (Blueprint $table) {
+        Schema::create('frontend_testimonial_clients', function (Blueprint $table) {
             $table->id();
             $table->text('description');
             $table->string('image');
@@ -23,6 +23,6 @@ return new class extends Migration {
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::dropIfExists('frontend_testimonial_items');
+        Schema::dropIfExists('frontend_testimonial_clients');
     }
 };

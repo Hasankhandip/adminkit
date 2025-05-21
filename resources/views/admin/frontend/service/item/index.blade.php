@@ -29,11 +29,11 @@
                                     </td>
                                     <td>{{ __($serviceItem->title) }}</td>
                                     <td>{{ __($serviceItem->description) }}</td>
-                                    <td class="d-flex justify-content-between align-items-center">
+                                    <td>
                                         <a href="{{ route('admin.frontend.service.item.edit', $serviceItem->id) }}"
-                                            class="btn btn-primary me-1">@lang('Edit')</a>
+                                            class="btn btn-primary m-1">@lang('Edit')</a>
                                         <a href="{{ route('admin.frontend.service.item.delete', $serviceItem->id) }}"
-                                            class="btn btn-danger"
+                                            class="btn btn-danger m-1"
                                             onclick="return confirm('Are you sure delete this?')">@lang('Delete')</a>
                                     </td>
                                 </tr>

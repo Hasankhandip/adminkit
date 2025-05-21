@@ -5,7 +5,7 @@ namespace App\Models\Frontend;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FrontendFooterItem extends Model
+class FrontendTestimonialClient extends Model
 {
     use HasFactory;
 }

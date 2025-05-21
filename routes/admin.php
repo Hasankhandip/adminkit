@@ -144,13 +144,13 @@ Route::prefix('frontend')->name('frontend.')->group(function () {
         Route::post('store', "store")->name('store');
     });
 
-    Route::controller(TestimonialController::class)->prefix('testimonial/item')->name('testimonial.item.')->group(function () {
-        Route::get('/', "itemIndex")->name('index');
-        Route::get('create', "itemCreate")->name('create');
-        Route::post('store', "itemStore")->name('store');
-        Route::get('edit/{id}', "itemEdit")->name('edit');
-        Route::post('update/{id}', "itemUpdate")->name('update');
-        Route::get('delete/{id}', "itemDelete")->name('delete');
+    Route::controller(TestimonialController::class)->prefix('testimonial/client')->name('testimonial.client.')->group(function () {
+        Route::get('/', "clientIndex")->name('index');
+        Route::get('create', "clientCreate")->name('create');
+        Route::post('store', "clientStore")->name('store');
+        Route::get('edit/{id}', "clientEdit")->name('edit');
+        Route::post('update/{id}', "clientUpdate")->name('update');
+        Route::get('delete/{id}', "clientDelete")->name('delete');
     });
 
     Route::controller(BlogController::class)->prefix('blog')->name('blog.')->group(function () {
@@ -172,12 +172,13 @@ Route::prefix('frontend')->name('frontend.')->group(function () {
         Route::post('store', "store")->name('store');
     });
 
-    Route::controller(FooterController::class)->prefix('footer/item')->name('footer.item.')->group(function () {
-        Route::get('/', "itemIndex")->name('index');
-        Route::get('create', "itemCreate")->name('create');
-        Route::post('store', "itemStore")->name('store');
-        Route::get('edit/{id}', "itemEdit")->name('edit');
-        Route::post('update/{id}', "itemUpdate")->name('update');
-        Route::get('delete/{id}', "itemDelete")->name('delete');
+    Route::controller(FooterController::class)->prefix('footer/contact')->name('footer.contact.')->group(function () {
+        Route::get('/', "contactIndex")->name('index');
+        Route::post('store', "contactStore")->name('store');
+    });
+
+    Route::controller(FooterController::class)->prefix('footer/social')->name('footer.social.')->group(function () {
+        Route::get('/', "socialIndex")->name('index');
+        Route::post('store', "socialStore")->name('store');
     });
 });

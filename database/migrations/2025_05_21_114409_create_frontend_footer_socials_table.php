@@ -9,11 +9,8 @@ return new class extends Migration {
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('frontend_team_items', function (Blueprint $table) {
+        Schema::create('frontend_footer_socials', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->string('name');
-            $table->string('designation');
             $table->string('telegram_link');
             $table->string('youtube_link');
             $table->string('twitter_link');
@@ -26,6 +23,6 @@ return new class extends Migration {
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::dropIfExists('frontend_team_items');
+        Schema::dropIfExists('frontend_footer_socials');
     }
 };

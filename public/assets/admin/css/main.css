@@ -223,7 +223,13 @@ ul, ol {
 }
 .sidebar-menu-list__item-two.has-dropdown-two.active  .sidebar-submenu__two {
   display: block !important;
+  transition: 1s;
 }
+.sidebar-submenu-list .sidebar-submenu-list__item .sidebar-submenu-list__link {
+    background: #9999993d;
+}
+
+
 li.sidebar-menu-list__item-two {
     margin-left: 20px;
     margin-bottom: 10px;

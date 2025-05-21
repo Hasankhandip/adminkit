@@ -7,18 +7,18 @@
                       <h2 class="title">{{ $testimonialContent->title }}</h2>
                   </div>
                   <div class="testimonial-slider owl-carousel owl-theme" data-slider-id="1">
-                      @foreach ($testimonialItemContents as $testimonialItem)
+                      @foreach ($testimonialClientContents as $TestimonialClient)
                           <div class="testimonial-item">
                               <div class="quote-icon">
                                   <i class="flaticon-left-quote"></i>
                               </div>
-                              <p>{{ $testimonialItem->description }}</p>
+                              <p>{{ $TestimonialClient->description }}</p>
                               <div class="thumb">
-                                  <img src="{{ asset('assets/images/frontend/testimonial/item/images/' . $testimonialItem->image) }}"
+                                  <img src="{{ asset('assets/images/frontend/testimonial/item/images/' . $TestimonialClient->image) }}"
                                       alt="testimonials" />
                               </div>
-                              <h4 class="name">{{ $testimonialItem->name }}</h4>
-                              <span class="designation">{{ $testimonialItem->designation }}</span>
+                              <h4 class="name">{{ $TestimonialClient->name }}</h4>
+                              <span class="designation">{{ $TestimonialClient->designation }}</span>
                           </div>
                       @endforeach
 

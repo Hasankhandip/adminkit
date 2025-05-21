@@ -20,21 +20,24 @@
                             <span class="designation">{{ $teamItem->designation }}</span>
                             <ul class="social-icons">
                                 <li>
-                                    <a href="{{ $teamItem->social_link_one }}"><i
-                                            class="{{ $teamItem->social_icon_one }}"></i></a>
+                                    <a href="{{ $teamItem->telegram_link }}" title="telegram" target="_blank">
+                                        <i class="lab la-telegram-plane"></i>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="{{ $teamItem->social_link_two }}"><i
-                                            class="{{ $teamItem->social_icon_two }}"></i></a>
+                                    <a href="{{ $teamItem->youtube_link }}" title="youtube" target="_blank">
+                                        <i class="lab la-youtube"></i>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="{{ $teamItem->social_link_three }}"><i
-                                            class="{{ $teamItem->social_icon_three }}"></i></a>
+                                    <a href="{{ $teamItem->twitter_link }}" title="twitter" target="_blank">
+                                        <i class="lab la-twitter"></i>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="{{ $teamItem->social_link_four }}"><i
-                                            class="{{ $teamItem->social_icon_four }}"></i></a>
-                                </li>
+                                    <a href="{{ $teamItem->facebook_link }}" title="Facebook" target="_blank">
+                                        <i class="lab la-facebook"></i>
+                                    </a>
                             </ul>
                         </div>
                     </div>

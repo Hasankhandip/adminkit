@@ -38,10 +38,10 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="mb-3">
-                                    <label class="form-label">@lang('Social Icon')</label>
-                                    <input type="text" class="form-control" name="social_icon_one"
-                                        placeholder="@lang('Enter social icon')" value="{{ $frontendTeamItem->social_icon_one }}">
-                                    @error('social_icon_one')
+                                    <label class="form-label">@lang('Telegram Link')</label>
+                                    <input type="text" class="form-control" name="telegram_link"
+                                        value="{{ $frontendTeamItem->telegram_link }}" placeholder="@lang('Enter telegram link')">
+                                    @error('telegram_link')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
                                 </div>
@@ -49,92 +49,37 @@
 
                             <div class="col-lg-6">
                                 <div class="mb-3">
-                                    <label class="form-label">@lang('Social Link')</label>
-                                    <input type="text" class="form-control" name="social_link_one"
-                                        placeholder="@lang('Enter social link')" value="{{ $frontendTeamItem->social_link_one }}">
-                                    @error('social_link_one')
+                                    <label class="form-label">@lang('Youtube Link')</label>
+                                    <input type="text" class="form-control" name="youtube_link"
+                                        value="{{ $frontendTeamItem->youtube_link }}" placeholder="@lang('Enter youtube link')">
+                                    @error('youtube_link')
+                                        <p class="text-danger pt-2">{{ __($message) }}</p>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label class="form-label">@lang('Twitter Link')</label>
+                                    <input type="text" class="form-control" name="twitter_link"
+                                        value="{{ $frontendTeamItem->twitter_link }}" placeholder="@lang('Enter twitter link')">
+                                    @error('twitter_link')
+                                        <p class="text-danger pt-2">{{ __($message) }}</p>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label class="form-label">@lang('Facebook Link')</label>
+                                    <input type="text" class="form-control" name="facebook_link"
+                                        value="{{ $frontendTeamItem->facebook_link }}" placeholder="@lang('Enter facebook link')">
+                                    @error('facebook_link')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="mb-3">
-                                    <label class="form-label">@lang('Social Icon')</label>
-                                    <input type="text" class="form-control" name="social_icon_two"
-                                        placeholder="@lang('Enter social icon')" value="{{ $frontendTeamItem->social_icon_two }}">
-                                    @error('social_icon_two')
-                                        <p class="text-danger pt-2">{{ __($message) }}</p>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="mb-3">
-                                    <label class="form-label">@lang('Social Link')</label>
-                                    <input type="text" class="form-control" name="social_link_two"
-                                        placeholder="@lang('Enter social link')" value="{{ $frontendTeamItem->social_link_two }}">
-                                    @error('social_link_two')
-                                        <p class="text-danger pt-2">{{ __($message) }}</p>
-                                    @enderror
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="mb-3">
-                                    <label class="form-label">@lang('Social Icon')</label>
-                                    <input type="text" class="form-control" name="social_icon_three"
-                                        placeholder="@lang('Enter social icon')"
-                                        value="{{ $frontendTeamItem->social_icon_three }}">
-                                    @error('social_icon_three')
-                                        <p class="text-danger pt-2">{{ __($message) }}</p>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="mb-3">
-                                    <label class="form-label">@lang('Social Link')</label>
-                                    <input type="text" class="form-control" name="social_link_three"
-                                        placeholder="@lang('Enter social link')"
-                                        value="{{ $frontendTeamItem->social_link_three }}">
-                                    @error('social_link_three')
-                                        <p class="text-danger pt-2">{{ __($message) }}</p>
-                                    @enderror
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="mb-3">
-                                    <label class="form-label">@lang('Social Icon')</label>
-                                    <input type="text" class="form-control" name="social_icon_four"
-                                        placeholder="@lang('Enter social icon')" value="{{ $frontendTeamItem->social_icon_four }}">
-                                    @error('social_icon_four')
-                                        <p class="text-danger pt-2">{{ __($message) }}</p>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="mb-3">
-                                    <label class="form-label">@lang('Social Link')</label>
-                                    <input type="text" class="form-control" name="social_link_four"
-                                        placeholder="@lang('Enter social link')"
-                                        value="{{ $frontendTeamItem->social_link_four }}">
-                                    @error('social_link_four')
-                                        <p class="text-danger pt-2">{{ __($message) }}</p>
-                                    @enderror
-                                </div>
-                            </div>
-                        </div>
-
 
                         <button type="submit" class="btn btn-primary">@lang('Submit')</button>
                     </form>

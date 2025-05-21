@@ -13,14 +13,10 @@
                             <th>@lang('image')</th>
                             <th>@lang('name')</th>
                             <th>@lang('designation')</th>
-                            <th>@lang('social_icon_one')</th>
-                            <th>@lang('social_link_one')</th>
-                            <th>@lang('social_icon_two')</th>
-                            <th>@lang('social_link_two')</th>
-                            <th>@lang('social_icon_three')</th>
-                            <th>@lang('social_link_three')</th>
-                            <th>@lang('social_icon_four')</th>
-                            <th>@lang('social_link_four')</th>
+                            <th>@lang('telegram_link')</th>
+                            <th>@lang('youtube_link')</th>
+                            <th>@lang('twitter_link')</th>
+                            <th>@lang('facebook_link')</th>
                             <th>@lang('action')</th>
                         </tr>
                     </thead>
@@ -34,20 +30,18 @@
                                 </td>
                                 <td>{{ __($teamItem->name) }}</td>
                                 <td>{{ __($teamItem->designation) }}</td>
-                                <td>{{ __($teamItem->social_icon_one) }}</td>
-                                <td>{{ __($teamItem->social_link_one) }}</td>
-                                <td>{{ __($teamItem->social_icon_two) }}</td>
-                                <td>{{ __($teamItem->social_link_two) }}</td>
-                                <td>{{ __($teamItem->social_icon_three) }}</td>
-                                <td>{{ __($teamItem->social_link_three) }}</td>
-                                <td>{{ __($teamItem->social_icon_four) }}</td>
-                                <td>{{ __($teamItem->social_link_four) }}</td>
+                                <td>{{ __($teamItem->telegram_link) }}</td>
+                                <td>{{ __($teamItem->youtube_link) }}</td>
+                                <td>{{ __($teamItem->twitter_link) }}</td>
+                                <td>{{ __($teamItem->facebook_link) }}</td>
                                 <td>
-                                    <a href="{{ route('admin.frontend.team.item.edit', $teamItem->id) }}"
-                                        class="btn btn-primary mb-1">@lang('Edit')</a>
-                                    <a href="{{ route('admin.frontend.team.item.delete', $teamItem->id) }}"
-                                        class="btn btn-danger"
-                                        onclick="return confirm('Are you sure delete this?')">@lang('Delete')</a>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="{{ route('admin.frontend.team.item.edit', $teamItem->id) }}"
+                                            class="btn btn-primary m-1">@lang('Edit')</a>
+                                        <a href="{{ route('admin.frontend.team.item.delete', $teamItem->id) }}"
+                                            class="btn btn-danger m-1"
+                                            onclick="return confirm('Are you sure delete this?')">@lang('Delete')</a>
+                                    </div>
                                 </td>
                             </tr>
                         @empty

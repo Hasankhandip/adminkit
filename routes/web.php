@@ -9,8 +9,6 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
-
 Route::controller(ProductController::class)->prefix('product')->name('product.')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/details', 'details')->name('details');
@@ -35,3 +33,5 @@ Route::controller(LoginController::class)->prefix('login')->name('login.')->grou
 Route::controller(RegisterController::class)->prefix('register')->name('register.')->group(function () {
     Route::get('/', 'index')->name('index');
 });
+
+Route::get('/', [HomeController::class, 'index'])->name('index');

@@ -12,14 +12,14 @@
                         <div class="mb-3">
                             <label class="form-label">@lang('Reffer Title')</label>
                             <input type="text" class="form-control" required name="title"
-                                placeholder="@lang('Enter title')" value="{{ $refferContent->title }}">
+                                placeholder="@lang('Enter title')" value="{{ @$refferContent->title }}">
                             @error('title')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">@lang('Reffer Description')</label>
-                            <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter description')">{{ $refferContent->description }}</textarea>
+                            <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter description')">{{ @$refferContent->description }}</textarea>
                             @error('description')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
@@ -29,7 +29,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">@lang('Reffer Button name')</label>
                                     <input type="text" class="form-control" required name="button_name"
-                                        placeholder="@lang('Enter name')" value="{{ $refferContent->button_name }}">
+                                        placeholder="@lang('Enter name')" value="{{ @$refferContent->button_name }}">
                                     @error('button_name')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror
@@ -39,7 +39,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">@lang('Reffer Button Link')</label>
                                     <input type="text" class="form-control" required name="button_link"
-                                        placeholder="@lang('Enter link address')" value="{{ $refferContent->button_link }}">
+                                        placeholder="@lang('Enter link address')" value="{{ @$refferContent->button_link }}">
                                     @error('button_link')
                                         <p class="text-danger pt-2">{{ __($message) }}</p>
                                     @enderror

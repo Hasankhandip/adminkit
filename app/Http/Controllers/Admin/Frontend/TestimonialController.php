@@ -3,7 +3,7 @@ namespace App\Http\Controllers\Admin\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Frontend\FrontendTestimonial;
-use App\Models\Frontend\FrontendTestimonialItem;
+use App\Models\Frontend\FrontendTestimonialClient;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -33,19 +33,19 @@ class TestimonialController extends Controller {
     }
 
     // item start
-    public function itemIndex() {
-        $pageTitle               = "Manage Testimonial Item";
-        $testimonialItemContents = FrontendTestimonialItem::orderBy('id', 'desc')->get();
-        return view('admin.frontend.testimonial.item.index', compact('pageTitle', 'testimonialItemContents'));
+    public function clientIndex() {
+        $pageTitle                 = "Manage Testimonial Item";
+        $testimonialClientContents = FrontendTestimonialClient::orderBy('id', 'desc')->get();
+        return view('admin.frontend.testimonial.client.index', compact('pageTitle', 'testimonialClientContents'));
     }
 
-    public function itemCreate() {
-        $pageTitle              = "Create Testimonial Item";
-        $testimonialItemContent = new FrontendTestimonialItem();
-        return view('admin.frontend.testimonial.item.create', compact('pageTitle', 'testimonialItemContent'));
+    public function clientCreate() {
+        $pageTitle                = "Create Testimonial Item";
+        $testimonialClientContent = new FrontendTestimonialClient();
+        return view('admin.frontend.testimonial.client.create', compact('pageTitle', 'testimonialClientContent'));
     }
 
-    public function itemStore(Request $request) {
+    public function clientStore(Request $request) {
         $request->validate([
             'image'       => 'required|image|mimes:png,jpg,jpeg',
             'name'        => 'required|string',
@@ -53,58 +53,58 @@ class TestimonialController extends Controller {
             'description' => 'required|string|max:1000',
         ]);
 
-        $frontendTestimonialItem = new FrontendTestimonialItem();
+        $frontendTestimonialClient = new FrontendTestimonialClient();
         if ($request->hasFile('image')) {
             try {
-                $folderPath                     = "assets/images/frontend/testimonial/item/images/";
-                $imageName                      = uploadImage($request->image, $folderPath, $frontendTestimonialItem->image);
-                $frontendTestimonialItem->image = $imageName;
+                $folderPath                       = "assets/images/frontend/testimonial/item/images/";
+                $imageName                        = uploadImage($request->image, $folderPath, $frontendTestimonialClient->image);
+                $frontendTestimonialClient->image = $imageName;
             } catch (Exception $ex) {
                 return back()->withErrors("The image couldn't be uploaded");
             }
         }
-        $frontendTestimonialItem->name        = $request->name;
-        $frontendTestimonialItem->designation = $request->designation;
-        $frontendTestimonialItem->description = $request->description;
+        $frontendTestimonialClient->name        = $request->name;
+        $frontendTestimonialClient->designation = $request->designation;
+        $frontendTestimonialClient->description = $request->description;
 
-        $frontendTestimonialItem->save();
+        $frontendTestimonialClient->save();
 
-        return redirect()->route('admin.frontend.testimonial.item.index')->withSuccess("Testimonial has been created !");
+        return redirect()->route('admin.frontend.testimonial.client.index')->withSuccess("Testimonial has been created !");
     }
 
-    public function itemEdit($id) {
-        $pageTitle               = "Edit Testimonial Item";
-        $frontendTestimonialItem = FrontendTestimonialItem::findOrFail($id);
-        return view('admin.frontend.testimonial.item.edit', compact('pageTitle', 'frontendTestimonialItem'));
+    public function clientEdit($id) {
+        $pageTitle                 = "Edit Testimonial Client";
+        $frontendTestimonialClient = FrontendTestimonialClient::findOrFail($id);
+        return view('admin.frontend.testimonial.client.edit', compact('pageTitle', 'frontendTestimonialClient'));
     }
 
-    public function itemUpdate(Request $request, $id) {
+    public function clientUpdate(Request $request, $id) {
         $request->validate([
             'image'       => 'nullable|image|mimes:png,jpg,jpeg',
             'name'        => 'required|string',
             'designation' => 'required|string',
             'description' => 'required|string|max:1000',
         ]);
-        $frontendTestimonialItem = FrontendTestimonialItem::findOrFail($id);
+        $frontendTestimonialClient = FrontendTestimonialClient::findOrFail($id);
         if ($request->hasFile('image')) {
             try {
-                $folderPath                     = "assets/images/frontend/testimonial/item/images/";
-                $imageName                      = uploadImage($request->image, $folderPath, $frontendTestimonialItem->image);
-                $frontendTestimonialItem->image = $imageName;
+                $folderPath                       = "assets/images/frontend/testimonial/item/images/";
+                $imageName                        = uploadImage($request->image, $folderPath, $frontendTestimonialClient->image);
+                $frontendTestimonialClient->image = $imageName;
             } catch (Exception $ex) {
                 return back()->withErrors("The image couldn't be uploaded");
             }
         }
-        $frontendTestimonialItem->name        = $request->name;
-        $frontendTestimonialItem->designation = $request->designation;
-        $frontendTestimonialItem->description = $request->description;
+        $frontendTestimonialClient->name        = $request->name;
+        $frontendTestimonialClient->designation = $request->designation;
+        $frontendTestimonialClient->description = $request->description;
 
-        $frontendTestimonialItem->save();
-        return redirect()->route('admin.frontend.testimonial.item.index')->withSuccess('The testimonial item has been updated');
+        $frontendTestimonialClient->save();
+        return redirect()->route('admin.frontend.testimonial.client.index')->withSuccess('The testimonial client has been updated');
     }
-    public function itemDelete($id) {
-        $frontendTestimonialItem = FrontendTestimonialItem::findOrFail($id);
-        $frontendTestimonialItem->delete();
-        return back()->withSuccess('The testimonial item has been deleted');
+    public function clientDelete($id) {
+        $frontendTestimonialClient = FrontendTestimonialClient::findOrFail($id);
+        $frontendTestimonialClient->delete();
+        return back()->withSuccess('The testimonial client has been deleted');
     }
 }

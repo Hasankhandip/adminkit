@@ -189,7 +189,7 @@
                                     </li>
                                     <li class="sidebar-submenu-list__item ">
                                         <a class="sidebar-submenu-list__link"
-                                            href="{{ route('admin.frontend.testimonial.item.index') }}">
+                                            href="{{ route('admin.frontend.testimonial.client.index') }}">
                                             @lang('Testimonial Item')
                                         </a>
                                     </li>
@@ -241,8 +241,14 @@
                                     </li>
                                     <li class="sidebar-submenu-list__item ">
                                         <a class="sidebar-submenu-list__link"
-                                            href="{{ route('admin.frontend.footer.item.index') }}">
-                                            @lang('Footer Item')
+                                            href="{{ route('admin.frontend.footer.contact.index') }}">
+                                            @lang('Footer Contact')
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-list__item ">
+                                        <a class="sidebar-submenu-list__link"
+                                            href="{{ route('admin.frontend.footer.social.index') }}">
+                                            @lang('Footer Social Link')
                                         </a>
                                     </li>
                                 </ul>

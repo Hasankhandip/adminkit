@@ -3,7 +3,8 @@ namespace App\Http\Controllers\Admin\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Frontend\FrontendFooter;
-use App\Models\Frontend\FrontendFooterItem;
+use App\Models\Frontend\FrontendFooterContact;
+use App\Models\Frontend\FrontendFooterSocial;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -42,62 +43,61 @@ class FooterController extends Controller {
         return back()->with('success', 'The footer content has been updated');
     }
 
-    // item start
-    public function itemIndex() {
-        $pageTitle          = "Manage Footer Item";
-        $footerItemContents = FrontendFooterItem::orderBy('id', 'desc')->get();
-        return view('admin.frontend.footer.item.index', compact('pageTitle', 'footerItemContents'));
-    }
-    public function itemCreate() {
-        $pageTitle         = "Create Footer Item";
-        $footerItemContent = new FrontendFooterItem();
-        return view('admin.frontend.footer.item.create', compact('pageTitle', 'footerItemContent'));
+    // contact start
+    public function contactIndex() {
+        $pageTitle            = "Manage Footer Contact";
+        $footerContactContent = FrontendFooterContact::first();
+        return view('admin.frontend.footer.contact.index', compact('pageTitle', 'footerContactContent'));
     }
 
-    public function itemStore(Request $request) {
+    public function contactStore(Request $request) {
         $request->validate([
-            'title'       => 'required|string',
-            'footer_name' => 'required|string',
-            'footer_link' => 'required|string',
+            'address' => 'required|string',
+            'phone'   => 'required|string',
+            'email'   => 'required|string',
         ]);
 
-        $frontendFooterItem = new FrontendFooterItem();
+        $frontendFooterContact = FrontendFooterContact::first();
+        if (! $frontendFooterContact) {
+            $frontendFooterContact = new FrontendFooterContact();
+        }
 
-        $frontendFooterItem->title       = $request->title;
-        $frontendFooterItem->footer_name = $request->footer_name;
-        $frontendFooterItem->footer_link = $request->footer_link;
+        $frontendFooterContact->address = $request->address;
+        $frontendFooterContact->phone   = $request->phone;
+        $frontendFooterContact->email   = $request->email;
 
-        $frontendFooterItem->save();
+        $frontendFooterContact->save();
 
-        return redirect()->route('admin.frontend.footer.item.index')->withSuccess("Footer item has been created !");
+        return redirect()->route('admin.frontend.footer.contact.index')->withSuccess("Footer contact has been updated");
     }
 
-    public function itemEdit($id) {
-        $pageTitle          = "Edit Footer Item";
-        $frontendFooterItem = FrontendFooterItem::findOrFail($id);
-        return view('admin.frontend.footer.item.edit', compact('pageTitle', 'frontendFooterItem'));
+    //social start
+    public function socialIndex() {
+        $pageTitle           = "Manage Footer Social";
+        $footerSocialContent = FrontendFooterSocial::first();
+        return view('admin.frontend.footer.social.index', compact('pageTitle', 'footerSocialContent'));
     }
 
-    public function itemUpdate(Request $request, $id) {
+    public function socialStore(Request $request) {
         $request->validate([
-            'title'       => 'required|string',
-            'footer_name' => 'required|string',
-            'footer_link' => 'required|string',
+            'telegram_link' => 'required|string',
+            'youtube_link'  => 'required|string',
+            'twitter_link'  => 'required|string',
+            'facebook_link' => 'required|string',
         ]);
 
-        $frontendFooterItem = FrontendFooterItem::findOrFail($id);
+        $footerSocial = FrontendFooterSocial::first();
+        if (! $footerSocial) {
+            $footerSocial = new FrontendFooterSocial();
+        }
 
-        $frontendFooterItem->title       = $request->title;
-        $frontendFooterItem->footer_name = $request->footer_name;
-        $frontendFooterItem->footer_link = $request->footer_link;
-        $frontendFooterItem->save();
+        $footerSocial->telegram_link = $request->telegram_link;
+        $footerSocial->youtube_link  = $request->youtube_link;
+        $footerSocial->twitter_link  = $request->twitter_link;
+        $footerSocial->facebook_link = $request->facebook_link;
 
-        return redirect()->route('admin.frontend.footer.item.index')->withSuccess("Footer has been updated !");
-    }
+        $footerSocial->save();
 
-    public function itemDelete($id) {
-        $frontendFooterItem = FrontendFooterItem::findOrFail($id);
-        $frontendFooterItem->delete();
-        return back()->withSuccess('The footer item has been deleted');
+        return redirect()->route('admin.frontend.footer.social.index')->withSuccess("Footer Social has been updated");
     }
 }

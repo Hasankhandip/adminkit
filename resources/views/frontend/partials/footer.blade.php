@@ -63,17 +63,16 @@
                           <ul class="footer-info">
                               <li>
                                   <p>
-                                      <i class="las la-map-marker"></i>#142 Poran Masto Raod
-                                      902100 Bangde Britatu Sans Francico
+                                      <i class="las la-map-marker"></i>{{ __($footerContactContents->address) }}
                                   </p>
                               </li>
                               <li>
-                                  <a href="tel:+01234567890"><i class="las la-phone-volume"></i>+01234567890</a>
+                                  <a href="tel:+01234567890"><i
+                                          class="las la-phone-volume"></i>{{ __($footerContactContents->phone) }}</a>
                               </li>
                               <li>
-                                  <a href="/cdn-cgi/l/email-protection#22515752524d505662404b4c43505b47414d4f0c414d4f"><i
-                                          class="las la-envelope"></i><span class="__cf_email__"
-                                          data-cfemail="cdbeb8bdbda2bfb98dafa4a3acbfb4a8aea2a0e3aea2a0">[email&#160;protected]</span></a>
+                                  <a href="#"><i class="las la-envelope"></i><span
+                                          class="__cf_email__">{{ __($footerContactContents->email) }}</span></a>
                               </li>
                           </ul>
                       </div>
@@ -90,22 +89,22 @@
                   </p>
                   <ul class="social-icons">
                       <li>
-                          <a href="https://telegram.org/" title="telegram" target="_blank">
+                          <a href="{{ $footerSocial->telegram_link }}" title="telegram" target="_blank">
                               <i class="lab la-telegram-plane"></i>
                           </a>
                       </li>
                       <li>
-                          <a href="https://www.youtube.com/" title="youtube" target="_blank">
+                          <a href="{{ $footerSocial->youtube_link }}" title="youtube" target="_blank">
                               <i class="lab la-youtube"></i>
                           </a>
                       </li>
                       <li>
-                          <a href="https://twitter.com/" title="twitter" target="_blank">
+                          <a href="{{ $footerSocial->twitter_link }}" title="twitter" target="_blank">
                               <i class="lab la-twitter"></i>
                           </a>
                       </li>
                       <li>
-                          <a href="https://www.facebook.com/" title="Facebook" target="_blank">
+                          <a href="{{ $footerSocial->facebook_link }}" title="Facebook" target="_blank">
                               <i class="lab la-facebook"></i>
                           </a>
                       </li>

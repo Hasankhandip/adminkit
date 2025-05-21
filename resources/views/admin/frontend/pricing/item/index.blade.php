@@ -38,9 +38,9 @@
                                 <td>{{ __($pricingItem->button_name) }}</td>
                                 <td>
                                     <a href="{{ route('admin.frontend.pricing.item.edit', $pricingItem->id) }}"
-                                        class="btn btn-primary mb-1">@lang('Edit')</a>
+                                        class="btn btn-primary m-1">@lang('Edit')</a>
                                     <a href="{{ route('admin.frontend.pricing.item.delete', $pricingItem->id) }}"
-                                        class="btn btn-danger"
+                                        class="btn btn-danger m-1"
                                         onclick="return confirm('Are you sure delete this?')">@lang('Delete')</a>
                                 </td>
                             </tr>

@@ -2,26 +2,26 @@
 @section('content')
     <div class="d-flex justify-content-between mb-4 flex-wrap  gap-2">
         <h1 class="h3">{{ __($pageTitle) }}</h1>
-        <a href="{{ route('admin.frontend.testimonial.item.index') }}" class="btn btn-primary">@lang('Testimonial Item  List')</a>
+        <a href="{{ route('admin.frontend.testimonial.client.index') }}" class="btn btn-primary">@lang('Testimonial Item  List')</a>
     </div>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin.frontend.testimonial.item.store') }}" method="POST"
-                        enctype="multipart/form-data">
+                    <form action="{{ route('admin.frontend.testimonial.client.update', $frontendTestimonialClient->id) }}"
+                        method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">@lang('Testimonial Image')</label>
-                            <input type="file" class="form-control" required name="image">
+                            <input type="file" class="form-control" name="image">
                             @error('image')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">@lang('Testimonial Name')</label>
-                            <input type="text" class="form-control" required name="name" value="{{ old('name') }}"
-                                placeholder="@lang('Enter name')">
+                            <input type="text" class="form-control" required name="name"
+                                value="{{ $frontendTestimonialClient->name }}" placeholder="@lang('Enter name')">
                             @error('name')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
@@ -30,14 +30,14 @@
                         <div class="mb-3">
                             <label class="form-label">@lang('Testimonial Designation')</label>
                             <input type="text" class="form-control" min="0" required name="designation"
-                                value="{{ old('designation') }}" placeholder="@lang('Enter designation')">
+                                value="{{ $frontendTestimonialClient->designation }}" placeholder="@lang('Enter designation')">
                             @error('designation')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">@lang('Testimonial Description')</label>
-                            <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter description')">{{ old('description') }}</textarea>
+                            <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter description')">{{ $frontendTestimonialClient->description }}</textarea>
                             @error('description')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
