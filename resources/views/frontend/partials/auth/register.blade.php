@@ -2,14 +2,12 @@
       <div class="row g-0">
           <div class="col-md-6 col-xl-7 col-lg-6">
               <div class="account-thumb">
-                  <img src="https://script.viserlab.com/binaryecom/assets/images/frontend/register/61766d7fe740c1635151231.jpg"
-                      alt="thumb" />
+                  <img src="{{ asset('assets/images/register/thumb/' . $registerContent->thumb) }}" alt="thumb" />
                   <div class="account-thumb-content">
-                      <p class="welc">WELCOME TO</p>
-                      <h3 class="title">Multi Level Marketing Rock</h3>
+                      <p class="welc">{{ $registerContent->subtitle }}</p>
+                      <h3 class="title">{{ $registerContent->title }}</h3>
                       <p class="info">
-                          Create an Account to get extra facility on MLM Hero and Access
-                          all Plans.
+                          {{ $registerContent->info }}
                       </p>
                   </div>
               </div>

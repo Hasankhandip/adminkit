@@ -9,14 +9,12 @@ return new class extends Migration {
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('frontend_product_items', function (Blueprint $table) {
+        Schema::create('login_items', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->string('name');
-            $table->tinyInteger('stock')->default(1);
-            $table->decimal('price', 8, 2);
-            $table->string('button_name');
-            $table->string('button_link');
+            $table->string('subtitle');
+            $table->string('title');
+            $table->string('info');
+            $table->string('thumb');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration {
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::dropIfExists('frontend_product_items');
+        Schema::dropIfExists('login_items');
     }
 };

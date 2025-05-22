@@ -152,4 +152,11 @@ class ProductController extends Controller {
             return back()->withError("The image couldn't be deleted");
         }
     }
+
+    public function delete($id) {
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return back()->withSuccess('Product Item has been deleted');
+    }
+
 }

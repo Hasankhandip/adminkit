@@ -21,9 +21,8 @@ class CategoryController extends Controller {
     public function store(Request $request) {
 
         $request->validate([
-            'name'   => 'required|unique:categories,name',
-            'status' => 'required|boolean',
-            'image'  => 'required|mimes:png,jpg,jpeg',
+            'name'  => 'required|unique:categories,name',
+            'image' => 'required|mimes:png,jpg,jpeg',
         ]);
 
         $category       = new Category();
@@ -53,8 +52,9 @@ class CategoryController extends Controller {
     public function update(Request $request, $id) {
 
         $request->validate([
-            'name'  => 'required|unique:categories,name,' . $id,
-            'image' => 'nullable|mimes:png,jpg,jpeg',
+            'name'   => 'required|unique:categories,name,' . $id,
+            'status' => 'required|boolean',
+            'image'  => 'nullable|mimes:png,jpg,jpeg',
         ]);
 
         $category = Category::findOrFail($id);
@@ -77,4 +77,11 @@ class CategoryController extends Controller {
 
         return redirect()->route('admin.category.index')->with('success', 'Your Category has been updated! ');
     }
+
+    public function delete($id) {
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return back()->withSuccess('Category Item has been deleted');
+    }
+
 }

@@ -37,7 +37,7 @@ class BrandController extends Controller {
         }
 
         $brand->save();
-        return redirect()->route('admin.brand.index')->with('success', 'Your brand has been created !');
+        return redirect()->route('admin.brand.index')->with('success', 'Brand has been created !');
     }
 
     public function edit($id) {
@@ -70,6 +70,11 @@ class BrandController extends Controller {
         $brand->status = $request->status ?? 0;
         $brand->save();
 
-        return redirect()->route('admin.brand.index')->with('success', 'Your brand has been updated !');
+        return redirect()->route('admin.brand.index')->with('success', 'Brand has been updated !');
+    }
+    public function delete($id) {
+        $brand = Brand::findOrFail($id);
+        $brand->delete();
+        return back()->withSuccess('Brand Item has been deleted');
     }
 }

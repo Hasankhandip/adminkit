@@ -44,8 +44,14 @@
                                 <td>
                                     ${{ __($product->price) }}
                                 </td>
-                                <td><a href="{{ route('admin.product.edit', $product->id) }}"
-                                        class="btn btn-primary">@lang('Edit')</a></td>
+                                <td>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="{{ route('admin.product.edit', $product->id) }}"
+                                            class="btn btn-primary m-1">@lang('Edit')</a>
+                                        <a href="{{ route('admin.product.delete', $product->id) }}"
+                                            class="btn btn-danger m-1">@lang('Delete')</a>
+                                    </div>
+                                </td>
                             </tr>
                         @empty
                             <tr class="text-center">

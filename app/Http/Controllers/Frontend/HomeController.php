@@ -12,7 +12,6 @@ use App\Models\Frontend\FrontendFooterSocial;
 use App\Models\Frontend\FrontendPricing;
 use App\Models\Frontend\FrontendPricingItem;
 use App\Models\Frontend\FrontendProduct;
-use App\Models\Frontend\FrontendProductItem;
 use App\Models\Frontend\FrontendReffer;
 use App\Models\Frontend\FrontendService;
 use App\Models\Frontend\FrontendServiceItem;
@@ -38,7 +37,6 @@ class HomeController extends Controller {
         $teamContent               = FrontendTeam::first();
         $teamItemContents          = FrontendTeamItem::orderBy('id', 'asc')->get();
         $productContent            = FrontendProduct::first();
-        $productItemContents       = FrontendProductItem::orderBy('price')->get();
         $testimonialContent        = FrontendTestimonial::first();
         $testimonialClientContents = FrontendTestimonialClient::orderBy('id', 'asc')->get();
         $blogContent               = FrontendBlog::first();
@@ -46,7 +44,8 @@ class HomeController extends Controller {
         $footerContent             = FrontendFooter::first();
         $footerContactContents     = FrontendFooterContact::first();
         $footerSocial              = FrontendFooterSocial::first();
-        return view('frontend.index', compact('headTitle', 'bannerContent', 'aboutContent', 'serviceContent', 'serviceItemContents', 'workContent', 'workItemContents', 'pricingContent', 'pricingContents', 'refferContent', 'teamContent', 'teamItemContents', 'productContent', 'productItemContents', 'testimonialContent', 'testimonialClientContents', 'blogContent', 'blogItemContents', 'footerContent', 'footerContactContents', 'footerSocial'));
+
+        return view('frontend.index', compact('headTitle', 'bannerContent', 'aboutContent', 'serviceContent', 'serviceItemContents', 'workContent', 'workItemContents', 'pricingContent', 'pricingContents', 'refferContent', 'teamContent', 'teamItemContents', 'productContent', 'testimonialContent', 'testimonialClientContents', 'blogContent', 'blogItemContents', 'footerContent', 'footerContactContents', 'footerSocial'));
     }
 
 }

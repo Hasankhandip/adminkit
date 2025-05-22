@@ -47,14 +47,12 @@
          </div>
          <div class="col-md-6 col-xl-7 col-lg-6">
              <div class="account-thumb">
-                 <img src="https://script.viserlab.com/binaryecom/assets/images/frontend/login/61756759612201635084121.jpg"
-                     alt="thumb" />
+                 <img src="{{ asset('assets/images/login/thumb/' . $loginContent->thumb) }}" alt="thumb" />
                  <div class="account-thumb-content">
-                     <p class="welc">Welcome to</p>
-                     <h3 class="title">Multi Level Marketing Rock</h3>
+                     <p class="welc">{{ $loginContent->subtitle }}</p>
+                     <h3 class="title">{{ $loginContent->title }}</h3>
                      <p class="info">
-                         Login to Access Account, changes to your Acconnt as per your
-                         Need.
+                         {{ $loginContent->info }}
                      </p>
                  </div>
              </div>

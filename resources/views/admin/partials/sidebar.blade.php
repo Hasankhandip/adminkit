@@ -161,12 +161,6 @@
                                             @lang('Product Content')
                                         </a>
                                     </li>
-                                    <li class="sidebar-submenu-list__item ">
-                                        <a class="sidebar-submenu-list__link"
-                                            href="{{ route('admin.frontend.product.item.index') }}">
-                                            @lang('Product Item')
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -279,6 +273,44 @@
                     <span class="text"> @lang('Brand') </span>
                 </a>
             </li>
+
+            <li class="sidebar-menu-list__item has-dropdown ">
+                <a href="javascript:void(0)" class="sidebar-menu-list__link">
+                    <span class="icon">
+                        <i class="align-middle" data-feather="sliders"></i>
+                    </span>
+                    <span class="text"> @lang('Manage Contact') </span>
+                </a>
+                <div class="sidebar-submenu">
+                    <ul class="sidebar-submenu-list ">
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.contact.index') }}">
+                                @lang('Contact Content')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.contact.item.index') }}">
+                                @lang('Contact Item')
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="sidebar-menu-list__item ">
+                <a href="{{ route('admin.login.index') }}" class="sidebar-menu-list__link">
+                    <span class="icon"> <i class="align-middle" data-feather="sliders"></i> </span>
+                    <span class="text"> @lang('Manage Login') </span>
+                </a>
+            </li>
+
+            <li class="sidebar-menu-list__item ">
+                <a href="{{ route('admin.register.index') }}" class="sidebar-menu-list__link">
+                    <span class="icon"> <i class="align-middle" data-feather="sliders"></i> </span>
+                    <span class="text"> @lang('Manage Register') </span>
+                </a>
+            </li>
+
         </ul>
     </div>
 </nav>

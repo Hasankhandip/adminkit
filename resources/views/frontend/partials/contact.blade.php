@@ -3,15 +3,13 @@
           <div class="row">
               <div class="col-lg-6 d-none d-lg-block">
                   <div class="contact-thumb rtl">
-                      <img src="https://script.viserlab.com/binaryecom/assets/images/frontend/contact_us/61adde9c0f5f71638784668.png"
-                          alt="thumb" />
+                      <img src="{{ asset('assets/images/contact/thumb/' . $contactContent->image) }}" alt="thumb" />
                   </div>
               </div>
               <div class="col-lg-6">
                   <div class="contact-form-wrapper">
                       <h3 class="title">
-                          Contact Us for Asking any Question. We are always ready to
-                          assist you.
+                          {{ $contactContent->title }}
                       </h3>
                       <form class="contact-form verify-gcaptcha" method="post">
                           <input type="hidden" name="_token" value="" autocomplete="off" />
@@ -69,8 +67,8 @@
                               </div>
                               <div class="content">
                                   <h5 class="title">Email Address :</h5>
-                                  <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                          data-cfemail="a0d3d5d0d0cfd2d4e0c2c9cec1d2d9c5c3cfcd8ec3cfcd">[email&#160;protected]</a></span>
+                                  <span><a href="{{ $contactitemContent->email_link }}" class="__cf_email__"
+                                          data-cfemail="a0d3d5d0d0cfd2d4e0c2c9cec1d2d9c5c3cfcd8ec3cfcd">{{ $contactitemContent->email_name }}</a></span>
                               </div>
                           </div>
                       </div>
@@ -82,7 +80,7 @@
                               </div>
                               <div class="content">
                                   <h5 class="title">Phone Number :</h5>
-                                  <span>+01234 5678 9000</span>
+                                  <span>{{ $contactitemContent->phone_number }}</span>
                               </div>
                           </div>
                       </div>
@@ -94,7 +92,7 @@
                               </div>
                               <div class="content">
                                   <h5 class="title">Company Location :</h5>
-                                  <span>23/A Hamham Tower Purba, USA</span>
+                                  <span>{{ $contactitemContent->address }}</span>
                               </div>
                           </div>
                       </div>
@@ -102,9 +100,7 @@
               </div>
               <div class="col-lg-6 col-xl-7">
                   <div class="map-wrapper">
-                      <iframe class="map"
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.48129412968!2d77.06889969035102!3d28.52728034389636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sbd!4v1638784996798!5m2!1sen!2sbd"
-                          style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+                      <iframe class="map" src="{{ $contactitemContent->map_link }}"></iframe>
                   </div>
               </div>
           </div>
