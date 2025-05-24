@@ -2,13 +2,13 @@
 @section('content')
     <div class="d-flex justify-content-between mb-4 flex-wrap  gap-2">
         <h1 class="h3">{{ __($pageTitle) }}</h1>
-        <a href="{{ route('admin.frontend.blog.item.index') }}" class="btn btn-primary">@lang('Blog Item  List')</a>
+        <a href="{{ route('admin.blog.index') }}" class="btn btn-primary">@lang('Blog Item  List')</a>
     </div>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin.frontend.blog.item.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.blog.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">@lang('Blog Image')</label>

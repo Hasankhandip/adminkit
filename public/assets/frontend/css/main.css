@@ -3057,6 +3057,9 @@ div[class*='col']:nth-of-type(even) .post-item .read-more::before {
 
 .post-thumb img {
   width: 100%;
+  height: 300px;
+  object-fit: cover;
+    object-position: center;
 }
 
 .post-content {

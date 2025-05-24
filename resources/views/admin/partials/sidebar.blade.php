@@ -256,22 +256,53 @@
             </li>
 
             <li class="sidebar-menu-list__item ">
-                <a href="{{ route('admin.product.index') }}" class="sidebar-menu-list__link">
-                    <span class="icon"> <i class="align-middle" data-feather="sliders"></i> </span>
-                    <span class="text"> @lang('Products') </span>
-                </a>
-            </li>
-            <li class="sidebar-menu-list__item ">
                 <a href="{{ route('admin.category.index') }}" class="sidebar-menu-list__link">
                     <span class="icon"> <i class="align-middle" data-feather="sliders"></i> </span>
-                    <span class="text"> @lang('Category') </span>
+                    <span class="text"> @lang('Manage Category') </span>
                 </a>
             </li>
             <li class="sidebar-menu-list__item ">
                 <a href="{{ route('admin.brand.index') }}" class="sidebar-menu-list__link">
                     <span class="icon"> <i class="align-middle" data-feather="sliders"></i> </span>
-                    <span class="text"> @lang('Brand') </span>
+                    <span class="text"> @lang('Manage Brand') </span>
                 </a>
+            </li>
+            <li class="sidebar-menu-list__item ">
+                <a href="{{ route('admin.product.index') }}" class="sidebar-menu-list__link">
+                    <span class="icon"> <i class="align-middle" data-feather="sliders"></i> </span>
+                    <span class="text"> @lang('Manage Products') </span>
+                </a>
+            </li>
+
+            <li class="sidebar-menu-list__item ">
+                <a href="{{ route('admin.blog.index') }}" class="sidebar-menu-list__link">
+                    <span class="icon"> <i class="align-middle" data-feather="sliders"></i> </span>
+                    <span class="text"> @lang('Manage Blog') </span>
+                </a>
+            </li>
+
+
+            <li class="sidebar-menu-list__item has-dropdown ">
+                <a href="javascript:void(0)" class="sidebar-menu-list__link">
+                    <span class="icon">
+                        <i class="align-middle" data-feather="sliders"></i>
+                    </span>
+                    <span class="text"> @lang('Manage Faq') </span>
+                </a>
+                <div class="sidebar-submenu">
+                    <ul class="sidebar-submenu-list ">
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.faq.index') }}">
+                                @lang('Faq Content')
+                            </a>
+                        </li>
+                        <li class="sidebar-submenu-list__item ">
+                            <a class="sidebar-submenu-list__link" href="{{ route('admin.faq.item.index') }}">
+                                @lang('Faq Item')
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
 
             <li class="sidebar-menu-list__item has-dropdown ">

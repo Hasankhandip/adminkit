@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\Auth\LoginController as AdminAuthLoginController;
+use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\Frontend\AboutController;
 use App\Http\Controllers\Admin\Frontend\BannerController;
 use App\Http\Controllers\Admin\Frontend\BlogController;
@@ -26,35 +28,6 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
 Route::controller(AdminAuthLoginController::class)->prefix('login')->name('login.')->group(function () {
     Route::get('/', "login")->name('view');
     Route::post('login/attempt', "loginAttempt")->name('attempt');
-});
-
-Route::controller(CategoryController::class)->prefix('category')->name('category.')->group(function () {
-    Route::get('/', "index")->name('index');
-    Route::get('create', "create")->name('create');
-    Route::post('store', "store")->name('store');
-    Route::get('edit/{id}', "edit")->name('edit');
-    Route::post('update/{id}', "update")->name('update');
-    Route::get('delete/{id}', "delete")->name('delete');
-});
-
-Route::controller(BrandController::class)->prefix('brand')->name('brand.')->group(function () {
-    Route::get('/', "index")->name('index');
-    Route::get('create', "create")->name('create');
-    Route::post('store', "store")->name('store');
-    Route::get('edit/{id}', "edit")->name('edit');
-    Route::post('update/{id}', "update")->name('update');
-    Route::get('delete/{id}', "delete")->name('delete');
-
-});
-
-Route::controller(AdminProductController::class)->prefix('product')->name('product.')->group(function () {
-    Route::get('/', "index")->name('index');
-    Route::get('create', "create")->name('create');
-    Route::post('store', "store")->name('store');
-    Route::get('edit/{id}', "edit")->name('edit');
-    Route::post('update/{id}', "update")->name('update');
-    Route::get("delete/image/{id}/{productId}", "deleteImage")->name('delete.image');
-    Route::get('delete/{id}', "delete")->name('delete');
 });
 
 Route::prefix('frontend')->name('frontend.')->group(function () {
@@ -181,6 +154,35 @@ Route::prefix('frontend')->name('frontend.')->group(function () {
     });
 });
 
+Route::controller(CategoryController::class)->prefix('category')->name('category.')->group(function () {
+    Route::get('/', "index")->name('index');
+    Route::get('create', "create")->name('create');
+    Route::post('store', "store")->name('store');
+    Route::get('edit/{id}', "edit")->name('edit');
+    Route::post('update/{id}', "update")->name('update');
+    Route::get('delete/{id}', "delete")->name('delete');
+});
+
+Route::controller(BrandController::class)->prefix('brand')->name('brand.')->group(function () {
+    Route::get('/', "index")->name('index');
+    Route::get('create', "create")->name('create');
+    Route::post('store', "store")->name('store');
+    Route::get('edit/{id}', "edit")->name('edit');
+    Route::post('update/{id}', "update")->name('update');
+    Route::get('delete/{id}', "delete")->name('delete');
+
+});
+
+Route::controller(AdminProductController::class)->prefix('product')->name('product.')->group(function () {
+    Route::get('/', "index")->name('index');
+    Route::get('create', "create")->name('create');
+    Route::post('store', "store")->name('store');
+    Route::get('edit/{id}', "edit")->name('edit');
+    Route::post('update/{id}', "update")->name('update');
+    Route::get("delete/image/{id}/{productId}", "deleteImage")->name('delete.image');
+    Route::get('delete/{id}', "delete")->name('delete');
+});
+
 Route::controller(ContactController::class)->prefix('contact')->name('contact.')->group(function () {
     Route::get('/', "index")->name('index');
     Route::post('store', "store")->name('store');
@@ -199,4 +201,27 @@ Route::controller(LoginController::class)->prefix('login')->name('login.')->grou
 Route::controller(RegisterController::class)->prefix('register')->name('register.')->group(function () {
     Route::get('/', "index")->name('index');
     Route::post('store', "store")->name('store');
+});
+
+Route::controller(AdminBlogController::class)->prefix('blog')->name('blog.')->group(function () {
+    Route::get('/', "index")->name('index');
+    Route::get('create', "create")->name('create');
+    Route::post('store', "store")->name('store');
+    Route::get('edit/{id}', "edit")->name('edit');
+    Route::post('update/{id}', "update")->name('update');
+    Route::get('delete/{id}', "delete")->name('delete');
+});
+
+Route::controller(FaqController::class)->prefix('faq')->name('faq.')->group(function () {
+    Route::get('/', "index")->name('index');
+    Route::post('store', "store")->name('store');
+});
+
+Route::controller(FaqController::class)->prefix('faq/item')->name('faq.item.')->group(function () {
+    Route::get('/', "itemIndex")->name('index');
+    Route::get('create', "itemCreate")->name('create');
+    Route::post('store', "itemStore")->name('store');
+    Route::get('edit/{id}', "itemEdit")->name('edit');
+    Route::post('update/{id}', "itemUpdate")->name('update');
+    Route::get('delete/{id}', "itemDelete")->name('delete');
 });
