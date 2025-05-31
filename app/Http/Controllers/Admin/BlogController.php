@@ -83,12 +83,11 @@ class BlogController extends Controller {
                 return back()->withErrors("The image couldn't be uploaded");
             }
         }
-        $blogContent->date      = $request->date;
-        $blogContent->month     = $request->month;
-        $blogContent->year      = $request->year;
-        $blogContent->title     = $request->title;
-        $blogContent->blog_link = $request->blog_link;
-
+        $blogContent->date        = $request->date;
+        $blogContent->month       = $request->month;
+        $blogContent->year        = $request->year;
+        $blogContent->title       = $request->title;
+        $blogContent->blog_link   = $request->blog_link;
         $blogContent->description = $request->description;
         $blogContent->button_name = $request->button_name;
         $blogContent->button_link = $request->button_link;

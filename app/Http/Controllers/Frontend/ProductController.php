@@ -16,8 +16,11 @@ class ProductController extends Controller {
         return view('frontend.product.index', compact('headTitle', 'innerTitle', 'footerContent', 'footerContactContents', 'footerSocial'));
     }
     public function details() {
-        $headTitle  = "BinaryEcom - Product Details";
-        $innerTitle = "Product Details";
-        return view('frontend.product.details', compact('headTitle', 'innerTitle'));
+        $headTitle             = "BinaryEcom - Product Details";
+        $innerTitle            = "Product Details";
+        $footerContent         = FrontendFooter::first();
+        $footerContactContents = FrontendFooterContact::first();
+        $footerSocial          = FrontendFooterSocial::first();
+        return view('frontend.product.details', compact('headTitle', 'innerTitle', 'footerContent', 'footerContactContents', 'footerSocial'));
     }
 }

@@ -40,7 +40,8 @@
                                         <a href="{{ route('admin.category.edit', $category->id) }}"
                                             class="btn btn-primary m-1">@lang('Edit')</a>
                                         <a href="{{ route('admin.category.delete', $category->id) }}"
-                                            class="btn btn-danger m-1">@lang('Delete')</a>
+                                            class="btn btn-danger m-1"
+                                            onclick="return confirm('Are you sure delete this?')">@lang('Delete')</a>
                                     </div>
                                 </td>
                             </tr>

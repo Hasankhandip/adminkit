@@ -45,7 +45,7 @@ class ProductController extends Controller {
         if ($request->hasFile('thumbnail')) {
             try {
                 $folderPath         = "assets/images/product/thumb/";
-                $imageName          = uploadImage($request->image, $folderPath, $product->thumbnail);
+                $imageName          = uploadImage($request->thumbnail, $folderPath, $product->thumbnail);
                 $product->thumbnail = $imageName;
             } catch (Exception $ex) {
                 return back()->with('error', "The image couldn't be uploaded");
