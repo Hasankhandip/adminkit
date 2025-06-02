@@ -15,7 +15,7 @@ class Product extends Model {
         'thumbnail',
         'description',
         'price',
-        'quantity',
+        'stock',
     ];
 
     public function category() {

@@ -57,10 +57,16 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">@lang('Product Quantity')</label>
-                            <input type="number" min="0" class="form-control" required name="quantity"
-                                value="{{ $product->quantity }}" placeholder="@lang('Enter product amount')">
-                            @error('quantity')
+                            <label class="form-label">@lang('Stock')</label>
+                            <select class="form-control" name="stock">
+                                <option value="1" @selected($product->stock == '1')>
+                                    @lang('In Stock')
+                                </option>
+                                <option value="0" @selected($product->stock == '0')>
+                                    @lang('Out of stock')
+                                </option>
+                            </select>
+                            @error('name')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>

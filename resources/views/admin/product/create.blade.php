@@ -50,7 +50,7 @@
                         <div class="mb-3">
                             <label class="form-label">@lang('Product Description')</label>
                             <textarea class="form-control" required rows="4" name="description" placeholder="@lang('Enter product description')">{{ old('description') }}</textarea>
-                            @error('code')
+                            @error('description')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
@@ -63,14 +63,7 @@
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">@lang('Quantity')</label>
-                            <input type="number" min="0" class="form-control" required name="quantity"
-                                value="{{ old('quantity') }}" placeholder="@lang('Enter product quantity')">
-                            @error('quantity')
-                                <p class="text-danger pt-2">{{ __($message) }}</p>
-                            @enderror
-                        </div>
+
                         <div class="mb-3">
                             <label for="formFileMultiple" class="form-label">@lang('Product Images Upload Here')</label>
                             <input class="form-control" type="file" name="image_gallery[]" multiple id="formFileMultiple"

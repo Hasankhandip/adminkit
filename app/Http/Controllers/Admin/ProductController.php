@@ -31,7 +31,6 @@ class ProductController extends Controller {
             'thumbnail'       => 'required|image|mimes:jpg,jpeg,png',
             'description'     => 'required|string|max:1000',
             'price'           => 'required|numeric|gt:0',
-            'quantity'        => 'required|numeric|gt:0',
             'image_gallery'   => 'required|array|min:1',
             'image_gallery.*' => 'required|image|mimes:jpg,jpeg,png',
         ]);
@@ -52,18 +51,17 @@ class ProductController extends Controller {
             }
         }
 
-        $productCode           = max(Product::max('id'), 1) + 1000;
-        $product->product_code = $productCode;
-        $product->description  = $request->description;
-        $product->quantity     = $request->quantity;
-        $product->price        = $request->price;
+        $product->description = $request->description;
+        $product->price       = $request->price;
+        $productCode          = max(Product::max('id'), 1) + 1000;
+        $product->code        = $productCode;
         $product->save();
 
-        foreach (($request->file('image_gallery') ?? []) as $galleryImage) {
+        foreach (($request->file('image_gallery') ?? []) as $k => $galleryImage) {
             try {
                 $productImage = new ProductImage();
                 $folderPath   = "assets/images/product/image/";
-                $imageName    = time() . '.' . $galleryImage->extension();
+                $imageName    = $k . "_" . time() . '.' . $galleryImage->extension();
                 $galleryImage->move(public_path($folderPath), $imageName);
                 $productImage->product_id = $product->id;
                 $productImage->image      = $imageName;
@@ -90,8 +88,8 @@ class ProductController extends Controller {
             'category_id'     => 'required|exists:categories,id',
             'thumbnail'       => 'nullable|image|mimes:jpg,jpeg,png,webp',
             'description'     => 'required|string|max:1000',
-            'quantity'        => 'required|integer|min:0',
             'price'           => 'required|numeric|min:0',
+            'stock'           => 'required|boolean',
             'image_gallery'   => 'array|min:1',
             'image_gallery.*' => 'nullable|image|mimes:jpg,jpeg,png,PNG,JPG',
         ]);
@@ -111,7 +109,7 @@ class ProductController extends Controller {
             }
         }
         $product->description = $request->description;
-        $product->quantity    = $request->quantity;
+        $product->stock       = $request->stock ?? 0;
         $product->price       = $request->price;
         $product->save();
 

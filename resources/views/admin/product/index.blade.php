@@ -14,8 +14,8 @@
                             <th>@lang('Name')</th>
                             <th>@lang('Product Code')</th>
                             <th>@lang('Description')</th>
-                            <th>@lang('Quantity')</th>
                             <th>@lang('Price')</th>
+                            <th>@lang('Stock')</th>
                             <th>@lang('Action')</th>
                         </tr>
                     </thead>
@@ -33,16 +33,25 @@
                                     </div>
                                 </td>
                                 <td>
-                                    {{ __($product->product_code) }}
+                                    {{ __($product->code) }}
                                 </td>
                                 <td>
                                     {{ __($product->description) }}
                                 </td>
-                                <td>
-                                    {{ __($product->quantity) }}
-                                </td>
+
                                 <td>
                                     ${{ __($product->price) }}
+                                </td>
+                                <td>
+                                    @if ($product->stock)
+                                        <span class="text-success">
+                                            @lang('In Stock')
+                                        </span>
+                                    @else
+                                        <span class="text-danger">
+                                            @lang('Out of Stock')
+                                        </span>
+                                    @endif
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center">
