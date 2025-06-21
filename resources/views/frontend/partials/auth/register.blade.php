@@ -19,16 +19,15 @@
                               src="https://script.viserlab.com/binaryecom/assets/images/logoIcon/logo.png"
                               alt="logo" /></a>
                   </div>
-                  <form class="account-form verify-gcaptcha disableSubmission" method="POST"
-                      action="https://script.viserlab.com/binaryecom/user/register">
-                      <input type="hidden" name="_token" value="CPtJZDsHshJNHKnIlTXPS1uvrYewGIsHFuUcYivK"
-                          autocomplete="off" />
+                  <form class="account-form verify-gcaptcha disableSubmission" action="{{ route('register.store') }}"
+                      method="POST">
+                      @csrf
                       <div class="row">
                           <div class="col-md-6">
                               <div class="form--group">
                                   <label class="form--label">Referral Username</label>
-                                  <input class="referral form-control form--control" id="referenceBy" name="referBy"
-                                      type="text" value="" placeholder="Enter referral username" required />
+                                  <input class="referral form-control form--control" name="referBy" type="text"
+                                      placeholder="Enter referral username" required />
                                   <div id="ref"></div>
                                   <span id="referral"></span>
                               </div>

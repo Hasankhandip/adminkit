@@ -7,7 +7,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin.register.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.frontend.register.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">@lang('Register Subtitle')</label>

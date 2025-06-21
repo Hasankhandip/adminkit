@@ -9,10 +9,13 @@ return new class extends Migration {
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email');
+        Schema::create('users_register', function (Blueprint $table) {
+            $table->id();
+            $table->string('referBy');
+            $table->tinyInteger('position');
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();
         });
@@ -22,6 +25,6 @@ return new class extends Migration {
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('users_register');
     }
 };

@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Frontend\Auth;
+namespace App\Http\Controllers\Frontend\User\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\LoginItem;

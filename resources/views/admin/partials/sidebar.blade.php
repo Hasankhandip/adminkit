@@ -328,17 +328,17 @@
                 </div>
             </li>
 
-            <li class="sidebar-menu-list__item ">
-                <a href="{{ route('admin.login.index') }}" class="sidebar-menu-list__link">
-                    <span class="icon"> <i class="align-middle" data-feather="sliders"></i> </span>
-                    <span class="text"> @lang('Manage Login') </span>
-                </a>
-            </li>
 
             <li class="sidebar-menu-list__item ">
-                <a href="{{ route('admin.register.index') }}" class="sidebar-menu-list__link">
+                <a href="{{ route('admin.frontend.register.index') }}" class="sidebar-menu-list__link">
                     <span class="icon"> <i class="align-middle" data-feather="sliders"></i> </span>
                     <span class="text"> @lang('Manage Register') </span>
+                </a>
+            </li>
+            <li class="sidebar-menu-list__item ">
+                <a href="{{ route('admin.frontend.login.index') }}" class="sidebar-menu-list__link">
+                    <span class="icon"> <i class="align-middle" data-feather="sliders"></i> </span>
+                    <span class="text"> @lang('Manage Login') </span>
                 </a>
             </li>
 
