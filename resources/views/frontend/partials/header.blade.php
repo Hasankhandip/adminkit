@@ -19,19 +19,19 @@
                   </div>
 
                   <ul class="menu">
-                      <li><a href="{{ route('index') }}">Home</a></li>
+                      <li><a href="{{ route('index') }}">@lang('Home')</a></li>
                       <li>
-                          <a href="{{ route('product.index') }}">Product</a>
+                          <a href="{{ route('product.index') }}">@lang('Product')</a>
                       </li>
 
                       <li>
-                          <a href="{{ route('faq.index') }}">Faq</a>
+                          <a href="{{ route('faq.index') }}">@lang('Faq')</a>
                       </li>
                       <li>
-                          <a href="{{ route('blog.index') }}">Blog</a>
+                          <a href="{{ route('blog.index') }}">@lang('Blog')</a>
                       </li>
                       <li>
-                          <a href="{{ route('contact.index') }}">Contact</a>
+                          <a href="{{ route('contact.index') }}">@lang('Contact')</a>
                       </li>
 
                       <li>
@@ -41,35 +41,35 @@
                                       <img src="https://script.viserlab.com/binaryecom/assets/images/language/668e57c2cdbb11720604610.png"
                                           alt="image" />
                                   </div>
-                                  <span class="text"> English </span>
+                                  <span class="text"> @lang('English') </span>
                               </div>
                               <ul class="dropdown-list">
                                   <li class="dropdown-list__item" data-value="en">
                                       <a class="thumb" href="#">
                                           <img src="https://script.viserlab.com/binaryecom/assets/images/language/668e57c2cdbb11720604610.png"
                                               alt="image" />
-                                          <span class="text"> English </span>
+                                          <span class="text"> @lang('English') </span>
                                       </a>
                                   </li>
                                   <li class="dropdown-list__item" data-value="en">
                                       <a class="thumb" href="#">
                                           <img src="https://script.viserlab.com/binaryecom/assets/images/language/668e57ceca4691720604622.png"
                                               alt="image" />
-                                          <span class="text"> Bangla </span>
+                                          <span class="text"> @lang('Bangla') </span>
                                       </a>
                                   </li>
                                   <li class="dropdown-list__item" data-value="en">
                                       <a class="thumb" href="#">
                                           <img src="https://script.viserlab.com/binaryecom/assets/images/language/668e57e022e811720604640.png"
                                               alt="image" />
-                                          <span class="text"> Turkish </span>
+                                          <span class="text"> @lang('Turkish') </span>
                                       </a>
                                   </li>
                                   <li class="dropdown-list__item" data-value="en">
                                       <a class="thumb" href="#">
                                           <img src="https://script.viserlab.com/binaryecom/assets/images/language/668e57f0d16551720604656.png"
                                               alt="image" />
-                                          <span class="text"> Spanish </span>
+                                          <span class="text"> @lang('Spanish') </span>
                                       </a>
                                   </li>
                               </ul>

@@ -19,7 +19,7 @@ class BrandController extends Controller {
     public function store(Request $request) {
         $request->validate([
             'name'  => 'required|unique:brands,name',
-            'image' => 'nullable|mimes:png,jpg,jpeg',
+            'image' => 'nullable|mimes:png,jpg,jpeg,webp',
         ]);
 
         $brand       = new Brand();
@@ -50,7 +50,7 @@ class BrandController extends Controller {
         $request->validate([
             'name'   => 'required|unique:brands,name,' . $id,
             'status' => 'required|boolean',
-            'image'  => 'nullable|mimes:png,jpg,jpeg',
+            'image'  => 'nullable|mimes:png,jpg,jpeg,webp',
         ]);
 
         $brand       = Brand::findOrFail($id);

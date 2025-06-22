@@ -28,11 +28,11 @@ class ProductController extends Controller {
             'name'            => 'required|unique:products,name',
             'brand_id'        => 'required|exists:brands,id',
             'category_id'     => 'required|exists:categories,id',
-            'thumbnail'       => 'required|image|mimes:jpg,jpeg,png',
+            'thumbnail'       => 'required|image|mimes:jpg,jpeg,png,webp',
             'description'     => 'required|string|max:1000',
             'price'           => 'required|numeric|gt:0',
             'image_gallery'   => 'required|array|min:1',
-            'image_gallery.*' => 'required|image|mimes:jpg,jpeg,png',
+            'image_gallery.*' => 'required|image|mimes:jpg,jpeg,png,webp',
         ]);
 
         $product              = new Product();
@@ -53,8 +53,8 @@ class ProductController extends Controller {
 
         $product->description = $request->description;
         $product->price       = $request->price;
-        $productCode          = max(Product::max('id'), 1) + 1000;
-        $product->code        = $productCode;
+        $latestCode           = Product::max('code') ?? 1000;
+        $product->code        = $latestCode + 1;
         $product->save();
 
         foreach (($request->file('image_gallery') ?? []) as $k => $galleryImage) {
@@ -62,7 +62,7 @@ class ProductController extends Controller {
                 $productImage = new ProductImage();
                 $folderPath   = "assets/images/product/image/";
                 $imageName    = $k . "_" . time() . '.' . $galleryImage->extension();
-                $galleryImage->move(public_path($folderPath), $imageName);
+                $galleryImage->move($folderPath, $imageName);
                 $productImage->product_id = $product->id;
                 $productImage->image      = $imageName;
                 $productImage->save();
@@ -91,7 +91,7 @@ class ProductController extends Controller {
             'price'           => 'required|numeric|min:0',
             'stock'           => 'required|boolean',
             'image_gallery'   => 'array|min:1',
-            'image_gallery.*' => 'nullable|image|mimes:jpg,jpeg,png,PNG,JPG',
+            'image_gallery.*' => 'nullable|image|mimes:jpg,jpeg,png,PNG,JPG,webp',
         ]);
 
         $product              = Product::findOrFail($id);
@@ -140,7 +140,7 @@ class ProductController extends Controller {
         }
         try {
             $folderPath   = "assets/images/product/image/";
-            $oldImagePath = public_path($folderPath . $productImage->image);
+            $oldImagePath = $folderPath . $productImage->image;
             if (file_exists($oldImagePath)) {
                 unlink($oldImagePath);
             }

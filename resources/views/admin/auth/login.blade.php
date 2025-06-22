@@ -7,9 +7,9 @@
                     <div class="d-table-cell align-middle">
 
                         <div class="text-center mt-4">
-                            <h1 class="h2">Welcome back!</h1>
+                            <h1 class="h2">@lang('Welcome back!')</h1>
                             <p class="lead">
-                                Sign in to your account to continue
+                                @lang('Sign in to your account to continue');
                             </p>
                         </div>
                         <div class="card">
@@ -18,12 +18,12 @@
                                     <form action="{{ route('admin.login.attempt') }}" method="POST">
                                         @csrf
                                         <div class="mb-3">
-                                            <label class="form-label">Email</label>
+                                            <label class="form-label">@lang('Email')</label>
                                             <input class="form-control form-control-lg" type="email" name="email"
                                                 placeholder="Enter your email" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Password</label>
+                                            <label class="form-label">@lang('Password')</label>
                                             <input class="form-control form-control-lg" type="password" name="password"
                                                 placeholder="Enter your password" required>
                                         </div>
@@ -32,18 +32,18 @@
                                                 <input id="customControlInline" type="checkbox" class="form-check-input"
                                                     value="remember-me" name="remember-me" checked="">
                                                 <label class="form-check-label text-small"
-                                                    for="customControlInline">Remember me</label>
+                                                    for="customControlInline">@lang('Remember me')</label>
                                             </div>
                                         </div>
                                         <div class="d-grid gap-2 mt-3">
-                                            <button type="submit" class="btn btn-lg btn-primary">Sign in</button>
+                                            <button type="submit" class="btn btn-lg btn-primary">@lang('Sign in')</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="text-center mb-3">
-                            Don't have an account? <a href="pages-sign-up.html">Sign up</a>
+                            @lang("Don't have an account?") <a href="pages-sign-up.html">@lang('Sign up')</a>
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ class FooterController extends Controller {
     }
     public function store(Request $request) {
         $request->validate([
-            'image' => 'nullable|image|mimes:jpg,jpeg,png',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
             'link'  => 'required|string',
             'title' => 'required|string',
         ]);

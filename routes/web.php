@@ -27,12 +27,14 @@ Route::controller(ContactController::class)->prefix('contact')->name('contact.')
     Route::get('/', 'index')->name('index');
 });
 
-Route::controller(LoginController::class)->prefix('login')->name('login.')->group(function () {
-    Route::get('/', 'index')->name('index');
-});
 Route::controller(RegisterController::class)->prefix('register')->name('register.')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::post('/store', 'store')->name('store');
+});
+
+Route::controller(LoginController::class)->prefix('login')->name('login.')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::post('/login/attempt', 'loginAttempt')->name('attempt');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('index');

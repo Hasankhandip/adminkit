@@ -47,7 +47,7 @@ class TestimonialController extends Controller {
 
     public function clientStore(Request $request) {
         $request->validate([
-            'image'       => 'required|image|mimes:png,jpg,jpeg',
+            'image'       => 'required|image|mimes:png,jpg,jpeg,webp',
             'name'        => 'required|string',
             'designation' => 'required|string',
             'description' => 'required|string|max:1000',
@@ -80,7 +80,7 @@ class TestimonialController extends Controller {
 
     public function clientUpdate(Request $request, $id) {
         $request->validate([
-            'image'       => 'nullable|image|mimes:png,jpg,jpeg',
+            'image'       => 'nullable|image|mimes:png,jpg,jpeg,webp',
             'name'        => 'required|string',
             'designation' => 'required|string',
             'description' => 'required|string|max:1000',

@@ -22,7 +22,7 @@ class CategoryController extends Controller {
 
         $request->validate([
             'name'  => 'required|unique:categories,name',
-            'image' => 'required|mimes:png,jpg,jpeg',
+            'image' => 'required|mimes:png,jpg,jpeg,webp',
         ]);
 
         $category       = new Category();
@@ -54,7 +54,7 @@ class CategoryController extends Controller {
         $request->validate([
             'name'   => 'required|unique:categories,name,' . $id,
             'status' => 'required|boolean',
-            'image'  => 'nullable|mimes:png,jpg,jpeg',
+            'image'  => 'nullable|mimes:png,jpg,jpeg,webp',
         ]);
 
         $category = Category::findOrFail($id);

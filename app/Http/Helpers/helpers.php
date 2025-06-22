@@ -4,10 +4,10 @@ function uploadImage($image, $location, $oldImage = null
 ) {
 
     $imageName = time() . '.' . $image->extension();
-    $image->move(public_path($location), $imageName);
+    $image->move($location, $imageName);
 
     if ($oldImage) {
-        $oldImagePath = public_path($location . $oldImage);
+        $oldImagePath = $location . $oldImage;
         if (file_exists($oldImagePath)) {
             unlink($oldImagePath);
         }
@@ -38,4 +38,9 @@ function menuActive($routeName, $param = null, $className = 'active') {
 }
 function generatSlug($slugString) {
     return str()->slug($slugString);
+}
+
+function getImage($path, $fileName) {
+
+    return asset("assets/images/$path/$fileName");
 }

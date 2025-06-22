@@ -22,7 +22,7 @@ class BannerController extends Controller {
             'button_name_two' => 'required|string',
             'button_link_one' => 'required|string',
             'button_link_two' => 'required|string',
-            'image'           => 'nullable|image|mimes:jpg,jpeg,png',
+            'image'           => 'nullable|image|mimes:jpg,jpeg,png,webp',
         ]);
 
         $frontendBanner = FrontendBanner::first();

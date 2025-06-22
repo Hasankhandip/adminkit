@@ -20,7 +20,10 @@ class LoginController extends Controller {
             'password' => 'required|string',
         ]);
 
-        $attempt = auth()->guard('admin')->attempt(['email' => $request->email, 'password' => $request->password]);
+        $attempt = auth()->guard('admin')->attempt([
+            'email'    => $request->email,
+            'password' => $request->password,
+        ]);
         if ($attempt) {
             return to_route('admin.dashboard');
         }

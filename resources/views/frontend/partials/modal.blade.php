@@ -3,7 +3,7 @@
          <div class="modal-content">
              <div class="modal-header">
                  <h5 class="modal-title" id="__modal_title">
-                     Commission to tree info
+                     @lang(' Commission to tree info')
                  </h5>
              </div>
              <div class="modal-body"></div>
@@ -11,7 +11,7 @@
                  <div class="row">
                      <div class="col-lg-12">
                          <button type="button" class="btn btn-dark" id="__modal_close">
-                             Close
+                             @lang(' Close')
                          </button>
                      </div>
                  </div>

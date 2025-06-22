@@ -5,20 +5,19 @@
                   <a class="mr-list__btn active" href="#">All Products</a>
               </li>
               <li class="mr-list__item">
-                  <a class="mr-list__btn" href="#">Mens Fashion</a>
+                  <a class="mr-list__btn" href="#">Men's T-shirt</a>
               </li>
               <li class="mr-list__item">
-                  <a class="mr-list__btn" href="#">Womens Fashion</a>
+                  <a class="mr-list__btn" href="#">Men's Panjabi</a>
               </li>
               <li class="mr-list__item">
-                  <a class="mr-list__btn" href="#">Sports &amp;
-                      Outdor</a>
+                  <a class="mr-list__btn" href="#">Jeans Pant</a>
               </li>
               <li class="mr-list__item">
-                  <a class="mr-list__btn" href="#">Automobile</a>
+                  <a class="mr-list__btn" href="#">Cap</a>
               </li>
               <li class="mr-list__item">
-                  <a class="mr-list__btn" href="#">Home &amp; Audio</a>
+                  <a class="mr-list__btn" href="#">Air Force</a>
               </li>
           </ul>
           <div class="row g-3 justify-content-center">

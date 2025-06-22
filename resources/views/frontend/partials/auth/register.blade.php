@@ -25,7 +25,7 @@
                       <div class="row">
                           <div class="col-md-6">
                               <div class="form--group">
-                                  <label class="form--label">Referral Username</label>
+                                  <label class="form--label">@lang('Referral Username')</label>
                                   <input class="referral form-control form--control" name="referBy" type="text"
                                       placeholder="Enter referral username" required />
                                   <div id="ref"></div>
@@ -34,14 +34,14 @@
                           </div>
                           <div class="col-md-6">
                               <div class="form--group">
-                                  <label class="form--label">Position</label>
+                                  <label class="form--label">@lang('Position')</label>
                                   <select class="position form--control form-select select2" id="position"
                                       name="position" required data-minimum-results-for-search="-1">
                                       <option value="" selected disabled>
-                                          Select position
+                                          @lang('Select position')
                                       </option>
-                                      <option value="1">Left</option>
-                                      <option value="2">Right</option>
+                                      <option value="1">@lang('Left')</option>
+                                      <option value="2">@lang('Right')</option>
                                   </select>
                                   <span id="position-test"><span class="text--danger"></span></span>
                               </div>
@@ -51,14 +51,14 @@
                       <div class="row">
                           <div class="col-lg-6">
                               <div class="form--group">
-                                  <label class="form--label">First Name</label>
+                                  <label class="form--label">@lang('First Name')</label>
                                   <input class="form-control form--control" name="firstname" type="text"
                                       value="" required placeholder="Enter Your First Name" />
                               </div>
                           </div>
                           <div class="col-lg-6">
                               <div class="form--group">
-                                  <label class="form--label">Last Name</label>
+                                  <label class="form--label">@lang('Last Name')</label>
                                   <input class="form-control form--control" name="lastname" type="text"
                                       value="" required placeholder="Enter Your Last Name" />
                               </div>
@@ -68,7 +68,7 @@
                       <div class="row">
                           <div class="col-lg-12">
                               <div class="form--group">
-                                  <label class="form--label">Email</label>
+                                  <label class="form--label">@lang('Email')</label>
                                   <input class="form-control form--control checkUser" name="email" type="email"
                                       required placeholder="Enter Your Email" />
                               </div>
@@ -78,14 +78,14 @@
                       <div class="row">
                           <div class="col-lg-6">
                               <div class="form--group hover-input-popup">
-                                  <label class="form--label">Password</label>
+                                  <label class="form--label">@lang('Password')</label>
                                   <input class="form-control form--control" name="password" type="password" required
                                       placeholder="Enter Password" />
                               </div>
                           </div>
                           <div class="col-lg-6">
                               <div class="form--group">
-                                  <label class="form--label">Re-Password</label>
+                                  <label class="form--label">@lang('Re-Password')</label>
                                   <input class="form-control form--control" name="password_confirmation" type="password"
                                       required placeholder="Confirm Password" />
                               </div>
@@ -101,29 +101,29 @@
 
                       <div class="form-group">
                           <input id="agree" name="agree" type="checkbox" required />
-                          <label for="agree">I agree with</label>
+                          <label for="agree">@lang('I agree with')</label>
                           <a class="text-primary"
                               href="https://script.viserlab.com/binaryecom/policy/privacy-and-policies"
-                              target="_blank">Privacy and Policies</a>
+                              target="_blank">@lang('Privacy and Policies')</a>
                           ,
                           <a class="text-primary"
                               href="https://script.viserlab.com/binaryecom/policy/terms-and-condition"
-                              target="_blank">Terms and Condition</a>
+                              target="_blank">@lang('Terms and Condition')</a>
                           ,
                           <a class="text-primary" href="https://script.viserlab.com/binaryecom/policy/refund-policy"
-                              target="_blank">Refund Policy</a>
+                              target="_blank">@lang('Refund Policy')</a>
                           ,
                           <a class="text-primary"
                               href="https://script.viserlab.com/binaryecom/policy/commission-policy"
-                              target="_blank">Commission Policy</a>
+                              target="_blank">@lang('Commission Policy')</a>
                       </div>
 
                       <div class="form--group button-wrapper">
                           <button class="account--btn" type="submit">
-                              Create Account
+                              @lang('Create Account')
                           </button>
-                          <a class="custom--btn" href="{{ route('login.index') }}"><span>Login
-                                  Account</span></a>
+                          <a class="custom--btn" href="{{ route('login.index') }}"><span>@lang('Login
+                                  Account')</span></a>
                       </div>
                   </form>
               </div>

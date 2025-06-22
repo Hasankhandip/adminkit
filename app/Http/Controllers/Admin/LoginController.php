@@ -19,7 +19,7 @@ class LoginController extends Controller {
             'subtitle' => 'required|string',
             'title'    => 'required|string',
             'info'     => 'required|string',
-            'thumb'    => 'nullable|mimes:png,jpg,jpeg',
+            'thumb'    => 'nullable|mimes:png,jpg,jpeg,webp',
         ]);
 
         $loginContent = LoginItem::first();

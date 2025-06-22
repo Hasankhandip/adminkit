@@ -20,7 +20,7 @@ class BlogController extends Controller {
 
     public function store(Request $request) {
         $request->validate([
-            'image'       => 'required|image|mimes:png,jpg,jpeg',
+            'image'       => 'required|image|mimes:png,jpg,jpeg,webp',
             'date'        => 'required|string',
             'month'       => 'required|string',
             'year'        => 'required|string',
@@ -62,7 +62,7 @@ class BlogController extends Controller {
 
     public function update(Request $request, $id) {
         $request->validate([
-            'image'       => 'nullable|image|mimes:png,jpg,jpeg',
+            'image'       => 'nullable|image|mimes:png,jpg,jpeg,webp',
             'date'        => 'required|string',
             'month'       => 'required|string',
             'year'        => 'required|string',

@@ -3,7 +3,7 @@
           <div class="row">
               <div class="col-lg-6 d-none d-lg-block">
                   <div class="contact-thumb rtl">
-                      <img src="{{ asset('assets/images/contact/thumb/' . $contactContent->image) }}" alt="thumb" />
+                      <img src="{{ getImage('contact/thumb/', $contactContent->image) }}" />
                   </div>
               </div>
               <div class="col-lg-6">

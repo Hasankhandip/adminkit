@@ -44,7 +44,7 @@ class TeamController extends Controller {
     }
     public function itemStore(Request $request) {
         $request->validate([
-            'image'         => 'required|image|mimes:png,jpg,jpeg',
+            'image'         => 'required|image|mimes:png,jpg,jpeg,webp',
             'name'          => 'required|string',
             'designation'   => 'required|string',
             'telegram_link' => 'required|string',
@@ -83,7 +83,7 @@ class TeamController extends Controller {
 
     public function itemUpdate(Request $request, $id) {
         $request->validate([
-            'image'         => 'nullable|image|mimes:png,jpg,jpeg',
+            'image'         => 'nullable|image|mimes:png,jpg,jpeg,webp',
             'name'          => 'required|string',
             'designation'   => 'required|string',
             'telegram_link' => 'required|string',

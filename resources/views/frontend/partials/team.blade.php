@@ -1,3 +1,8 @@
+@php
+    $teamContent = App\Models\Frontend\FrontendTeam::first();
+    $teamItemContents = App\Models\Frontend\FrontendTeamItem::first();
+@endphp
+
 <section class="team-section padding-bottom pos-rel">
     <div class="container">
         <div class="row justify-content-center">
@@ -13,7 +18,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="team-item">
                         <div class="team-thumb">
-                            <img src="{{ asset('assets/images/frontend/team/images/' . $teamItem->image) }}" />
+                            <img src="{{ getImage('frontend/team/images/', $teamItem->image) }}" />
                         </div>
                         <div class="team-content">
                             <h4 class="name">{{ $teamItem->name }}</h4>

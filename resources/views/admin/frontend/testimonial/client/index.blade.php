@@ -1,3 +1,6 @@
+@php
+    $testimonialClientContents = App\Models\Frontend\FrontendTestimonialClient::first();
+@endphp
 @extends('admin.layouts.app')
 @section('content')
     <div class="d-flex justify-content-between mb-4 flex-wrap  gap-2">

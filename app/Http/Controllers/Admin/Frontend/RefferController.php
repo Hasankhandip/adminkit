@@ -18,7 +18,7 @@ class RefferController extends Controller {
             'description' => 'required|string|max:1000',
             'button_name' => 'required|string',
             'button_link' => 'required|string',
-            'image'       => 'nullable|image|mimes:jpg,jpeg,png',
+            'image'       => 'nullable|image|mimes:jpg,jpeg,png,webp',
         ]);
 
         $refferContent = FrontendReffer::first();

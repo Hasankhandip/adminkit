@@ -3,7 +3,10 @@ namespace App\Http\Controllers\Frontend\User\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\RegisterItem;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller {
     public function index() {
@@ -14,24 +17,24 @@ class RegisterController extends Controller {
 
     public function store(Request $request) {
         $request->validate([
-            'referBy'   => 'required|string',
-            'position'  => 'required|integer|in:1,2',
             'firstname' => 'required|string',
             'lastname'  => 'required|string',
             'email'     => 'required|string',
             'password'  => 'required|string',
         ]);
 
-        $registerForm            = new RegisterItem();
-        $registerForm->referBy   = $request->referBy;
-        $registerForm->position  = $request->position;
-        $registerForm->firstname = $request->firstname;
-        $registerForm->lastname  = $request->lastname;
-        $registerForm->email     = $request->email;
-        $registerForm->password  = $request->password;
+        $user            = new User();
+        $user->firstname = $request->firstname;
+        $user->lastname  = $request->lastname;
+        $user->email     = $request->email;
+        $user->password  = Hash::make($request->password);
+        $user->save();
 
-        $registerForm->save();
+        Auth::guard('web')->login($user);
 
-        return to_route('index');
+        if (Auth::guard('web')->check()) {
+            return to_route('index');
+        }
+        return to_route('login.index');
     }
 }

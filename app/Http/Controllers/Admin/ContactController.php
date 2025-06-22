@@ -17,7 +17,7 @@ class ContactController extends Controller {
     public function store(Request $request) {
         $request->validate([
             'title' => 'required|string',
-            'image' => 'nullable|mimes:png,jpg,jpeg',
+            'image' => 'nullable|mimes:png,jpg,jpeg,webp',
         ]);
 
         $contactContent = Contact::first();

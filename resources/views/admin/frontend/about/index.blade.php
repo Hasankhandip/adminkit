@@ -10,18 +10,18 @@
                     <form action="{{ route('admin.frontend.about.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label">@lang('About Subtitle')</label>
-                            <input type="text" class="form-control" required name="subtitle"
-                                value="{{ @$aboutContent->subtitle }}" placeholder="@lang('Enter subtitle')">
-                            @error('subtitle')
-                                <p class="text-danger pt-2">{{ __($message) }}</p>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label">@lang('About Title')</label>
                             <input type="text" class="form-control" required name="title"
                                 value="{{ @$aboutContent->title }}" placeholder="@lang('Enter title')">
                             @error('title')
+                                <p class="text-danger pt-2">{{ __($message) }}</p>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">@lang('About Subtitle')</label>
+                            <input type="text" class="form-control" required name="subtitle"
+                                value="{{ @$aboutContent->subtitle }}" placeholder="@lang('Enter subtitle')">
+                            @error('subtitle')
                                 <p class="text-danger pt-2">{{ __($message) }}</p>
                             @enderror
                         </div>
