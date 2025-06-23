@@ -16,8 +16,13 @@ class ProductController extends Controller {
         $products = $productQuery->paginate(8);
         return view('frontend.product.index', compact('pageTitle', 'products', 'categories'));
     }
-    public function details() {
+    public function details($id) {
         $pageTitle = "Product Details";
-        return view('frontend.product.details', compact('pageTitle'));
+        $product   = Product::with('category', 'brand')->findOrFail($id);
+        $products  = Product::where('category_id', $product->category_id)
+            ->where('id', '!=', $product->id)
+            ->orderBy('created_at', 'desc')
+            ->paginate(8);
+        return view('frontend.product.details', compact('pageTitle', 'product', 'products'));
     }
 }

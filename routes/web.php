@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(ProductController::class)->prefix('product')->name('product.')->group(function () {
     Route::get('/list/{categoryId?}', 'index')->name('index');
-    Route::get('/details', 'details')->name('details');
+    Route::get('/details/{id}', 'details')->name('details');
 });
 
 Route::controller(BlogController::class)->prefix('blog')->name('blog.')->group(function () {

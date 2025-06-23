@@ -12,7 +12,7 @@
             </div>
             <div class="product-content">
                 <h6 class="product-title">
-                    <a href="{{ route('product.details') }}">{{ __($product->name) }}</a>
+                    <a href="{{ route('product.details', $product->id) }}">{{ __($product->name) }}</a>
                 </h6>
                 @if ($product->stock)
                     <span class="product-availablity text--success">@lang('in stock')</span>
@@ -22,7 +22,8 @@
                 <div class="product-price">
                     <span class="current-price">${{ printNumber(__($product->price)) }}</span>
                 </div>
-                <a class="add-to-cart cmn--btn-2" href="{{ route('product.details') }}">@lang('Details')</a>
+                <a class="add-to-cart cmn--btn-2"
+                    href="{{ route('product.details', $product->id) }}">@lang('Details')</a>
             </div>
         </div>
     </div>
