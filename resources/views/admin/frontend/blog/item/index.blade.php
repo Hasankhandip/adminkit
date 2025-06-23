@@ -25,8 +25,7 @@
                             <tr>
                                 <td>
                                     <img class="card-item-img"
-                                        src="{{ asset('assets/images/frontend/blog/item/images/' . $blogItem->image) }}"
-                                        alt="">
+                                        src="{{ getImage('frontend/blog/item/images/', $blogItem->image) }}" alt="">
                                 </td>
                                 <td>{{ __($blogItem->date) }}.{{ __($blogItem->month) }}.{{ __($blogItem->year) }}</td>
                                 <td>{{ __($blogItem->title) }}</td>

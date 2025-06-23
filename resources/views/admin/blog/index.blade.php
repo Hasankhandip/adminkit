@@ -1,7 +1,3 @@
-@php
-    $blogContents = App\Models\Frontend\FrontendBlogItem::first();
-@endphp
-
 @extends('admin.layouts.app')
 @section('content')
     <div class="d-flex justify-content-between mb-4 flex-wrap  gap-2">
@@ -28,8 +24,8 @@
                         @forelse ($blogContents as $blogItem)
                             <tr>
                                 <td>
-                                    <img class="card-item-img"
-                                        src="{{ asset('assets/images/blog/image/' . $blogItem->image) }}" alt="">
+                                    <img class="card-item-img" src="{{ getImage('blog/image/', $blogItem->image) }}"
+                                        alt="">
                                 </td>
                                 <td>{{ __($blogItem->date) }}.{{ __($blogItem->month) }}.{{ __($blogItem->year) }}</td>
                                 <td>{{ __($blogItem->title) }}</td>

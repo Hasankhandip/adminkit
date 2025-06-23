@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FaqController;
@@ -10,7 +9,7 @@ use App\Http\Controllers\Frontend\User\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(ProductController::class)->prefix('product')->name('product.')->group(function () {
-    Route::get('/', 'index')->name('index');
+    Route::get('/list/{categoryId?}', 'index')->name('index');
     Route::get('/details', 'details')->name('details');
 });
 

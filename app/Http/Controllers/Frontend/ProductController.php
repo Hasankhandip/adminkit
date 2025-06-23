@@ -2,27 +2,22 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Frontend\FrontendFooter;
-use App\Models\Frontend\FrontendFooterContact;
-use App\Models\Frontend\FrontendFooterSocial;
+use App\Models\Category;
 use App\Models\Product;
 
 class ProductController extends Controller {
-    public function index() {
-        $headTitle             = "BinaryEcom - Product";
-        $innerTitle            = "Products";
-        $products              = Product::orderBy('id', 'asc')->get();
-        $footerContent         = FrontendFooter::first();
-        $footerContactContents = FrontendFooterContact::first();
-        $footerSocial          = FrontendFooterSocial::first();
-        return view('frontend.product.index', compact('headTitle', 'innerTitle', 'products', 'footerContent', 'footerContactContents', 'footerSocial'));
+    public function index($categid = 0) {
+        $pageTitle    = "Products";
+        $categories   = Category::where('status', 1)->get();
+        $productQuery = Product::orderBy('id', 'desc');
+        if ($categid) {
+            $products = $productQuery->where('category_id', $categid)->paginate(8);
+        }
+        $products = $productQuery->paginate(8);
+        return view('frontend.product.index', compact('pageTitle', 'products', 'categories'));
     }
     public function details() {
-        $headTitle             = "BinaryEcom - Product Details";
-        $innerTitle            = "Product Details";
-        $footerContent         = FrontendFooter::first();
-        $footerContactContents = FrontendFooterContact::first();
-        $footerSocial          = FrontendFooterSocial::first();
-        return view('frontend.product.details', compact('headTitle', 'innerTitle', 'footerContent', 'footerContactContents', 'footerSocial'));
+        $pageTitle = "Product Details";
+        return view('frontend.product.details', compact('pageTitle'));
     }
 }

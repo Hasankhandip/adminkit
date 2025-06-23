@@ -11,7 +11,7 @@
                 <div class="col-lg-4 col-xl-3 col-sm-6">
                     <div class="footer-widget p-0">
                         <div class="logo">
-                            <a href="{{ route('index') }}"><img
+                            <a href="{{ route($footerContent->link) }}"><img
                                     src="{{ getImage('frontend/footer/image/', $footerContent->image) }}"
                                     alt="logo" /></a>
                         </div>
@@ -22,50 +22,52 @@
                 </div>
                 <div class="col-lg-2 col-xl-3 col-sm-6">
                     <div class="footer-widget">
-                        <h4 class="widget-title">Quick Links</h4>
+                        <h4 class="widget-title">@lang('Quick Links')</h4>
                         <ul class="footer-links">
                             <li>
-                                <a href="{{ route('index') }}"><i class="las la-angle-double-right"></i>Home</a>
+                                <a href="{{ route('index') }}"><i
+                                        class="las la-angle-double-right"></i>@lang('Home')</a>
                             </li>
                             <li>
                                 <a href="{{ route('product.index') }}"><i
-                                        class="las la-angle-double-right"></i>Products</a>
+                                        class="las la-angle-double-right"></i>@lang('Products')</a>
                             </li>
                             <li>
-                                <a href="{{ route('blog.index') }}"><i class="las la-angle-double-right"></i>Blog</a>
+                                <a href="{{ route('blog.index') }}"><i
+                                        class="las la-angle-double-right"></i>@lang('Blog')</a>
                             </li>
                             <li>
                                 <a href="{{ route('contact.index') }}"><i
-                                        class="las la-angle-double-right"></i>Contact</a>
+                                        class="las la-angle-double-right"></i>@lang('Contact')</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-xl-3 col-sm-6">
                     <div class="footer-widget">
-                        <h4 class="widget-title">Policy Links</h4>
+                        <h4 class="widget-title">@lang('Policy Links')</h4>
                         <ul class="footer-links">
                             <li>
-                                <a href="#"><i class="las la-angle-double-right"></i>Privacy and
-                                    Policies</a>
+                                <a href="#"><i class="las la-angle-double-right"></i>@lang('Privacy and
+                                                                    Policies')</a>
                             </li>
                             <li>
-                                <a href="#"><i class="las la-angle-double-right"></i>Terms and
-                                    Condition</a>
+                                <a href="#"><i class="las la-angle-double-right"></i>@lang('Terms and
+                                                                    Condition')</a>
                             </li>
                             <li>
-                                <a href="#"><i class="las la-angle-double-right"></i>Refund Policy</a>
+                                <a href="#"><i class="las la-angle-double-right"></i>@lang('Refund Policy')</a>
                             </li>
                             <li>
-                                <a href="#"><i class="las la-angle-double-right"></i>Commission
-                                    Policy</a>
+                                <a href="#"><i class="las la-angle-double-right"></i>@lang('Commission
+                                                                    Policy')</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-xl-3 col-sm-6">
                     <div class="footer-widget">
-                        <h4 class="widget-title">Contact</h4>
+                        <h4 class="widget-title">@lang('Contact')</h4>
                         <ul class="footer-info">
                             <li>
                                 <p>
@@ -90,8 +92,8 @@
         <div class="container">
             <div class="footer-bottom-wrapper">
                 <p class="copy-text">
-                    &copy; All Right Reserved By
-                    <a href="{{ route('index') }}">BinaryEcom</a>
+                    &copy; @lang('All Right Reserved By')
+                    <a href="{{ route('index') }}">@lang('BinaryEcom')</a>
                 </p>
                 <ul class="social-icons">
                     <li>

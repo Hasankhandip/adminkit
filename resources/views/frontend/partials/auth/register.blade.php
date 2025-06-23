@@ -2,12 +2,12 @@
       <div class="row g-0">
           <div class="col-md-6 col-xl-7 col-lg-6">
               <div class="account-thumb">
-                  <img src="{{ asset('assets/images/register/thumb/' . $registerContent->thumb) }}" alt="thumb" />
+                  <img src="{{ getImage('register/thumb/', $registerContent->thumb) }}" alt="thumb" />
                   <div class="account-thumb-content">
-                      <p class="welc">{{ $registerContent->subtitle }}</p>
-                      <h3 class="title">{{ $registerContent->title }}</h3>
+                      <p class="welc">{{ __($registerContent->subtitle) }}</p>
+                      <h3 class="title">{{ __($registerContent->title) }}</h3>
                       <p class="info">
-                          {{ $registerContent->info }}
+                          {{ __($registerContent->info) }}
                       </p>
                   </div>
               </div>
@@ -27,7 +27,7 @@
                               <div class="form--group">
                                   <label class="form--label">@lang('Referral Username')</label>
                                   <input class="referral form-control form--control" name="referBy" type="text"
-                                      placeholder="Enter referral username" required />
+                                      placeholder="@lang('Enter referral username')" required />
                                   <div id="ref"></div>
                                   <span id="referral"></span>
                               </div>
@@ -52,15 +52,15 @@
                           <div class="col-lg-6">
                               <div class="form--group">
                                   <label class="form--label">@lang('First Name')</label>
-                                  <input class="form-control form--control" name="firstname" type="text"
-                                      value="" required placeholder="Enter Your First Name" />
+                                  <input class="form-control form--control" name="firstname" type="text" required
+                                      placeholder="@lang('Enter Your First Name')" />
                               </div>
                           </div>
                           <div class="col-lg-6">
                               <div class="form--group">
                                   <label class="form--label">@lang('Last Name')</label>
-                                  <input class="form-control form--control" name="lastname" type="text"
-                                      value="" required placeholder="Enter Your Last Name" />
+                                  <input class="form-control form--control" name="lastname" type="text" required
+                                      placeholder="@lang('Enter Your Last Name')" />
                               </div>
                           </div>
                       </div>
@@ -70,7 +70,7 @@
                               <div class="form--group">
                                   <label class="form--label">@lang('Email')</label>
                                   <input class="form-control form--control checkUser" name="email" type="email"
-                                      required placeholder="Enter Your Email" />
+                                      required placeholder="@lang('Enter Your Email')" />
                               </div>
                           </div>
                       </div>
@@ -80,14 +80,14 @@
                               <div class="form--group hover-input-popup">
                                   <label class="form--label">@lang('Password')</label>
                                   <input class="form-control form--control" name="password" type="password" required
-                                      placeholder="Enter Password" />
+                                      placeholder="@lang('Enter Password')" />
                               </div>
                           </div>
                           <div class="col-lg-6">
                               <div class="form--group">
                                   <label class="form--label">@lang('Re-Password')</label>
                                   <input class="form-control form--control" name="password_confirmation" type="password"
-                                      required placeholder="Confirm Password" />
+                                      required placeholder="@lang('Confirm Password')" />
                               </div>
                           </div>
                       </div>
@@ -113,8 +113,7 @@
                           <a class="text-primary" href="https://script.viserlab.com/binaryecom/policy/refund-policy"
                               target="_blank">@lang('Refund Policy')</a>
                           ,
-                          <a class="text-primary"
-                              href="https://script.viserlab.com/binaryecom/policy/commission-policy"
+                          <a class="text-primary" href="https://script.viserlab.com/binaryecom/policy/commission-policy"
                               target="_blank">@lang('Commission Policy')</a>
                       </div>
 
@@ -123,7 +122,7 @@
                               @lang('Create Account')
                           </button>
                           <a class="custom--btn" href="{{ route('login.index') }}"><span>@lang('Login
-                                  Account')</span></a>
+                                                                                                                Account')</span></a>
                       </div>
                   </form>
               </div>

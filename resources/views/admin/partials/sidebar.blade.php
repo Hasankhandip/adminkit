@@ -86,63 +86,8 @@
                             </div>
                         </li>
 
-                        <li class="sidebar-menu-list__item-two has-dropdown-two">
-                            <a href="javascript:void(0)" class="sidebar-menu-list__link">
-                                <span class="icon">
-                                    <i class="align-middle" data-feather="sliders"></i>
-                                </span>
-                                <span class="text"> @lang('Pricing') </span>
-                            </a>
-                            <div class="sidebar-submenu__two">
-                                <ul class="sidebar-submenu-list ">
 
-                                    <li class="sidebar-submenu-list__item ">
-                                        <a class="sidebar-submenu-list__link"
-                                            href="{{ route('admin.frontend.pricing.index') }}">
-                                            @lang('Pricing Content')
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-submenu-list__item ">
-                                        <a class="sidebar-submenu-list__link"
-                                            href="{{ route('admin.frontend.pricing.item.index') }}">
-                                            @lang('Pricing Item')
-                                        </a>
-                                    </li>
 
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="sidebar-submenu-list__item ">
-                            <a class="sidebar-submenu-list__link" href="{{ route('admin.frontend.reffer.index') }}">
-                                @lang('Reffer Content')
-                            </a>
-                        </li>
-
-                        <li class="sidebar-menu-list__item-two has-dropdown-two">
-                            <a href="javascript:void(0)" class="sidebar-menu-list__link">
-                                <span class="icon">
-                                    <i class="align-middle" data-feather="sliders"></i>
-                                </span>
-                                <span class="text"> @lang('Team') </span>
-                            </a>
-                            <div class="sidebar-submenu__two">
-                                <ul class="sidebar-submenu-list ">
-                                    <li class="sidebar-submenu-list__item ">
-                                        <a class="sidebar-submenu-list__link"
-                                            href="{{ route('admin.frontend.team.index') }}">
-                                            @lang('Team Content')
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-submenu-list__item ">
-                                        <a class="sidebar-submenu-list__link"
-                                            href="{{ route('admin.frontend.team.item.index') }}">
-                                            @lang('Team Member')
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
 
 
 
@@ -166,30 +111,7 @@
                         </li>
 
 
-                        <li class="sidebar-menu-list__item-two has-dropdown-two">
-                            <a href="javascript:void(0)" class="sidebar-menu-list__link">
-                                <span class="icon">
-                                    <i class="align-middle" data-feather="sliders"></i>
-                                </span>
-                                <span class="text"> @lang('Testimonial') </span>
-                            </a>
-                            <div class="sidebar-submenu__two">
-                                <ul class="sidebar-submenu-list ">
-                                    <li class="sidebar-submenu-list__item ">
-                                        <a class="sidebar-submenu-list__link"
-                                            href="{{ route('admin.frontend.testimonial.index') }}">
-                                            @lang('Testimonial Content')
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-submenu-list__item ">
-                                        <a class="sidebar-submenu-list__link"
-                                            href="{{ route('admin.frontend.testimonial.client.index') }}">
-                                            @lang('Testimonial Item')
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+
 
 
                         <li class="sidebar-menu-list__item-two has-dropdown-two">

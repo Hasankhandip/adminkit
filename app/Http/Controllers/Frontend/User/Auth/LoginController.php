@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller {
     public function index() {
-        $headTitle    = "BinaryEcom - Login";
+        $pageTitle    = "Login";
         $loginContent = LoginItem::first();
-        return view('frontend.auth.login', compact('headTitle', 'loginContent'));
+        return view('frontend.auth.login', compact('pageTitle', 'loginContent'));
     }
 
     public function loginAttempt(Request $request) {

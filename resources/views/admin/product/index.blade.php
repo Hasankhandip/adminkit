@@ -26,8 +26,7 @@
                                     <div class="user user-2">
                                         <div class="user-thumb">
                                             <img class="card-item-img"
-                                                src="{{ asset('assets/images/product/thumb/' . $product->thumbnail) }}"
-                                                alt="">
+                                                src="{{ getImage('product/thumb/', $product->thumbnail) }}" alt="">
                                         </div>
                                         <span class="user-name">{{ __($product->name) }}</span>
                                     </div>

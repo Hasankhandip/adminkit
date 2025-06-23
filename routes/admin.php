@@ -11,12 +11,8 @@ use App\Http\Controllers\Admin\Frontend\AboutController;
 use App\Http\Controllers\Admin\Frontend\BannerController;
 use App\Http\Controllers\Admin\Frontend\BlogController;
 use App\Http\Controllers\Admin\Frontend\FooterController;
-use App\Http\Controllers\Admin\Frontend\PricingController;
 use App\Http\Controllers\Admin\Frontend\ProductController;
-use App\Http\Controllers\Admin\Frontend\RefferController;
 use App\Http\Controllers\Admin\Frontend\ServiceController;
-use App\Http\Controllers\Admin\Frontend\TeamController;
-use App\Http\Controllers\Admin\Frontend\TestimonialController;
 use App\Http\Controllers\Admin\Frontend\WorkController;
 use App\Http\Controllers\Admin\LoginController as AdminLoginController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
@@ -83,56 +79,9 @@ Route::middleware('has.admin')->group(function () {
             Route::get('delete/{id}', "itemDelete")->name('delete');
         });
 
-        Route::controller(PricingController::class)->prefix('pricing')->name('pricing.')->group(function () {
-            Route::get('/', "index")->name('index');
-            Route::post('store', "store")->name('store');
-        });
-
-        Route::controller(PricingController::class)->prefix('pricing/item')->name('pricing.item.')->group(function () {
-            Route::get('/', "itemIndex")->name('index');
-            Route::get('create', "itemCreate")->name('create');
-            Route::post('store', "itemStore")->name('store');
-            Route::get('edit/{id}', "itemEdit")->name('edit');
-            Route::post('update/{id}', "itemUpdate")->name('update');
-            Route::get('delete/{id}', "itemDelete")->name('delete');
-        });
-
-        Route::controller(RefferController::class)->prefix('reffer')->name('reffer.')->group(function () {
-            Route::get('/', "index")->name('index');
-            Route::post('store', "store")->name('store');
-        });
-
-        Route::controller(TeamController::class)->prefix('team')->name('team.')->group(function () {
-            Route::get('/', "index")->name('index');
-            Route::post('store', "store")->name('store');
-        });
-
-        Route::controller(TeamController::class)->prefix('team/item')->name('team.item.')->group(function () {
-            Route::get('/', "itemIndex")->name('index');
-            Route::get('create', "itemCreate")->name('create');
-            Route::post('store', "itemStore")->name('store');
-            Route::get('edit/{id}', "itemEdit")->name('edit');
-            Route::post('update/{id}', "itemUpdate")->name('update');
-            Route::get('delete/{id}', "itemDelete")->name('delete');
-        });
-
         Route::controller(ProductController::class)->prefix('product')->name('product.')->group(function () {
             Route::get('/', "index")->name('index');
             Route::post('store', "store")->name('store');
-        });
-
-        Route::controller(TestimonialController::class)->prefix('testimonial')->name('testimonial.')->group(function () {
-            Route::get('/', "index")->name('index');
-            Route::post('store', "store")->name('store');
-        });
-
-        Route::controller(TestimonialController::class)->prefix('testimonial/client')->name('testimonial.client.')->group(function () {
-            Route::get('/', "clientIndex")->name('index');
-            Route::get('create', "clientCreate")->name('create');
-            Route::post('store', "clientStore")->name('store');
-            Route::get('edit/{id}', "clientEdit")->name('edit');
-            Route::post('update/{id}', "clientUpdate")->name('update');
-            Route::get('delete/{id}', "clientDelete")->name('delete');
         });
 
         Route::controller(BlogController::class)->prefix('blog')->name('blog.')->group(function () {

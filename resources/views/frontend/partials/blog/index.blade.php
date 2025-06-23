@@ -1,8 +1,3 @@
-@php
-    $blogContents = App\Models\Frontend\FrontendBlogItem::first();
-@endphp
-
-
 <section class="blog-section padding-bottom padding-top">
     <div class="container">
         <div class="row justify-content-center gy-4">
@@ -11,20 +6,22 @@
                 <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="post-item h-100">
                         <div class="post-thumb">
-                            <img src="{{ asset('assets/images/blog/image/' . $blogItem->image) }}" alt="blog" />
+                            <img src="{{ getImage('blog/image/', $blogItem->image) }}" alt="blog" />
+
                             <div class="meta-date">
-                                <span class="date">{{ $blogItem->date }}.{{ $blogItem->month }}</span>
-                                <span>{{ $blogItem->year }}</span>
+                                <span class="date">{{ __($blogItem->date) }}.{{ __($blogItem->month) }}</span>
+                                <span>{{ __($blogItem->year) }}</span>
                             </div>
                         </div>
                         <div class="post-content">
                             <h4 class="title">
-                                <a href="{{ $blogItem->blog_link }}">{{ $blogItem->title }}</a>
+                                <a href="{{ __($blogItem->blog_link) }}">{{ __($blogItem->title) }}</a>
                             </h4>
                             <p>
-                                {{ $blogItem->description }}
+                                {{ __($blogItem->description) }}
                             </p>
-                            <a href="{{ $blogItem->button_link }}" class="read-more"> {{ $blogItem->button_name }}</a>
+                            <a href="{{ __($blogItem->button_link) }}" class="read-more">
+                                {{ __($blogItem->button_name) }}</a>
                         </div>
                     </div>
                 </div>

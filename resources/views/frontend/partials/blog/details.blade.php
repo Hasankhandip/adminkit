@@ -8,7 +8,7 @@
                             alt="blog" />
                     </div>
                     <h3 class="title">
-                        How to Maximize Your Earnings Through Referrals
+                        @lang('How to Maximize Your Earnings Through Referrals')
                     </h3>
                     <div>
                         <div style="text-align: justify">
@@ -25,13 +25,13 @@
                       font-family: 'Open Sans', Arial, sans-serif;
                     ">
                                 <span style="color: rgb(70, 73, 70); font-family: Inter, serif">
-                                    Referral programs are a powerful way to generate passive
-                                    income, grow your business, or earn rewards simply by
-                                    sharing services or products you love. Whether you're part
-                                    of an affiliate marketing program, a referral-based
-                                    business, or simply want to make the most of referral
-                                    opportunities, these strategies will help you maximize
-                                    your earnings.
+                                    @lang(" Referral programs are a powerful way to generate passive
+                                                                        income, grow your business, or earn rewards simply by
+                                                                        sharing services or products you love. Whether you're part
+                                                                        of an affiliate marketing program, a referral-based
+                                                                        business, or simply want to make the most of referral
+                                                                        opportunities, these strategies will help you maximize
+                                                                        your earnings.")
                                 </span>
                                 <br
                                     style="
@@ -57,7 +57,7 @@
                       font-size: 1.25rem;
                       font-family: Inter, serif;
                     ">
-                                Choose the Right Referral Program
+                                @lang('Choose the Right Referral Program')
                             </h5>
                             <div
                                 style="
@@ -66,20 +66,20 @@
                       color: rgb(70, 73, 70);
                       font-family: Inter, serif;
                     ">
-                                There are Choosing the right referral program is crucial.
-                                Not all programs are created equal, so consider the
-                                commission structure, relevance to your audience, and ease
-                                of use. High commissions, recurring payments, and
-                                user-friendly dashboards can make a significant difference
-                                in your success. Leveraging social media and content
-                                marketing can boost your referrals. Creating valuable
-                                content such as blog posts, videos, or infographics that
-                                explain the benefits of the product or service can help
-                                drive engagement. Using multiple channels like Facebook,
-                                Instagram, Twitter, LinkedIn, and TikTok expands your reach.
-                                Engaging with your audience by answering questions,
-                                providing testimonials, and sharing personal experiences
-                                builds trust and encourages conversions.<br style="margin: 0px; padding: 0px" />
+                                @lang('There are Choosing the right referral program is crucial.
+                                                                Not all programs are created equal, so consider the
+                                                                commission structure, relevance to your audience, and ease
+                                                                of use. High commissions, recurring payments, and
+                                                                user-friendly dashboards can make a significant difference
+                                                                in your success. Leveraging social media and content
+                                                                marketing can boost your referrals. Creating valuable
+                                                                content such as blog posts, videos, or infographics that
+                                                                explain the benefits of the product or service can help
+                                                                drive engagement. Using multiple channels like Facebook,
+                                                                Instagram, Twitter, LinkedIn, and TikTok expands your reach.
+                                                                Engaging with your audience by answering questions,
+                                                                providing testimonials, and sharing personal experiences
+                                                                builds trust and encourages conversions.')<br style="margin: 0px; padding: 0px" />
                             </div>
                             <div
                                 style="
@@ -99,7 +99,7 @@
                       font-size: 1.25rem;
                       font-family: Inter, serif;
                     ">
-                                Offer Incentives
+                                @lang('Offer Incentives')
                             </h5>
                             <div
                                 style="
@@ -108,21 +108,21 @@
                       color: rgb(70, 73, 70);
                       font-family: Inter, serif;
                     ">
-                                Offering incentives encourages more people to use your
-                                referral link. Providing bonuses such as discounts or extra
-                                perks makes referrals more appealing. Running giveaways
-                                where participants must use your referral link to enter
-                                creates excitement. Setting up loyalty rewards for frequent
-                                referrals ensures long-term engagement and sustained
-                                earnings. Networking and building relationships can
-                                significantly expand your referral network. Joining online
-                                communities like forums, Facebook groups, and niche-specific
-                                networks helps connect with potential referrals.
-                                Collaborating with influencers who can promote your referral
-                                links to their audience increases credibility. Attending
-                                events such as conferences, webinars, and meetups provides
-                                opportunities to introduce people to the referral program in
-                                a more personal way.
+                                @lang('Offering incentives encourages more people to use your
+                                                                referral link. Providing bonuses such as discounts or extra
+                                                                perks makes referrals more appealing. Running giveaways
+                                                                where participants must use your referral link to enter
+                                                                creates excitement. Setting up loyalty rewards for frequent
+                                                                referrals ensures long-term engagement and sustained
+                                                                earnings. Networking and building relationships can
+                                                                significantly expand your referral network. Joining online
+                                                                communities like forums, Facebook groups, and niche-specific
+                                                                networks helps connect with potential referrals.
+                                                                Collaborating with influencers who can promote your referral
+                                                                links to their audience increases credibility. Attending
+                                                                events such as conferences, webinars, and meetups provides
+                                                                opportunities to introduce people to the referral program in
+                                                                a more personal way.')
                                 <br style="margin: 0px; padding: 0px" />
                             </div>
                             <div
@@ -141,18 +141,18 @@
                       color: rgb(70, 73, 70);
                       font-family: Inter, serif;
                     ">
-                                There are even lenders who in some scenarios would accept
-                                the self-employed from day one. For example if someone who
-                                had one year’s accounts as an accountant decided to be a
-                                self-employed builder, they might struggle because there’s
-                                no work experience history. But an employed accountant
-                                moving to become a self-employed accountant is more likely
-                                to be accepted with a year’s accounts. Imagine a doctor that
-                                has worked for the NHS for five years is buying into a
-                                local, established practice. Many lenders would consider
-                                that from day one because the practice already has history.
-                                So it is definitely possible to get a mortgage with one
-                                year’s accounts, and sometimes less.<br style="margin: 0px; padding: 0px" />
+                                @lang("There are even lenders who in some scenarios would accept
+                                                                the self-employed from day one. For example if someone who
+                                                                had one year’s accounts as an accountant decided to be a
+                                                                self-employed builder, they might struggle because there’s
+                                                                no work experience history. But an employed accountant
+                                                                moving to become a self-employed accountant is more likely
+                                                                to be accepted with a year’s accounts. Imagine a doctor that
+                                                                has worked for the NHS for five years is buying into a
+                                                                local, established practice. Many lenders would consider
+                                                                that from day one because the practice already has history.
+                                                                So it is definitely possible to get a mortgage with one
+                                                                year’s accounts, and sometimes less.")<br style="margin: 0px; padding: 0px" />
                             </div>
                             <div
                                 style="
@@ -177,10 +177,10 @@
                         font-size: 18px;
                         border-left: 4px solid rgb(32, 92, 213);
                       ">
-                                    You don’t see an internship at a business or organization
-                                    you want to work for? Contact the business or the
-                                    employers. This shows them that you are motivated and
-                                    willing to go the extra mile.
+                                    @lang('You don’t see an internship at a business or organization
+                                                                        you want to work for? Contact the business or the
+                                                                        employers. This shows them that you are motivated and
+                                                                        willing to go the extra mile.')
                                 </blockquote>
                             </div>
                         </blockquote>
@@ -195,7 +195,7 @@
                       font-size: 1.25rem;
                       font-family: Inter, serif;
                     ">
-                                Find something that works for you
+                                @lang('Find something that works for you')
                             </h5>
                             <div
                                 style="
@@ -204,30 +204,30 @@
                       color: rgb(70, 73, 70);
                       font-family: Inter, serif;
                     ">
-                                Looking for an internship that intrigues you and will help
-                                you improve your skills and connections is important when
-                                making a final decision. While there are both paid and
-                                un-paid internships, there may be scholarships you can apply
-                                for if you decide to take an un-paid position, so don’t
-                                discount an opportunity if it will ultimately help you gain
-                                valuable experience. You should still be able to get a
-                                mortgage with just one year’s accounts. The majority of
-                                lenders usually want two years’ history as self-employed,
-                                but some will accept a year’s self-employed income. There
-                                are even lenders who in some scenarios would accept the
-                                self-employed from day one. For example if someone who had
-                                one year’s accounts as an accountant decided to be a
-                                self-employed builder, they might struggle because there’s
-                                no work experience history. But an employed accountant
-                                moving to become a self-employed accountant is more likely
-                                to be accepted with a year’s accounts. Imagine a doctor that
-                                has worked for the NHS for five years is buying into a
-                                local, established practice. Many lenders would consider
-                                that from day one because the practice already has history.
-                                So it is definitely possible to get a mortgage with one
-                                year’s accounts, and sometimes less. As brokers we’re here
-                                to help. We’ve got a really good understanding of which
-                                lenders are most suitable for every type of client.
+                                @lang('Looking for an internship that intrigues you and will help
+                                                                you improve your skills and connections is important when
+                                                                making a final decision. While there are both paid and
+                                                                un-paid internships, there may be scholarships you can apply
+                                                                for if you decide to take an un-paid position, so don’t
+                                                                discount an opportunity if it will ultimately help you gain
+                                                                valuable experience. You should still be able to get a
+                                                                mortgage with just one year’s accounts. The majority of
+                                                                lenders usually want two years’ history as self-employed,
+                                                                but some will accept a year’s self-employed income. There
+                                                                are even lenders who in some scenarios would accept the
+                                                                self-employed from day one. For example if someone who had
+                                                                one year’s accounts as an accountant decided to be a
+                                                                self-employed builder, they might struggle because there’s
+                                                                no work experience history. But an employed accountant
+                                                                moving to become a self-employed accountant is more likely
+                                                                to be accepted with a year’s accounts. Imagine a doctor that
+                                                                has worked for the NHS for five years is buying into a
+                                                                local, established practice. Many lenders would consider
+                                                                that from day one because the practice already has history.
+                                                                So it is definitely possible to get a mortgage with one
+                                                                year’s accounts, and sometimes less. As brokers we’re here
+                                                                to help. We’ve got a really good understanding of which
+                                                                lenders are most suitable for every type of client.')
                             </div>
                             <div
                                 style="
@@ -252,13 +252,13 @@
                         font-size: 18px;
                         border-left: 4px solid rgb(32, 92, 213);
                       ">
-                                    Tracking and optimizing your performance is key to
-                                    long-term success. Using analytics tools helps monitor
-                                    clicks, conversions, and earnings. Conducting A/B testing
-                                    with different promotional strategies allows you to refine
-                                    your approach. Identifying the most effective channels and
-                                    focusing on scaling those efforts ensures continued
-                                    growth.
+                                    @lang('Tracking and optimizing your performance is key to
+                                                                        long-term success. Using analytics tools helps monitor
+                                                                        clicks, conversions, and earnings. Conducting A/B testing
+                                                                        with different promotional strategies allows you to refine
+                                                                        your approach. Identifying the most effective channels and
+                                                                        focusing on scaling those efforts ensures continued
+                                                                        growth.')
                                 </blockquote>
                             </div>
                         </blockquote>
@@ -270,20 +270,20 @@
                       color: rgb(70, 73, 70);
                       font-family: Inter, serif;
                     ">
-                                Staying updated with program changes is essential. Referral
-                                programs may adjust their terms, commission structures, or
-                                rewards over time. Subscribing to newsletters or
-                                notifications ensures you stay informed. Engaging with
-                                customer support for clarifications or additional
-                                opportunities helps you make the most of the program.
-                                Exploring new programs with improved benefits ensures you're
-                                always maximizing your potential earnings. Maximizing your
-                                earnings through referrals requires strategy, consistency,
-                                and engagement. By selecting the right program, leveraging
-                                digital marketing channels, offering incentives, and
-                                optimizing performance, you can significantly boost your
-                                referral income. Start implementing these techniques today
-                                and watch your earnings grow!
+                                @lang("Staying updated with program changes is essential. Referral
+                                                                programs may adjust their terms, commission structures, or
+                                                                rewards over time. Subscribing to newsletters or
+                                                                notifications ensures you stay informed. Engaging with
+                                                                customer support for clarifications or additional
+                                                                opportunities helps you make the most of the program.
+                                                                Exploring new programs with improved benefits ensures you're
+                                                                always maximizing your potential earnings. Maximizing your
+                                                                earnings through referrals requires strategy, consistency,
+                                                                and engagement. By selecting the right program, leveraging
+                                                                digital marketing channels, offering incentives, and
+                                                                optimizing performance, you can significantly boost your
+                                                                referral income. Start implementing these techniques today
+                                                                and watch your earnings grow!")
                             </div>
                             <div
                                 style="

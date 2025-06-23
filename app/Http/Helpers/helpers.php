@@ -44,3 +44,7 @@ function getImage($path, $fileName) {
 
     return asset("assets/images/$path/$fileName");
 }
+
+function printNumber($number, $decimal = 2) {
+    return number_format($number, decimals: $decimal);
+}

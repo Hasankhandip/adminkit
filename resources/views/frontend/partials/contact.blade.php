@@ -9,28 +9,28 @@
               <div class="col-lg-6">
                   <div class="contact-form-wrapper">
                       <h3 class="title">
-                          {{ $contactContent->title }}
+                          {{ __($contactContent->title) }}
                       </h3>
                       <form class="contact-form verify-gcaptcha" method="post">
                           <input type="hidden" name="_token" value="" autocomplete="off" />
                           <div class="form--group">
-                              <label class="form--label">Name</label>
+                              <label class="form--label">@lang('Name')</label>
                               <input class="form--control" name="name" type="text" value=""
-                                  placeholder="Enter Your Full Name" required />
+                                  placeholder="@lang('Enter Your Full Name')" required />
                           </div>
                           <div class="form--group">
-                              <label class="form--label">Email Address</label>
+                              <label class="form--label">@lang('Email Address')</label>
                               <input class="form--control" name="email" type="email" value=""
-                                  placeholder="Enter Your Email Address" required />
+                                  placeholder="@lang('Enter Your Email Address')" required />
                           </div>
                           <div class="form--group">
-                              <label class="form--label">Subject</label>
+                              <label class="form--label">@lang('Subject')</label>
                               <input class="form--control" name="subject" type="text" value=""
-                                  placeholder="Enter Your Subject" required />
+                                  placeholder="@lang('Enter Your Subject')" required />
                           </div>
                           <div class="form--group">
-                              <label class="form--label" for="msg">Your Message</label>
-                              <textarea class="form--control" id="msg" name="message" placeholder="Enter Your Message" required></textarea>
+                              <label class="form--label" for="msg">@lang('Your Message')</label>
+                              <textarea class="form--control" id="msg" name="message" placeholder="@lang('Enter Your Message')" required></textarea>
                           </div>
                           <div class="mb-3">
                               <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -40,7 +40,7 @@
                           </div>
                           <div class="form--group">
                               <button class="btn btn--base w-100" type="submit">
-                                  Send Us Message
+                                  @lang('Send Us Message')
                               </button>
                           </div>
                       </form>
@@ -66,9 +66,9 @@
                                       alt="icon" />
                               </div>
                               <div class="content">
-                                  <h5 class="title">Email Address :</h5>
-                                  <span><a href="{{ $contactitemContent->email_link }}" class="__cf_email__"
-                                          data-cfemail="a0d3d5d0d0cfd2d4e0c2c9cec1d2d9c5c3cfcd8ec3cfcd">{{ $contactitemContent->email_name }}</a></span>
+                                  <h5 class="title">@lang('Email Address :')</h5>
+                                  <span><a href="{{ __($contactitemContent->email_link) }}" class="__cf_email__"
+                                          data-cfemail="a0d3d5d0d0cfd2d4e0c2c9cec1d2d9c5c3cfcd8ec3cfcd">{{ __($contactitemContent->email_name) }}</a></span>
                               </div>
                           </div>
                       </div>
@@ -79,8 +79,8 @@
                                       alt="icon" />
                               </div>
                               <div class="content">
-                                  <h5 class="title">Phone Number :</h5>
-                                  <span>{{ $contactitemContent->phone_number }}</span>
+                                  <h5 class="title">@lang('Phone Number :')</h5>
+                                  <span>{{ __($contactitemContent->phone_number) }}</span>
                               </div>
                           </div>
                       </div>
@@ -91,8 +91,8 @@
                                       alt="icon" />
                               </div>
                               <div class="content">
-                                  <h5 class="title">Company Location :</h5>
-                                  <span>{{ $contactitemContent->address }}</span>
+                                  <h5 class="title">@lang('Company Location :')</h5>
+                                  <span>{{ __($contactitemContent->address) }}</span>
                               </div>
                           </div>
                       </div>

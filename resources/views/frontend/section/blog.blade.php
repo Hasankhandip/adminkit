@@ -8,8 +8,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
                 <div class="section-header text-center">
-                    <span class="subtitle">{{ $blogContent->title }}</span>
-                    <h2 class="title">{{ $blogContent->subtitle }}</h2>
+                    <span class="subtitle">{{ __($blogContent->title) }}</span>
+                    <h2 class="title">{{ __($blogContent->subtitle) }}</h2>
                 </div>
             </div>
         </div>
@@ -20,18 +20,18 @@
                         <div class="post-thumb">
                             <img src="{{ getImage('frontend/blog/item/images/', $blogItem->image) }}" />
                             <div class="meta-date">
-                                <span class="date">{{ $blogItem->date }}.{{ $blogItem->month }}</span>
-                                <span>{{ $blogItem->year }}</span>
+                                <span class="date">{{ __($blogItem->date) }}.{{ __($blogItem->month) }}</span>
+                                <span>{{ __($blogItem->year) }}</span>
                             </div>
                         </div>
                         <div class="post-content">
                             <h4 class="title">
-                                <a href="{{ $blogItem->blog_link }}">{{ $blogItem->title }}</a>
+                                <a href="{{ $blogItem->blog_link }}">{{ __($blogItem->title) }}</a>
                             </h4>
                             <p>
-                                {{ $blogItem->description }}
+                                {{__($blogItem->description) }}
                             </p>
-                            <a href="{{ $blogItem->button_link }}" class="read-more"> {{ $blogItem->button_name }}</a>
+                            <a href="{{ $blogItem->button_link }}" class="read-more"> {{ __($blogItem->button_name) }}</a>
                         </div>
                     </div>
                 </div>

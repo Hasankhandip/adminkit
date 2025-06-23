@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>{{ __($headTitle) }}</title>
+    <title>{{ __($pageTitle) }}</title>
     <link type="image/x-icon" href="https://script.viserlab.com/binaryecom/assets/images/logoIcon/favicon.png"
         rel="shortcut icon" />
     <link href="https://script.viserlab.com/binaryecom/assets/images/logoIcon/logo.png" rel="apple-touch-icon" />

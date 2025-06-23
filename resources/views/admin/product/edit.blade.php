@@ -91,7 +91,7 @@
                                 @foreach ($product->productImages as $productImage)
                                     <div class="product-image-item">
                                         <img class=""
-                                            src="{{ asset('assets/images/product/image/' . $productImage->image) }}" />
+                                            src="{{ getImage('product/image/', $productImage->image) }}" />
                                         <a href="{{ route('admin.product.delete.image', [$productImage->id, $product->id]) }}"
                                             class="btn btn-danger"
                                             onclick="return confirm('Are you sure you want to delete this image?')">

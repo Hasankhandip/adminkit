@@ -21,7 +21,7 @@
                             <tr>
                                 <td>{{ __($category->name) }}</td>
                                 <td>
-                                    <img class="card-item-img" src="{{ asset('assets/images/category/' . $category->image) }}"
+                                    <img class="card-item-img" src="{{ getImage('category/' , $category->image) }}"
                                         alt="">
                                 </td>
                                 <td>

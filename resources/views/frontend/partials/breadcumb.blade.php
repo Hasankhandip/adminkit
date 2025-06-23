@@ -5,7 +5,7 @@
       ">
       <div class="container">
           <div class="inner-banner-wrapper">
-              <h2 class="title">{{ __($innerTitle) }}</h2>
+              <h2 class="title">{{ __($pageTitle) }}</h2>
           </div>
       </div>
   </div>

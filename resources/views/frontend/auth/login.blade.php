@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-6 col-xl-7 col-lg-6">
                 <div class="account-thumb">
-                    <img src="{{ asset('assets/images/login/thumb/' . $loginContent->thumb) }}" alt="thumb" />
+                    <img src="{{ getImage('login/thumb/', $loginContent->thumb) }}" alt="thumb" />
                     <div class="account-thumb-content">
                         <p class="welc">{{ $loginContent->subtitle }}</p>
                         <h3 class="title">{{ $loginContent->title }}</h3>

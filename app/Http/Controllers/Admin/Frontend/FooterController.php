@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class FooterController extends Controller {
     public function index() {
-        $pageTitle     = "Manage Pricing Plan";
+        $pageTitle     = "Manage Footer Content";
         $footerContent = FrontendFooter::first();
         return view('admin.frontend.footer.index', compact('pageTitle', 'footerContent'));
     }

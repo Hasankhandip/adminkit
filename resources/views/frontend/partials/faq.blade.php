@@ -1,7 +1,7 @@
  <section class="faq-section padding-top padding-bottom">
      <div class="container">
          <div class="section-header">
-             <h2 class="title">{{ $faqContent->title }}</h2>
+             <h2 class="title">{{ __($faqContent->title) }}</h2>
              <p></p>
          </div>
          <div class="row">
@@ -10,12 +10,12 @@
                      @foreach ($faqItemContent as $faqItem)
                          <div class="faq-item">
                              <div class="faq-title">
-                                 <h6 class="title">{{ $faqItem->title }}</h6>
+                                 <h6 class="title">{{ __($faqItem->title) }}</h6>
                                  <div class="right-icon"></div>
                              </div>
                              <div class="faq-content">
                                  <p>
-                                     {{ $faqItem->description }}
+                                     {{ __($faqItem->description) }}
                                  </p>
                              </div>
                          </div>

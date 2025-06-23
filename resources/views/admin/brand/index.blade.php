@@ -22,8 +22,7 @@
                             <tr>
                                 <td>{{ __($brand->name) }}</td>
                                 <td>
-                                    <img class="card-item-img" src="{{ asset('assets/images/brand/' . $brand->image) }}"
-                                        alt="">
+                                    <img class="card-item-img" src="{{ getImage('brand/', $brand->image) }}" alt="">
                                 </td>
                                 <td>
                                     @if ($brand->status)
