@@ -9,8 +9,10 @@ use App\Http\Controllers\Frontend\User\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(ProductController::class)->prefix('product')->name('product.')->group(function () {
-    Route::get('/list/{categoryId?}', 'index')->name('index');
+    Route::get('/list/{categid?}', 'index')->name('index');
     Route::get('/details/{id}', 'details')->name('details');
+    Route::get('/category/{categoryId?}', 'categoryProducts')->name('category.product');
+    Route::get('/brand/{brandId?}', 'brandProducts')->name('brand.product');
 });
 
 Route::controller(BlogController::class)->prefix('blog')->name('blog.')->group(function () {

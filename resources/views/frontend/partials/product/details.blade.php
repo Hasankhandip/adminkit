@@ -51,14 +51,15 @@
                       <ul class="product-meta">
                           <li class="meta-item">
                               <h6 class="title">@lang('Category :')</h6>
-                              <a href="#">
+                              <a href="{{ route('product.category.product', $product->category_id) }}">
                                   {{ __($product->category->name) }}
                               </a>
                           </li>
                           <li class="meta-item">
                               <h6 class="title">@lang('Brand :')</h6>
                               <div>
-                                  <a href="#0"> {{ __($product->brand->name) }}</a>
+                                  <a href="{{ route('product.brand.product', $product->brand_id) }}">
+                                      {{ __($product->brand->name) }}</a>
                               </div>
                           </li>
                       </ul>

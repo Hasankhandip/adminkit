@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 
@@ -16,13 +17,33 @@ class ProductController extends Controller {
         $products = $productQuery->paginate(8);
         return view('frontend.product.index', compact('pageTitle', 'products', 'categories'));
     }
+
     public function details($id) {
         $pageTitle = "Product Details";
-        $product   = Product::with('category', 'brand')->findOrFail($id);
-        $products  = Product::where('category_id', $product->category_id)
+
+        $product  = Product::with('category')->findOrFail($id);
+        $products = Product::where('category_id', $product->category_id)
             ->where('id', '!=', $product->id)
             ->orderBy('created_at', 'desc')
             ->paginate(8);
         return view('frontend.product.details', compact('pageTitle', 'product', 'products'));
+    }
+
+    public function categoryProducts($categoryId) {
+        $category  = Category::findOrFail($categoryId);
+        $pageTitle = $category->name;
+        $products  = Product::where('category_id', $categoryId)
+            ->orderBy('created_at', 'desc')
+            ->paginate(8);
+        return view('frontend.product.categoryProduct', compact('pageTitle', 'products'));
+    }
+
+    public function brandProducts($brandId) {
+        $brand     = Brand::findOrFail($brandId);
+        $pageTitle = $brand->name;
+        $products  = Product::where('brand_id', $brandId)
+            ->orderBy('created_at', 'desc')
+            ->paginate(8);
+        return view('frontend.product.categoryProduct', compact('pageTitle', 'products'));
     }
 }
