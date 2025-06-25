@@ -8,9 +8,11 @@ use App\Models\Product;
 
 class ProductController extends Controller {
     public function index($categid = 0) {
+
         $pageTitle    = "Products";
         $categories   = Category::where('status', 1)->get();
         $productQuery = Product::orderBy('id', 'desc');
+
         if ($categid) {
             $products = $productQuery->where('category_id', $categid)->paginate(8);
         }
@@ -24,7 +26,7 @@ class ProductController extends Controller {
         $product  = Product::with('category')->findOrFail($id);
         $products = Product::where('category_id', $product->category_id)
             ->where('id', '!=', $product->id)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('id', 'desc')
             ->paginate(8);
         return view('frontend.product.details', compact('pageTitle', 'product', 'products'));
     }

@@ -2,13 +2,13 @@
       <div class="container">
           <ul class="mr-list justify-content-center">
               <li class="mr-list__item">
-                  <a class="mr-list__btn  @if (!request()->categoryId) active @endif"
+                  <a class="mr-list__btn  @if (!request()->categid) active @endif"
                       href="{{ route('product.index') }}">@lang('All Products')</a>
               </li>
 
               @foreach ($categories as $category)
                   <li class="mr-list__item">
-                      <a class="mr-list__btn  @if (request()->categoryId == $category->id) active @endif"
+                      <a class="mr-list__btn  @if (request()->categid == $category->id) active @endif"
                           href="{{ route('product.index', $category->id) }}"> {{ __($category->name) }}</a>
                   </li>
               @endforeach

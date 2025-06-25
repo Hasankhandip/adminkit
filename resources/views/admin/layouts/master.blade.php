@@ -1,3 +1,8 @@
+@php
+    $generalSetting = App\Models\GeneralSetting::first();
+    $siteName = $generalSetting->site_name;
+
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,12 +15,10 @@
     <meta name="keywords"
         content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="{{ asset('img/icons/icon-48x48.png') }}" />
 
-    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
-
-    <title>@lang('AdminKit Demo - Bootstrap 5 Admin Template')</title>
+    <title>{{ $siteName }} - {{ $siteTitle }}</title>
+    <link type="image/x-icon" href="https://script.viserlab.com/binaryecom/assets/images/logoIcon/favicon.png"
+        rel="shortcut icon" />
     <link rel="stylesheet" href="{{ asset('assets/global/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/global/css/line-awesome.css') }}" />
     <link href="{{ asset('assets/admin/css/app.css') }}" rel="stylesheet">

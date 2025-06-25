@@ -2,13 +2,13 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Blog;
+use App\Models\Frontend\FrontendBlogItem;
 
 class BlogController extends Controller {
     public function index() {
-        $pageTitle    = "Blogs";
-        $blogContents = Blog::orderBy('id', 'asc')->get();
-        return view('frontend.blog.index', compact('pageTitle', 'blogContents'));
+        $pageTitle        = "Blogs";
+        $blogItemContents = FrontendBlogItem::orderBy('id', 'asc')->paginate(6);
+        return view('frontend.blog.index', compact('pageTitle', 'blogItemContents'));
     }
     public function details() {
         $pageTitle = "Blog Details";

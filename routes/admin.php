@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\Auth\LoginController;
-use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContactController;
@@ -14,6 +13,7 @@ use App\Http\Controllers\Admin\Frontend\FooterController;
 use App\Http\Controllers\Admin\Frontend\ProductController;
 use App\Http\Controllers\Admin\Frontend\ServiceController;
 use App\Http\Controllers\Admin\Frontend\WorkController;
+use App\Http\Controllers\Admin\GeneralSettingController;
 use App\Http\Controllers\Admin\LoginController as AdminLoginController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\RegisterController;
@@ -153,15 +153,6 @@ Route::middleware('has.admin')->group(function () {
         Route::post('store', "itemStore")->name('store');
     });
 
-    Route::controller(AdminBlogController::class)->prefix('blog')->name('blog.')->group(function () {
-        Route::get('/', "index")->name('index');
-        Route::get('create', "create")->name('create');
-        Route::post('store', "store")->name('store');
-        Route::get('edit/{id}', "edit")->name('edit');
-        Route::post('update/{id}', "update")->name('update');
-        Route::get('delete/{id}', "delete")->name('delete');
-    });
-
     Route::controller(FaqController::class)->prefix('faq')->name('faq.')->group(function () {
         Route::get('/', "index")->name('index');
         Route::post('store', "store")->name('store');
@@ -174,5 +165,10 @@ Route::middleware('has.admin')->group(function () {
         Route::get('edit/{id}', "itemEdit")->name('edit');
         Route::post('update/{id}', "itemUpdate")->name('update');
         Route::get('delete/{id}', "itemDelete")->name('delete');
+    });
+
+    Route::controller(GeneralSettingController::class)->prefix('general-setting')->name('general.setting.')->group(function () {
+        Route::get('/', "index")->name('index');
+        Route::post('/store', "store")->name('store');
     });
 });

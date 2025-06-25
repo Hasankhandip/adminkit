@@ -48,22 +48,24 @@
                               data-name="MeeTion MT-HP010 Scalable Noise-canceling Stereo Leather Wired Gaming Headset"
                               href="javascript:void(0)">@lang('Purchase Now')</a>
                       </div>
-                      <ul class="product-meta">
-                          <li class="meta-item">
-                              <h6 class="title">@lang('Category :')</h6>
-                              <a href="{{ route('product.category.product', $product->category_id) }}">
-                                  {{ __($product->category->name) }}
-                              </a>
-                          </li>
-                          <li class="meta-item">
-                              <h6 class="title">@lang('Brand :')</h6>
-                              <div>
-                                  <a href="{{ route('product.brand.product', $product->brand_id) }}">
-                                      {{ __($product->brand->name) }}</a>
-                              </div>
-                          </li>
-                      </ul>
-
+                      <div class="specifications mt-5">
+                          <h5 class="title">@lang('Product Details')</h5>
+                          <table class="specification-table">
+                              <tbody>
+                                  <tr>
+                                      <th>@lang('Category :')</th>
+                                      <td> <a href="{{ route('product.category.product', $product->category_id) }}">
+                                              {{ __($product->category->name) }}
+                                          </a></td>
+                                  </tr>
+                                  <tr>
+                                      <th>@lang('Brand :')</th>
+                                      <td> <a href="{{ route('product.brand.product', $product->brand_id) }}">
+                                              {{ __($product->brand->name) }}</a></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
                   </div>
               </div>
           </div>
@@ -128,7 +130,7 @@
           </div>
           <div class="product-slider owl-carousel owl-theme owl-loaded owl-drag">
               @foreach ($products as $relatedProduct)
-                  <div class="owl-ite">
+                  <div class="owl-item h-100">
                       <div class="product-item h-100">
                           <div class="product-thumb">
                               <img src="{{ getImage('product/thumb/', $relatedProduct->thumbnail) }}" alt="products" />
