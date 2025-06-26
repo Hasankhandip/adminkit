@@ -9,7 +9,7 @@ class GeneralSetting extends Model {
     protected $fillable = [
         'site_name',
         'timezone',
-        'currency',
+        'currency_code',
         'currency_symbol',
     ];
 }

@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller {
     public function index() {
+        $siteTitle      = "Service";
         $pageTitle      = "Manage Service Section Content";
         $serviceContent = FrontendService::first();
-        return view('admin.frontend.service.index', compact('pageTitle', 'serviceContent'));
+        return view('admin.frontend.service.index', compact('siteTitle', 'pageTitle', 'serviceContent'));
     }
     public function store(Request $request) {
 
@@ -34,13 +35,15 @@ class ServiceController extends Controller {
 
     // service item start
     public function itemIndex() {
+        $siteTitle           = "Service";
         $pageTitle           = "Manage Service Item ";
-        $serviceItemContents = FrontendServiceItem::orderBy('id', 'desc')->paginate(4);
-        return view('admin.frontend.service.item.index', compact('pageTitle', 'serviceItemContents'));
+        $serviceItemContents = FrontendServiceItem::orderBy('id', 'desc')->paginate(8);
+        return view('admin.frontend.service.item.index', compact('siteTitle', 'pageTitle', 'serviceItemContents'));
     }
     public function itemCreate() {
+        $siteTitle = "Service";
         $pageTitle = "Create Service Item ";
-        return view('admin.frontend.service.item.create', compact('pageTitle'));
+        return view('admin.frontend.service.item.create', compact('siteTitle', 'pageTitle'));
     }
     public function itemStore(Request $request) {
         $request->validate([
@@ -58,10 +61,11 @@ class ServiceController extends Controller {
         return redirect()->route('admin.frontend.service.item.index')->with('success', 'The service item  has been created! ');
     }
     public function itemEdit($id) {
+        $siteTitle           = "Service";
         $pageTitle           = "Edit Service Item";
         $frontendServiceItem = FrontendServiceItem::findOrFail($id);
 
-        return view('admin.frontend.service.item.edit', compact('pageTitle', 'frontendServiceItem'));
+        return view('admin.frontend.service.item.edit', compact('siteTitle', 'pageTitle', 'frontendServiceItem'));
     }
     public function itemUpdate(Request $request, $id) {
         $request->validate([

@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 
 class FaqController extends Controller {
     public function index() {
+        $siteTitle  = "Faq";
         $pageTitle  = "Manage Faq Content";
         $faqContent = Faq::first();
-        return view('admin.faq.index', compact('pageTitle', 'faqContent'));
+        return view('admin.faq.index', compact('siteTitle', 'pageTitle', 'faqContent'));
     }
 
     public function store(Request $request) {
@@ -32,15 +33,17 @@ class FaqController extends Controller {
     // item start
 
     public function itemIndex() {
+        $siteTitle       = "Faq";
         $pageTitle       = "Manage Faq";
         $faqItemContents = FaqItem::orderBy('id', 'desc')->get();
-        return view('admin.faq.item.index', compact('pageTitle', 'faqItemContents'));
+        return view('admin.faq.item.index', compact('siteTitle', 'pageTitle', 'faqItemContents'));
     }
 
     public function itemCreate() {
+        $siteTitle      = "Faq";
         $pageTitle      = "Create Faq";
         $faqItemContent = new FaqItem();
-        return view('admin.faq.item.create', compact('pageTitle', 'faqItemContent'));
+        return view('admin.faq.item.create', compact('siteTitle', 'pageTitle', 'faqItemContent'));
     }
 
     public function itemStore(Request $request) {
@@ -60,9 +63,10 @@ class FaqController extends Controller {
     }
 
     public function itemEdit($id) {
+        $siteTitle      = "Faq";
         $pageTitle      = "Edit Faq";
         $faqItemContent = FaqItem::findOrFail($id);
-        return view('admin.faq.item.edit', compact('pageTitle', 'faqItemContent'));
+        return view('admin.faq.item.edit', compact('siteTitle', 'pageTitle', 'faqItemContent'));
     }
 
     public function itemUpdate(Request $request, $id) {

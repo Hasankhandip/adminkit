@@ -30,7 +30,10 @@
     <script src="{{ asset('assets/frontend/js/viewport.jquery.js') }}"></script>
     <script src="{{ asset('assets/frontend/js/magnific-popup.min.js') }}"></script>
     <script src="{{ asset('assets/frontend/js/isotope.min.js') }}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+
+    @stack('js')
 </body>
 
 </html>

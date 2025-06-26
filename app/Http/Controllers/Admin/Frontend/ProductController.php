@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller {
     public function index() {
+        $siteTitle      = "Product";
         $pageTitle      = "Manage Product Content";
         $productContent = FrontendProduct::first();
-        return view('admin.frontend.product.index', compact('pageTitle', 'productContent'));
+        return view('admin.frontend.product.index', compact('siteTitle', 'pageTitle', 'productContent'));
     }
     public function store(Request $request) {
         $request->validate([

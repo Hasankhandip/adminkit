@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller {
     public function index() {
+        $siteTitle    = "Login";
         $pageTitle    = "Manage Login Content";
         $loginContent = LoginItem::first();
 
-        return view('admin.login.index', compact('pageTitle', 'loginContent'));
+        return view('admin.login.index', compact('siteTitle', 'pageTitle', 'loginContent'));
     }
 
     public function store(Request $request) {

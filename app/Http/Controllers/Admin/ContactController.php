@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller {
     public function index() {
+        $siteTitle      = "Contact";
         $pageTitle      = "Manage Contact Content";
         $contactContent = Contact::first();
-        return view('admin.contact.index', compact('pageTitle', 'contactContent'));
+        return view('admin.contact.index', compact('siteTitle', 'pageTitle', 'contactContent'));
     }
 
     public function store(Request $request) {
@@ -45,9 +46,10 @@ class ContactController extends Controller {
     //item start
 
     public function itemIndex() {
+        $siteTitle          = "Contact";
         $pageTitle          = "Manage Contact Item";
         $contactitemContent = ContactItem::first();
-        return view('admin.contact.item.index', compact('pageTitle', 'contactitemContent'));
+        return view('admin.contact.item.index', compact('siteTitle', 'pageTitle', 'contactitemContent'));
     }
 
     public function itemStore(Request $request) {

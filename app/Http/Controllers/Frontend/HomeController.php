@@ -5,8 +5,9 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller {
     public function index() {
+        $siteTitle = "Footer";
         $pageTitle = "Home";
-        return view('frontend.index', compact('pageTitle'));
+        return view('frontend.index', compact('siteTitle', 'pageTitle'));
     }
 
 }

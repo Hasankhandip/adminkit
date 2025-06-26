@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller {
     public function login() {
-
+        $siteTitle    = "Login";
         $pageTitle    = "Manage Login Content";
         $loginContent = LoginItem::first();
 
-        return view('admin.auth.login', compact('pageTitle', 'loginContent'));
+        return view('admin.auth.login', compact('siteTitle', 'pageTitle', 'loginContent'));
     }
 
     public function loginAttempt(Request $request) {

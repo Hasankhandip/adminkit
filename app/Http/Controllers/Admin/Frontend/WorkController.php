@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 
 class WorkController extends Controller {
     public function index() {
+        $siteTitle   = "Work";
         $pageTitle   = "Manage Work Content";
         $WorkContent = FrontendWork::first();
-        return view('admin.frontend.work.index', compact('pageTitle', 'WorkContent'));
+        return view('admin.frontend.work.index', compact('siteTitle', 'pageTitle', 'WorkContent'));
     }
     public function store(Request $request) {
         $request->validate([
@@ -33,13 +34,15 @@ class WorkController extends Controller {
 
     // work item start
     public function itemIndex() {
+        $siteTitle        = "Work";
         $pageTitle        = "Manage Work Item ";
         $workItemContents = FrontendWorkItem::orderBy('id', 'desc')->get();
-        return view('admin.frontend.work.item.index', compact('pageTitle', 'workItemContents'));
+        return view('admin.frontend.work.item.index', compact('siteTitle', 'pageTitle', 'workItemContents'));
     }
     public function itemCreate() {
+        $siteTitle = "Work";
         $pageTitle = "Create Work Item ";
-        return view('admin.frontend.work.item.create', compact('pageTitle'));
+        return view('admin.frontend.work.item.create', compact('siteTitle', 'pageTitle'));
     }
 
     public function itemStore(Request $request) {
@@ -59,10 +62,11 @@ class WorkController extends Controller {
     }
 
     public function itemEdit($id) {
+        $siteTitle        = "Work";
         $pageTitle        = "Edit Work Item";
         $frontendWorkItem = FrontendWorkItem::findOrFail($id);
 
-        return view('admin.frontend.work.item.edit', compact('pageTitle', 'frontendWorkItem'));
+        return view('admin.frontend.work.item.edit', compact('siteTitle', 'pageTitle', 'frontendWorkItem'));
     }
 
     public function itemUpdate(Request $request, $id) {

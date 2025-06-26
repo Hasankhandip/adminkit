@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller {
     public function index() {
+        $siteTitle       = "Footer";
         $pageTitle       = "Register";
         $registerContent = RegisterItem::first();
-        return view('frontend.auth.register', compact('pageTitle', 'registerContent'));
+        return view('frontend.auth.register', compact('siteTitle', 'pageTitle', 'registerContent'));
     }
 
     public function store(Request $request) {

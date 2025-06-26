@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller {
     public function index() {
+        $siteTitle   = "Blog";
         $pageTitle   = "Manage Blog Content";
         $blogContent = FrontendBlog::first();
-        return view('admin.frontend.blog.index', compact('pageTitle', 'blogContent'));
+        return view('admin.frontend.blog.index', compact('siteTitle', 'pageTitle', 'blogContent'));
     }
     public function store(Request $request) {
         $request->validate([
@@ -34,15 +35,17 @@ class BlogController extends Controller {
 
     // item start
     public function itemIndex() {
+        $siteTitle        = "Blog";
         $pageTitle        = "Manage Blog Item";
         $blogItemContents = FrontendBlogItem::orderBy('id', 'desc')->get();
-        return view('admin.frontend.blog.item.index', compact('pageTitle', 'blogItemContents'));
+        return view('admin.frontend.blog.item.index', compact('siteTitle', 'pageTitle', 'blogItemContents'));
     }
 
     public function itemCreate() {
+        $siteTitle       = "Blog";
         $pageTitle       = "Create Blog Item";
         $blogItemContent = new FrontendBlogItem();
-        return view('admin.frontend.blog.item.create', compact('pageTitle', 'blogItemContent'));
+        return view('admin.frontend.blog.item.create', compact('siteTitle', 'pageTitle', 'blogItemContent'));
     }
 
     public function itemStore(Request $request) {
@@ -82,9 +85,10 @@ class BlogController extends Controller {
         return redirect()->route('admin.frontend.blog.item.index')->withSuccess("Blog has been created !");
     }
     public function itemEdit($id) {
+        $siteTitle        = "Blog";
         $pageTitle        = "Edit Blog Item";
         $frontendBlogItem = FrontendBlogItem::findOrFail($id);
-        return view('admin.frontend.blog.item.edit', compact('pageTitle', 'frontendBlogItem'));
+        return view('admin.frontend.blog.item.edit', compact('siteTitle', 'pageTitle', 'frontendBlogItem'));
     }
 
     public function itemUpdate(Request $request, $id) {

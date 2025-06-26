@@ -11,16 +11,18 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller {
     public function index() {
+        $siteTitle = "Product";
         $pageTitle = "Manage Product";
-        $products  = Product::orderBy('id', 'desc')->get();
-        return view('admin.product.index', compact('products', 'pageTitle'));
+        $products  = Product::orderBy('id', 'desc')->paginate(6);
+        return view('admin.product.index', compact('siteTitle', 'products', 'pageTitle'));
     }
 
     public function create() {
+        $siteTitle  = "Product";
         $pageTitle  = "Create Product";
         $categories = Category::where('status', 1)->orderBy('name')->get();
         $brands     = Brand::where('status', 1)->orderBy('name')->get();
-        return view('admin.product.create', compact('brands', 'categories', 'pageTitle'));
+        return view('admin.product.create', compact('siteTitle', 'brands', 'categories', 'pageTitle'));
     }
 
     public function store(Request $request) {
@@ -74,11 +76,12 @@ class ProductController extends Controller {
     }
 
     public function edit($id) {
+        $siteTitle  = "Product";
         $pageTitle  = "Edit Product";
         $product    = Product::with('productImages')->findOrFail($id);
         $categories = Category::orderBy('id', 'desc')->get();
         $brands     = Brand::orderBy('id', 'desc')->get();
-        return view('admin.product.edit', compact('product', 'brands', 'categories', 'pageTitle'));
+        return view('admin.product.edit', compact('siteTitle', 'product', 'brands', 'categories', 'pageTitle'));
     }
 
     public function update(Request $request, $id) {

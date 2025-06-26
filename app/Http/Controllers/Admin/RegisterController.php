@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller {
     public function index() {
+        $siteTitle       = "Register";
         $pageTitle       = "Manage Register Content";
         $registerContent = RegisterItem::first();
 
-        return view('admin.register.index', compact('pageTitle', 'registerContent'));
+        return view('admin.register.index', compact('siteTitle', 'pageTitle', 'registerContent'));
     }
 
     public function store(Request $request) {

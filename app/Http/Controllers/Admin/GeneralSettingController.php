@@ -8,25 +8,26 @@ use Illuminate\Http\Request;
 
 class GeneralSettingController extends Controller {
     public function index() {
-        $siteTitle = "General Setting";
+
         $pageTitle = "Manage General Settings";
-        $setting   = GeneralSetting::firstOrCreate([]);
+        $pageTitle = "General Setting";
+        $setting   = GeneralSetting::first();
         $timezones = DateTimeZone::listIdentifiers();
 
-        return view('admin.generalSetting.index', compact('siteTitle', 'pageTitle', 'setting', 'timezones'));
+        return view('admin.general_setting.index', compact('pageTitle', 'setting', 'timezones'));
     }
 
     public function store(Request $request) {
         $request->validate([
             'site_name'       => 'required|string|max:255',
             'timezone'        => 'required|timezone',
-            'currency'        => 'required|string|max:10',
-            'currency_symbol' => 'required|string|max:5',
+            'currency_code'   => 'required|string',
+            'currency_symbol' => 'required|string',
         ]);
 
         $setting = GeneralSetting::first();
         $setting->update($request->only([
-            'site_name', 'timezone', 'currency', 'currency_symbol',
+            'site_name', 'timezone', 'currency_code', 'currency_symbol',
         ]));
 
         return redirect()->back()->with('success', 'Settings updated successfully!');

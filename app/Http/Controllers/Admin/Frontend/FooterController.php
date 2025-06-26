@@ -10,9 +10,10 @@ use Illuminate\Http\Request;
 
 class FooterController extends Controller {
     public function index() {
+        $siteTitle     = "Footer";
         $pageTitle     = "Manage Footer Content";
         $footerContent = FrontendFooter::first();
-        return view('admin.frontend.footer.index', compact('pageTitle', 'footerContent'));
+        return view('admin.frontend.footer.index', compact('siteTitle', 'pageTitle', 'footerContent'));
     }
     public function store(Request $request) {
         $request->validate([
@@ -45,9 +46,10 @@ class FooterController extends Controller {
 
     // contact start
     public function contactIndex() {
+        $siteTitle            = "Footer";
         $pageTitle            = "Manage Footer Contact";
         $footerContactContent = FrontendFooterContact::first();
-        return view('admin.frontend.footer.contact.index', compact('pageTitle', 'footerContactContent'));
+        return view('admin.frontend.footer.contact.index', compact('siteTitle', 'pageTitle', 'footerContactContent'));
     }
 
     public function contactStore(Request $request) {
@@ -73,9 +75,10 @@ class FooterController extends Controller {
 
     //social start
     public function socialIndex() {
+        $siteTitle           = "Footer";
         $pageTitle           = "Manage Footer Social";
         $footerSocialContent = FrontendFooterSocial::first();
-        return view('admin.frontend.footer.social.index', compact('pageTitle', 'footerSocialContent'));
+        return view('admin.frontend.footer.social.index', compact('siteTitle', 'pageTitle', 'footerSocialContent'));
     }
 
     public function socialStore(Request $request) {

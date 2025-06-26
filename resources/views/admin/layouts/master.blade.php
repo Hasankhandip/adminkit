@@ -1,8 +1,3 @@
-@php
-    $generalSetting = App\Models\GeneralSetting::first();
-    $siteName = $generalSetting->site_name;
-
-@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +10,7 @@
     <meta name="keywords"
         content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
-
-    <title>{{ $siteName }} - {{ $siteTitle }}</title>
+    <title>{{ $pageTitle }} - {{ generalSetting()->site_name }}</title>
     <link type="image/x-icon" href="https://script.viserlab.com/binaryecom/assets/images/logoIcon/favicon.png"
         rel="shortcut icon" />
     <link rel="stylesheet" href="{{ asset('assets/global/css/font-awesome.min.css') }}" />
@@ -34,7 +28,8 @@
     <script src="{{ asset('assets/admin/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/admin/js/app.js') }}"></script>
     <script src="{{ asset('assets/admin/js/main.js') }}"></script>
-    <script></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
 </body>
 
 </html>

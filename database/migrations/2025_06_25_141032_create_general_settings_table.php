@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->id();
             $table->string('site_name')->nullable();
             $table->string('timezone')->default('Asia/Dhaka');
-            $table->string('currency')->default('USD');
+            $table->string('currency_code')->default('USD');
             $table->string('currency_symbol')->default('$');
             $table->timestamps();
         });

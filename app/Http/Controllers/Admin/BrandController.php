@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller {
     public function index() {
+        $siteTitle = "Footer";
         $pageTitle = "Manage Brand";
         $brands    = Brand::orderBy('id', 'desc')->get();
-        return view('admin.brand.index', compact('pageTitle', 'brands'));
+        return view('admin.brand.index', compact('siteTitle', 'pageTitle', 'brands'));
     }
     public function create() {
         $pageTitle = "Create Brand";

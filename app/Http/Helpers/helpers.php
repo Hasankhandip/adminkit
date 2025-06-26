@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\GeneralSetting;
+
 function uploadImage($image, $location, $oldImage = null
 ) {
 
@@ -45,6 +47,14 @@ function getImage($path, $fileName) {
     return asset("assets/images/$path/$fileName");
 }
 
-function printNumber($number, $decimal = 2) {
+function printNumber($number, $decimal = 0) {
     return number_format($number, decimals: $decimal);
+}
+function generalSetting() {
+    return GeneralSetting::first();
+
+}
+function printAmount($amount) {
+    $gs = generalSetting();
+    return $gs->currency_symbol . printNumber($amount);
 }

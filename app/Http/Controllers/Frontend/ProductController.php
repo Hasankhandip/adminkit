@@ -8,7 +8,7 @@ use App\Models\Product;
 
 class ProductController extends Controller {
     public function index($categid = 0) {
-
+        $siteTitle    = "product";
         $pageTitle    = "Products";
         $categories   = Category::where('status', 1)->get();
         $productQuery = Product::orderBy('id', 'desc');
@@ -17,18 +17,18 @@ class ProductController extends Controller {
             $products = $productQuery->where('category_id', $categid)->paginate(8);
         }
         $products = $productQuery->paginate(8);
-        return view('frontend.product.index', compact('pageTitle', 'products', 'categories'));
+        return view('frontend.product.index', compact('siteTitle', 'pageTitle', 'products', 'categories'));
     }
 
     public function details($id) {
+        $siteTitle = "Product Details";
         $pageTitle = "Product Details";
-
-        $product  = Product::with('category')->findOrFail($id);
-        $products = Product::where('category_id', $product->category_id)
+        $product   = Product::with('category')->findOrFail($id);
+        $products  = Product::where('category_id', $product->category_id)
             ->where('id', '!=', $product->id)
             ->orderBy('id', 'desc')
             ->paginate(8);
-        return view('frontend.product.details', compact('pageTitle', 'product', 'products'));
+        return view('frontend.product.details', compact('siteTitle', 'pageTitle', 'product', 'products'));
     }
 
     public function categoryProducts($categoryId) {

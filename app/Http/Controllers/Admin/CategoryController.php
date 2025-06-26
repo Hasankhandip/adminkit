@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller {
     public function index() {
+        $siteTitle  = "Category";
         $pageTitle  = "Manage Category";
         $categories = Category::orderBy('id', 'desc')->get();
-        return view('admin.category.index', compact('pageTitle', 'categories'));
+        return view('admin.category.index', compact('siteTitle', 'pageTitle', 'categories'));
     }
 
     public function create() {

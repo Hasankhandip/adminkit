@@ -17,10 +17,5 @@ class AppServiceProvider extends ServiceProvider {
      */
     public function boot(): void {
         Paginator::useBootstrapFive();
-        // $setting = GeneralSetting::first();
-        // if ($setting && $setting->timezone) {
-        //     config(['app.timezone' => $setting->timezone]);
-        //     date_default_timezone_set($setting->timezone);
-        // }
     }
 }
