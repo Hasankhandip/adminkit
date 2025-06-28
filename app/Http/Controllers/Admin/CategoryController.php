@@ -8,14 +8,13 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller {
     public function index() {
-        $siteTitle  = "Category";
-        $pageTitle  = "Manage Category";
+        $pageTitle  = "Category";
         $categories = Category::orderBy('id', 'desc')->get();
-        return view('admin.category.index', compact('siteTitle', 'pageTitle', 'categories'));
+        return view('admin.category.index', compact('pageTitle', 'categories'));
     }
 
     public function create() {
-        $pageTitle = "Create Category";
+        $pageTitle = "Category";
         return view('admin.category.create', compact('pageTitle'));
     }
 
@@ -45,7 +44,7 @@ class CategoryController extends Controller {
     }
 
     public function edit($id) {
-        $pageTitle = "Edit Category";
+        $pageTitle = "Category";
         $category  = Category::findOrFail($id);
         return view('admin.category.edit', compact('pageTitle', 'category'));
     }

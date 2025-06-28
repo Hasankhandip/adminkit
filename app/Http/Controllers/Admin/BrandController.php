@@ -8,13 +8,12 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller {
     public function index() {
-        $siteTitle = "Footer";
-        $pageTitle = "Manage Brand";
+        $pageTitle = "Brand";
         $brands    = Brand::orderBy('id', 'desc')->get();
-        return view('admin.brand.index', compact('siteTitle', 'pageTitle', 'brands'));
+        return view('admin.brand.index', compact('pageTitle', 'brands'));
     }
     public function create() {
-        $pageTitle = "Create Brand";
+        $pageTitle = "Brand";
         return view('admin.brand.create', compact('pageTitle'));
     }
     public function store(Request $request) {
@@ -42,7 +41,7 @@ class BrandController extends Controller {
     }
 
     public function edit($id) {
-        $pageTitle = "Edit Brand";
+        $pageTitle = "Brand";
         $brand     = Brand::findOrFail($id);
         return view('admin.brand.edit', compact('pageTitle', 'brand'));
     }

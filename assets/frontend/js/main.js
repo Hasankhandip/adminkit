@@ -423,14 +423,14 @@ for(let i = 0; i < incrementBtn.length; i++){
 
 const totalCalc = function(){
     const tax =  $taxRate ;
-    let subtotal = $subTotal;
-    let totalTax = $taxAmount;
-    let total = $totalWithTax;
+    let subtotal = 0;
+    let totalTax = 0;
+    let total = 0;
 
     for(let i = 0; i < quantityElem.length; i++){
         subtotal += Number(quantityElem[i].textContent) * Number(priceElem[i].textContent);
 
-        subtotalElem.textContent = subtotal.toFixed(2);
+  subtotalElem.textContent = subtotal.toFixed(2);
 
         totalTax = subtotal * tax;
 

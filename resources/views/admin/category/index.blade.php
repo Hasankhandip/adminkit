@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('content')
     <div class="d-flex justify-content-between mb-4 flex-wrap  gap-2">
-        <h1 class="h3">{{ __($pageTitle) }}</h1>
+        <h1 class="h3">@lang('Manage Category')</h1>
         <a href="{{ route('admin.category.create') }}" class="btn btn-primary">@lang('Add Category')</a>
     </div>
     <div class="row">
@@ -21,7 +21,7 @@
                             <tr>
                                 <td>{{ __($category->name) }}</td>
                                 <td>
-                                    <img class="card-item-img" src="{{ getImage('category/' , $category->image) }}"
+                                    <img class="card-item-img" src="{{ getImage('category/', $category->image) }}"
                                         alt="">
                                 </td>
                                 <td>

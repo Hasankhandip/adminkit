@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Cart;
+use Illuminate\Http\Request;
 
 class CartController extends Controller {
 
@@ -68,4 +69,28 @@ class CartController extends Controller {
         ]);
 
     }
+
+    public function cartRemove(Request $request) {
+        $productId = $request->id;
+
+        if (Cart::get($productId)) {
+            Cart::remove($productId);
+
+            $subTotal  = Cart::getSubTotal();
+            $taxRate   = 0.10;
+            $taxAmount = $subTotal * $taxRate;
+            $total     = $subTotal + $taxAmount;
+
+            return response()->json([
+                'success'    => true,
+                'subtotal'   => printAmount($subTotal),
+                'tax'        => printAmount($taxAmount),
+                'total'      => printAmount($total),
+                'cart_count' => Cart::getContent()->count(),
+            ]);
+        }
+
+        return response()->json(['success' => false, 'message' => 'Product not found']);
+    }
+
 }

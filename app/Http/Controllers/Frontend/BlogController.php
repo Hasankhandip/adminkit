@@ -6,10 +6,9 @@ use App\Models\Frontend\FrontendBlogItem;
 
 class BlogController extends Controller {
     public function index() {
-        $siteTitle        = "Blog";
-        $pageTitle        = "Blogs";
+        $pageTitle        = "Blog";
         $blogItemContents = FrontendBlogItem::orderBy('id', 'asc')->paginate(6);
-        return view('frontend.blog.index', compact('siteTitle', 'pageTitle', 'blogItemContents'));
+        return view('frontend.blog.index', compact('pageTitle', 'blogItemContents'));
     }
     public function details() {
         $pageTitle = "Blog Details";

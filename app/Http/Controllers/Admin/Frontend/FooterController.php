@@ -10,10 +10,9 @@ use Illuminate\Http\Request;
 
 class FooterController extends Controller {
     public function index() {
-        $siteTitle     = "Footer";
-        $pageTitle     = "Manage Footer Content";
+        $pageTitle     = "Footer";
         $footerContent = FrontendFooter::first();
-        return view('admin.frontend.footer.index', compact('siteTitle', 'pageTitle', 'footerContent'));
+        return view('admin.frontend.footer.index', compact('pageTitle', 'footerContent'));
     }
     public function store(Request $request) {
         $request->validate([
@@ -46,10 +45,9 @@ class FooterController extends Controller {
 
     // contact start
     public function contactIndex() {
-        $siteTitle            = "Footer";
-        $pageTitle            = "Manage Footer Contact";
+        $pageTitle            = "Footer";
         $footerContactContent = FrontendFooterContact::first();
-        return view('admin.frontend.footer.contact.index', compact('siteTitle', 'pageTitle', 'footerContactContent'));
+        return view('admin.frontend.footer.contact.index', compact('pageTitle', 'footerContactContent'));
     }
 
     public function contactStore(Request $request) {
@@ -75,10 +73,9 @@ class FooterController extends Controller {
 
     //social start
     public function socialIndex() {
-        $siteTitle           = "Footer";
-        $pageTitle           = "Manage Footer Social";
+        $pageTitle           = "Footer";
         $footerSocialContent = FrontendFooterSocial::first();
-        return view('admin.frontend.footer.social.index', compact('siteTitle', 'pageTitle', 'footerSocialContent'));
+        return view('admin.frontend.footer.social.index', compact('pageTitle', 'footerSocialContent'));
     }
 
     public function socialStore(Request $request) {

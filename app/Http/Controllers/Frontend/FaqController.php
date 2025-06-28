@@ -7,10 +7,9 @@ use App\Models\FaqItem;
 
 class FaqController extends Controller {
     public function index() {
-        $siteTitle      = "Faq";
-        $pageTitle      = "FAQs";
+        $pageTitle      = "Faq";
         $faqContent     = Faq::first();
         $faqItemContent = FaqItem::orderBy('id', 'desc')->get();
-        return view('frontend.faq.index', compact('siteTitle', 'pageTitle', 'faqContent', 'faqItemContent'));
+        return view('frontend.faq.index', compact('pageTitle', 'faqContent', 'faqItemContent'));
     }
 }

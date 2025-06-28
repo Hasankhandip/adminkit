@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('content')
     <div class="d-flex justify-content-between mb-4 flex-wrap  gap-2">
-        <h1 class="h3">{{ __($pageTitle) }}</h1>
+        <h1 class="h3">@lang('Manage Contact Item')</h1>
     </div>
     <div class="row">
         <div class="col-lg-12">

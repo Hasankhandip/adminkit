@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 class GeneralSettingController extends Controller {
     public function index() {
 
-        $pageTitle = "Manage General Settings";
         $pageTitle = "General Setting";
         $setting   = GeneralSetting::first();
         $timezones = DateTimeZone::listIdentifiers();

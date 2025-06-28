@@ -11,18 +11,16 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller {
     public function index() {
-        $siteTitle = "Product";
-        $pageTitle = "Manage Product";
+        $pageTitle = "Product";
         $products  = Product::orderBy('id', 'desc')->paginate(6);
-        return view('admin.product.index', compact('siteTitle', 'products', 'pageTitle'));
+        return view('admin.product.index', compact('products', 'pageTitle'));
     }
 
     public function create() {
-        $siteTitle  = "Product";
-        $pageTitle  = "Create Product";
+        $pageTitle  = "Product";
         $categories = Category::where('status', 1)->orderBy('name')->get();
         $brands     = Brand::where('status', 1)->orderBy('name')->get();
-        return view('admin.product.create', compact('siteTitle', 'brands', 'categories', 'pageTitle'));
+        return view('admin.product.create', compact('brands', 'categories', 'pageTitle'));
     }
 
     public function store(Request $request) {
@@ -76,8 +74,7 @@ class ProductController extends Controller {
     }
 
     public function edit($id) {
-        $siteTitle  = "Product";
-        $pageTitle  = "Edit Product";
+        $pageTitle  = "Product";
         $product    = Product::with('productImages')->findOrFail($id);
         $categories = Category::orderBy('id', 'desc')->get();
         $brands     = Brand::orderBy('id', 'desc')->get();

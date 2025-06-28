@@ -9,10 +9,9 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller {
     public function index() {
-        $siteTitle   = "Blog";
-        $pageTitle   = "Manage Blog Content";
+        $pageTitle   = "Blog";
         $blogContent = FrontendBlog::first();
-        return view('admin.frontend.blog.index', compact('siteTitle', 'pageTitle', 'blogContent'));
+        return view('admin.frontend.blog.index', compact('pageTitle', 'blogContent'));
     }
     public function store(Request $request) {
         $request->validate([
@@ -35,15 +34,13 @@ class BlogController extends Controller {
 
     // item start
     public function itemIndex() {
-        $siteTitle        = "Blog";
-        $pageTitle        = "Manage Blog Item";
+        $pageTitle        = "Blog";
         $blogItemContents = FrontendBlogItem::orderBy('id', 'desc')->get();
-        return view('admin.frontend.blog.item.index', compact('siteTitle', 'pageTitle', 'blogItemContents'));
+        return view('admin.frontend.blog.item.index', compact('pageTitle', 'blogItemContents'));
     }
 
     public function itemCreate() {
-        $siteTitle       = "Blog";
-        $pageTitle       = "Create Blog Item";
+        $pageTitle       = "Blog";
         $blogItemContent = new FrontendBlogItem();
         return view('admin.frontend.blog.item.create', compact('siteTitle', 'pageTitle', 'blogItemContent'));
     }
@@ -85,10 +82,9 @@ class BlogController extends Controller {
         return redirect()->route('admin.frontend.blog.item.index')->withSuccess("Blog has been created !");
     }
     public function itemEdit($id) {
-        $siteTitle        = "Blog";
-        $pageTitle        = "Edit Blog Item";
+        $pageTitle        = "Blog";
         $frontendBlogItem = FrontendBlogItem::findOrFail($id);
-        return view('admin.frontend.blog.item.edit', compact('siteTitle', 'pageTitle', 'frontendBlogItem'));
+        return view('admin.frontend.blog.item.edit', compact('pageTitle', 'frontendBlogItem'));
     }
 
     public function itemUpdate(Request $request, $id) {

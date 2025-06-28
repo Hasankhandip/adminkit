@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('content')
     <div class="d-flex justify-content-between mb-4 flex-wrap  gap-2">
-        <h1 class="h3">{{ __($pageTitle) }}</h1>
+        <h1 class="h3">@lang('Edit Product')</h1>
         <a href="{{ route('admin.product.index') }}" class="btn btn-primary">
             @lang('Product List')</a>
     </div>
@@ -90,8 +90,7 @@
                             <div class="product-image-wrapper">
                                 @foreach ($product->productImages as $productImage)
                                     <div class="product-image-item">
-                                        <img class=""
-                                            src="{{ getImage('product/image/', $productImage->image) }}" />
+                                        <img class="" src="{{ getImage('product/image/', $productImage->image) }}" />
                                         <a href="{{ route('admin.product.delete.image', [$productImage->id, $product->id]) }}"
                                             class="btn btn-danger"
                                             onclick="return confirm('Are you sure you want to delete this image?')">

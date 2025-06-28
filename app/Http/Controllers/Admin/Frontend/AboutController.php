@@ -8,10 +8,9 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller {
     public function index() {
-        $siteTitle    = "About";
-        $pageTitle    = "Manage About Content";
+        $pageTitle    = "About";
         $aboutContent = FrontendAbout::first();
-        return view('admin.frontend.about.index', compact('siteTitle', 'pageTitle', 'aboutContent'));
+        return view('admin.frontend.about.index', compact('pageTitle', 'aboutContent'));
     }
 
     public function store(Request $request) {

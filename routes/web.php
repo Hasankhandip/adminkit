@@ -40,7 +40,8 @@ Route::controller(ContactController::class)->prefix('contact')->name('contact.')
 });
 
 Route::controller(CartController::class)->name('cart.')->prefix('cart')->group(function () {
-    Route::get('index', 'index')->name('index');
-    Route::get('add/{id}', 'cartAdd')->name('add');
+    Route::get('/index', 'index')->name('index');
+    Route::get('/add/{id}', 'cartAdd')->name('add');
+    Route::post('/remove', 'cartRemove')->name('remove');
 });
 Route::get('/', [HomeController::class, 'index'])->name('index');

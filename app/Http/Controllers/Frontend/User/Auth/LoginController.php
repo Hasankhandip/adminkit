@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller {
     public function index() {
-        $siteTitle    = "Login";
         $pageTitle    = "Login";
         $loginContent = LoginItem::first();
-        return view('frontend.auth.login', compact('siteTitle', 'pageTitle', 'loginContent'));
+        return view('frontend.auth.login', compact('pageTitle', 'loginContent'));
     }
 
     public function loginAttempt(Request $request) {

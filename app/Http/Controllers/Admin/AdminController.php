@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class AdminController extends Controller {
 
     public function dashboard() {
-        $siteTitle = "Dashboard";
-        return view('admin.dashboard', compact('siteTitle'));
+        $pageTitle = "Dashboard";
+        return view('admin.dashboard', compact('pageTitle'));
     }
 
     public function login(Request $request) {

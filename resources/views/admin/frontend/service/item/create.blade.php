@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('content')
     <div class="d-flex justify-content-between mb-4 flex-wrap  gap-2">
-        <h1 class="h3">{{ __($pageTitle) }}</h1>
+        <h1 class="h3">@lang('Create Service Item')</h1>
         <a href="{{ route('admin.frontend.service.item.index') }}" class="btn btn-primary">@lang('Service Item List')</a>
     </div>
     <div class="row">
